@@ -1,0 +1,48 @@
+main {
+    margin: 1rem 0.8rem;
+    padding: 0.5rem;
+    background-color: $colorWhite;
+    border: 2px solid $colorBlue;
+    
+        h1 {
+            @include fontBold(2rem);
+            color: $colorBlue;
+            margin: 1rem 0;
+        }
+
+        h2 {
+            @include fontBold(1.5rem);
+            color: $colorGrey;
+        }
+
+
+        p {
+            @include fontRegular(0.9rem);
+            margin: 0 0 2rem 0;
+            color: $colorGrey;
+        }
+
+        a {
+            @include fontRegular(0.9rem);
+            color: $colorGrey;
+
+            &:hover {
+                color: $colorBlue;
+            }
+        }
+
+        .main--article--extraInfo {
+            h2 {
+                display: none;
+            }
+
+            p {
+                font-size: 0.7rem;
+                margin: 0 0 0.8rem 0;
+            }
+
+            a {
+                font-size: 0.7rem;
+            }
+        }
+}

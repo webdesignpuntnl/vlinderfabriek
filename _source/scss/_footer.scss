@@ -1,0 +1,16 @@
+footer {
+    background-color: $colorWhite;
+    margin: 2rem 0.8rem 1rem 0.8rem;
+    text-align: center;
+
+    a {
+        @include fontRegular(0.8rem);
+        display: block;
+        padding: 1rem 0 0.5rem 0;
+        color: $colorGrey;
+
+        img {
+            width: 17%;
+        }
+    }
+}

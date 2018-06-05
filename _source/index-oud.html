@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>De Vlinderfabriek</title>
+<LINK REL="SHORTCUT ICON" HREF="images/vlinder.ico">
+<link href="css/nieuws.css" rel="stylesheet" type="text/css" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=yes">
+</head>
+<body>
+<div id='header'></div>
+<div id='links'><img src="images/04.Logo_compleet_blauw_4_72dpi.png" width="100%" height="100%" /></div>
+
+<div id='groen'>
+<a href="pages/verdieping.html"
+onMouseOver="return changeImage1()"
+onMouseOut= "return changeImageBack1()"
+onMouseDown="return handleMDown1()"
+onMouseUp="return handleMUp1()">
+<img name="vlinder01" src="images/02.vlinder_1_wit_190112.png" width="100%" height="100%" border="0"></a>
+</div>
+
+<div id='pink'>
+<a href="pages/naschool.html"
+onMouseOver="return changeImage2()"
+onMouseOut= "return changeImageBack2()"
+onMouseDown="return handleMDown2()"
+onMouseUp="return handleMUp2()">
+<img name="vlinder02" src="images/01.vlinder_2_wit_190112.png" width="100%" height="100%" border="0"></a>
+</div>
+
+<div id='oranje'>
+<a href="pages/opschool.html"
+onMouseOver="return changeImage3()"
+onMouseOut= "return changeImageBack3()"
+onMouseDown="return handleMDown3()"
+onMouseUp="return handleMUp3()">
+<img name="vlinder03" src="images/01.vlinder_3_wit_190112.png" width="100%" height="100%" border="0"></a></div>
+
+<div id='blauw'><a href="#"><img src="images/02.vlinder_4_blauw_190112.png" width="100%" height="100%" border="0"></a>
+</div>
+
+<div id='midden'>
+<img name="button01" src="images/02.button_groot_blauw_nieuws.png" width="100%" height="100%" border="0"></a>
+<br /><br/>
+<a href="pages/welkom.html"
+onMouseOver="return changeImage6()"
+onMouseOut= "return changeImageBack6()"
+onMouseDown="return handleMDown6()"
+onMouseUp="return handleMUp6()">
+<img name="button02" src="images/01.button_groot_wit_ons.png" width="100%" height="100%" border="0"></a>
+<br /><br/>
+
+<a href="pages/wiezijnwij.html"
+onMouseOver="return changeImage7()"
+onMouseOut= "return changeImageBack7()"
+onMouseDown="return handleMDown7()"
+onMouseUp="return handleMUp7()">
+<img name="button03" src="images/01.button_groot_wit_wij.png" width="100%" height="100%" border="0"></a>
+<br /><br/>
+
+<a href="pages/contact.html"
+onMouseOver="return changeImage8()"
+onMouseOut= "return changeImageBack8()"
+onMouseDown="return handleMDown8()"
+onMouseUp="return handleMUp8()">
+<img name="button04" src="images/01.button_groot_wit_contact.png" width="100%" height="100%" border="0"></a>
+<br /><br/>
+
+<a href="pages/schermen.html"
+onMouseOver="return changeImage4()"
+onMouseOut= "return changeImageBack4()"
+onMouseDown="return handleMDown4()"
+onMouseUp="return handleMUp4()">
+<img name="button05" src="images/01.button_groot_wit_schermen.png" width="100%" height="100%" border="0"></a>
+<br /><br/></div>
+
+<div id='rechts'>
+
+<div id='tekst1'>Vlindernieuws</div>
+<!-- <div class="kerstkaart">
+  <img src="images/kerstkaart-2017.jpg" alt="kerstkaart 2017">
+</div> -->
+<div id='tekst2'>
+
+<!-- <h1>In januari zijn er weer gratis proeflessen!</h1>
+<p>In januari starten de wekelijkse theaterlessen van de Vlinderfabriek weer,<br />
+lessen vol toneelspelen, verhalen verzinnen en scènes maken voor alle leeftijden.<br>
+
+<a href="pages/naschool.html" style="color:#36BCE3">Meer info over de wekelijkse lessen</a></p> -->
+
+<h1>Culemborg</h1>
+
+<p>
+	De lessen in Culemborg zijn op maandag, dinsdag &amp woensdag.<br>
+	<a href="pages/culemborg.html" style="color:#36BCE3">Meer info over de wekelijkse lessen in Culemborg</a></p>
+
+<h1>Breda</h1>
+<p>
+	De lessen in Breda zijn op maandag, dinsdag (Prinsenbeek) en donderdag.<br>
+	<a href="pages/breda.html" style="color:#36BCE3">Meer info over de wekelijkse lessen in Breda</a></p>
+
+	<div id='tekst4'>Houdt voor meer info de site &amp; <a href="https://www.facebook.com/pages/De-Vlinderfabriek/365229100205779" STYLE="color:#36BCE3;" target="_blank">Facebookpagina</a> in&nbsp;de gaten!</br>
+
+Sinds januari 2014 zijn wij aangesloten bij het <a href="pages/jeugdcultuurfonds.html" STYLE="color:#36BCE3;" target="_blank">Jeugdcultuurfonds</a></br></br></div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<div id='pijl'><a href="#" class="back-to-top"><img src="images/Pijl_terug_blauwe_outline.png" width="50%" height="50%"/></a> 
+
+<script>            
+			jQuery(document).ready(function() {
+				var offset = 220;
+				var duration = 500;
+				jQuery(window).scroll(function() {
+					if (jQuery(this).scrollTop() > offset) {
+						jQuery('.back-to-top').fadeIn(duration);
+					} else {
+						jQuery('.back-to-top').fadeOut(duration);
+					}
+				});
+				
+				jQuery('.back-to-top').click(function(event) {
+					event.preventDefault();
+					jQuery('html, body').animate({scrollTop: 0}, duration);
+					return false;
+				})
+			});
+		</script>
+ </div>       
+
+<script>
+
+ 
+upImage1 = new Image();
+upImage1.src = "images/09.vlinder_1_groene_outline_190112.png";
+downImage1 = new Image();
+downImage1.src = "images/05.vlinder_1_groen_190112.png";
+normalImage1 = new Image();
+normalImage1.src = "images/02.vlinder_1_wit_190112.png";
+ 
+function changeImage1()
+{
+  document.images["vlinder01"].src= upImage1.src;
+  return true;
+}
+function changeImageBack1()
+{
+   document.images["vlinder01"].src = normalImage1.src;
+   return true;
+}
+function handleMDown1()
+{
+ document.images["vlinder01"].src = downImage1.src;
+ return true;
+}
+function handleMUp1()
+{
+ changeImage1();
+ return true;
+}
+
+upImage2 = new Image();
+upImage2.src = "images/08.vlinder_2_pinke_outline_190112.png";
+downImage2 = new Image();
+downImage2.src = "images/04.vlinder_2_pink_190112.png";
+normalImage2 = new Image();
+normalImage2.src = "images/01.vlinder_2_wit_190112.png";
+ 
+function changeImage2()
+{
+  document.images["vlinder02"].src= upImage2.src;
+  return true;
+}
+function changeImageBack2()
+{
+   document.images["vlinder02"].src = normalImage2.src;
+   return true;
+}
+function handleMDown2()
+{
+ document.images["vlinder02"].src = downImage2.src;
+ return true;
+}
+function handleMUp2()
+{
+ changeImage2();
+ return true;
+}
+
+upImage3 = new Image();
+upImage3.src = "images/07.vlinder_3_oranje_outline_190112.png";
+downImage3 = new Image();
+downImage3.src = "images/03.vlinder_3_oranje_190112.png";
+normalImage3 = new Image();
+normalImage3.src = "images/01.vlinder_3_wit_190112.png";
+ 
+function changeImage3()
+{
+  document.images["vlinder03"].src= upImage3.src;
+  return true;
+}
+function changeImageBack3()
+{
+   document.images["vlinder03"].src = normalImage3.src;
+   return true;
+}
+function handleMDown3()
+{
+ document.images["vlinder03"].src = downImage3.src;
+ return true;
+}
+function handleMUp3()
+{
+ changeImage3();
+ return true;
+}
+upImage6 = new Image();
+upImage6.src = "images/03.button_groot_blauwe_outline_ons.png";
+downImage6 = new Image();
+downImage6.src = "images/02.button_groot_blauw_ons.png";
+normalImage6 = new Image();
+normalImage6.src = "images/01.button_groot_wit_ons.png";
+ 
+function changeImage6()
+{
+  document.images["button02"].src= upImage6.src;
+  return true;
+}
+function changeImageBack6()
+{
+   document.images["button02"].src = normalImage6.src;
+   return true;
+}
+function handleMDown6()
+{
+ document.images["button02"].src = downImage6.src;
+ return true;
+}
+function handleMUp6()
+{
+ changeImage6();
+ return true;
+}
+
+upImage7 = new Image();
+upImage7.src = "images/03.button_groot_blauwe_outline_wij.png";
+downImage7 = new Image();
+downImage7.src = "images/02.button_groot_blauw_wij.png";
+normalImage7 = new Image();
+normalImage7.src = "images/01.button_groot_wit_wij.png";
+ 
+function changeImage7()
+{
+  document.images["button03"].src= upImage7.src;
+  return true;
+}
+function changeImageBack7()
+{
+   document.images["button03"].src = normalImage7.src;
+   return true;
+}
+function handleMDown7()
+{
+ document.images["button03"].src = downImage7.src;
+ return true;
+}
+function handleMUp7()
+{
+ changeImage7();
+ return true;
+}
+
+upImage8 = new Image();
+upImage8.src = "images/03.button_groot_blauwe_outline_contact.png";
+downImage8 = new Image();
+downImage8.src = "images/02.button_groot_blauw_contact.png";
+normalImage8 = new Image();
+normalImage8.src = "images/01.button_groot_wit_contact.png";
+ 
+function changeImage8()
+{
+  document.images["button04"].src= upImage8.src;
+  return true;
+}
+function changeImageBack8()
+{
+   document.images["button04"].src = normalImage8.src;
+   return true;
+}
+function handleMDown8()
+{
+ document.images["button04"].src = downImage8.src;
+ return true;
+}
+function handleMUp8()
+{
+ changeImage8();
+ return true;
+}
+
+upImage4 = new Image();
+upImage4.src = "images/03.button_groot_blauwe_outline_schermen.png";
+downImage4 = new Image();
+downImage4.src = "images/02.button_groot_blauw_schermen.png";
+normalImage4 = new Image();
+normalImage4.src = "images/01.button_groot_wit_schermen.png";
+ 
+function changeImage4()
+{
+  document.images["button05"].src= upImage4.src;
+  return true;
+}
+function changeImageBack4()
+{
+   document.images["button05"].src = normalImage4.src;
+   return true;
+}
+function handleMDown4()
+{
+ document.images["button05"].src = downImage4.src;
+ return true;
+}
+function handleMUp4()
+{
+ changeImage4();
+ return true;
+}
+
+
+</script>
+        
+
+</body>
+</html>

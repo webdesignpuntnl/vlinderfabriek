@@ -2,3 +2,17 @@
         clear: both;
         overflow: hidden;
 }
+
+@mixin fontRegular ($fontSize: 1rem) {
+        font-family: 'Tajawal', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $fontSize;
+}
+
+@mixin fontBold ($fontSize: 1rem) {
+        font-family: 'Tajawal', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: $fontSize;
+}
