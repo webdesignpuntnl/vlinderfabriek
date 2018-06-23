@@ -2,47 +2,104 @@ main {
     margin: 1rem 0.8rem;
     padding: 0.5rem;
     background-color: $colorWhite;
-    border: 2px solid $colorBlue;
+
+    h1 {
+        @include fontBold(2rem);
+        margin: 1rem 0;
+    }
+
+    h2 {
+        @include fontBold(1.5rem);
+        color: $colorGrey;
+    }
     
-        h1 {
-            @include fontBold(2rem);
-            color: $colorBlue;
-            margin: 1rem 0;
-        }
+    p {
+        @include fontRegular(0.9rem);
+        margin: 0 0 2rem 0;
+        color: $colorGrey;
+    }
 
+    a {
+        @include fontRegular(0.9rem);
+    }
+
+
+    .main__article--extraInfo {
         h2 {
-            @include fontBold(1.5rem);
-            color: $colorGrey;
+            display: none;
         }
-
 
         p {
-            @include fontRegular(0.9rem);
-            margin: 0 0 2rem 0;
-            color: $colorGrey;
+            font-size: 0.7rem;
+            margin: 0 0 0.8rem 0;
         }
 
         a {
-            @include fontRegular(0.9rem);
-            color: $colorGrey;
-
-            &:hover {
-                color: $colorBlue;
-            }
+            font-size: 0.7rem;
         }
+    }
+}
 
-        .main--article--extraInfo {
-            h2 {
-                display: none;
-            }
+.main--blue {
+    border: 2px solid $colorBlue;
 
-            p {
-                font-size: 0.7rem;
-                margin: 0 0 0.8rem 0;
-            }
+    h1 {
+        color: $colorBlue;
+    }
 
-            a {
-                font-size: 0.7rem;
-            }
+    a {
+        color: $colorGrey;
+
+        &:hover {
+            color: $colorBlue;
         }
+    }
+}
+
+.main--orange {
+    border: 2px solid $colorOrange;
+
+    h1 {
+        color: $colorOrange;
+    }
+
+    a {
+        color: $colorGrey;
+
+        &:hover {
+            color: $colorOrange;
+        }
+    }
+}
+
+@mixin main--512 {
+    
+    main {
+        float: right;
+        width: 60%;
+        margin: 2rem 0.8rem 5rem 0.8rem;
+           
+    }
+}
+
+@mixin main--768 {
+
+    main {
+        width: 70%;
+    }
+}
+
+@mixin main--1080 {
+
+    main {
+        @include clearfix;
+        float: none;
+        display: block;
+        width: 98%;
+        // margin: 2rem 0.8rem;
+    }
+}
+
+@mixin main--1200 {
+    
 }

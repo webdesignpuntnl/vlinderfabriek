@@ -29,18 +29,19 @@
     "use strict";
     n(1), window.onload = function() {
         function e(e) {
-            var t = this.src;
-            if ("mouseover" === e.type) {
-                var n = t.replace("-outline", "");
-                this.src = n;
+            var t = this.querySelector("img"), n = this.querySelector("a"), r = t.src;
+            if (!n.hasAttribute("class")) if ("mouseover" === e.type) {
+                var i = r.replace("-outline", "");
+                t.src = i;
             } else {
-                var r = t.replace(".png", "-outline.png");
-                this.src = r;
+                var o = r.replace(".png", "-outline.png");
+                t.src = o;
             }
         }
-        for (var t = Array.from(document.querySelectorAll(".butterflys img")), n = [], r = [ "vlinder-blauw.png", "vlinder-groen.png", "vlinder-oranje.png", "vlinder-rood.png" ], i = 0; i < r.length; i += 1) n[i] = new Image(), 
-        n[i].src = "../media/images/" + r[i];
-        t.forEach(function(t) {
+        var t = Array.from(document.querySelectorAll(".butterflys li")), n = [], r = [ "vlinder-blauw.png", "vlinder-groen.png", "vlinder-oranje.png", "vlinder-rood.png", "fabriek-oranje.svg", "fabriek-groen.svg", "fabriek-rood.svg" ];
+        r.map(function(e, t) {
+            n[t] = new Image(), n[t].src = "../media/images/" + r[t];
+        }), t.forEach(function(t) {
             return t.addEventListener("mouseover", e);
         }), t.forEach(function(t) {
             return t.addEventListener("mouseout", e);

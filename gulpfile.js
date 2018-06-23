@@ -59,7 +59,7 @@ gulp.task('injectPages', ['webpackbuild','sassbuild'], function () {
 
 // copy images
 gulp.task('image', function () {
-  return gulp.src('_source/images/**')
+  return gulp.src('_source/media/images/**')
   .pipe(gulp.dest('www/media/images'))
 }); 
 

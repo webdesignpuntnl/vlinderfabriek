@@ -1,17 +1,14 @@
-header {
-    .header--factory {
+.header__logo {
         width: 30%;
         margin: 1.5rem 0 0 0.8rem;
     }
 
-    .header--wordlogo {
-        float: right;
-        width: 45%;
-        margin: 1.5rem 0.8rem 0 0;
-        
-    }
+.header__wordlogo {
+    float: right;
+    width: 45%;
+    margin: 1.5rem 0.8rem 0 0;
+    
 }
-
 
 nav {
     @include clearfix;
@@ -39,24 +36,40 @@ nav {
             
         }
         
-        li:first-child a:hover {
-            color: $colorBlue;
-            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
-        }
-        
-        li:nth-child(2) a:hover {
+        li:first-child a:hover { // green butterfly
             color: $colorGreen;
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
         }
+        
+        li:nth-child(2) a:hover { // red butterfly
+            color: $colorRed;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
+        }
 
-        li:nth-child(3) a:hover {
+        li:nth-child(3) a:hover { // orange butterfly
             color: $colorOrange;
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
         }
 
-        li:nth-child(4) a:hover {
-            color: $colorRed;
+        li:nth-child(4) a:hover { // blue butterfly
+            color: $colorBlue;
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
+        }
+
+        .butterflys__active--green {
+            color: $colorGreen;
+        }
+
+        .butterflys__active--red{
+            color: $colorRed;
+        }
+
+        .butterflys__active--orange {
+            color: $colorOrange;
+        }
+
+        .butterflys__active--blue {
+            color: $colorBlue;
         }
         
     }
@@ -81,34 +94,8 @@ nav {
             display: block;
             padding: 0.6rem 1rem 0.3rem 1rem;
             border: 2px solid $colorGrey;
-            border-radius:  10px;
+            border-radius: 10px;
             position: relative;
-
-
-            &:hover {
-                border: 2px solid $colorBlue;img {
-                    width: 40px;
-                }
-        
-                a {
-                    @include fontBold(0.8rem);
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    color: $colorWhite;
-        
-                    &:hover {
-                        color: $colorBlue;
-                    }
-        
-                    span {
-                        display: block;
-                        margin: 0 0 2rem 0;
-                    }
-        
-                }
-                color: $colorBlue;
-            }
-
 
             &:after { // second white border around the grey one
                 content: " ";
@@ -124,7 +111,37 @@ nav {
             }
         }
 
-        .buttons__active {
+        .buttons__active--green {
+            background-color: $colorGreen;
+            color: $colorWhite;
+
+            &:hover {
+                color: $colorWhite;
+                border-color: $colorGrey;
+            }
+        }
+
+        .buttons__active--red {
+            background-color: $colorRed;
+            color: $colorWhite;
+
+            &:hover {
+                color: $colorWhite;
+                border-color: $colorGrey;
+            }
+        }
+
+        .buttons__active--orange {
+            background-color: $colorOrange;
+            color: $colorWhite;
+
+            &:hover {
+                color: $colorWhite;
+                border-color: $colorGrey;
+            }
+        }
+
+        .buttons__active--blue {
             background-color: $colorBlue;
             color: $colorWhite;
 
@@ -134,4 +151,174 @@ nav {
             }
         }
     }
-}  
+
+    .buttons--green {
+        a:hover {
+            color: $colorGreen;
+            border-color: $colorGreen; 
+        }
+    }
+
+    .buttons--red {
+        a:hover {
+            color: $colorRed;
+            border-color: $colorRed; 
+        }
+    }
+
+    .buttons--orange {
+        a:hover {
+            color: $colorOrange;
+            border-color: $colorOrange; 
+        }
+    }
+
+    .buttons--blue {
+        a:hover {
+            color: $colorBlue;
+            border-color: $colorBlue; 
+        }
+    }
+    .buttons__sub { // button menu under the main button. Orange butterfly only
+       list-style-type: none;
+
+       li {
+        margin: 0;
+
+        a {
+            background-color: transparent;
+            border: none;  
+            color: $colorWhite;
+            text-align: left;
+
+
+            &:after {
+                background-color: transparent; 
+                border: none; 
+            }
+        }
+       }
+    }
+}
+
+@mixin navigation--320 {
+    nav {
+        
+        .buttons {
+
+            a {
+                padding: 0.7rem 1.8rem 0.4rem 1.8rem;
+            }
+        }
+    }
+}
+
+@mixin navigation--512 {
+
+    header {
+        // @include clearfix;
+        .header__logo {
+            width: 200px;
+            margin: 10rem 0 0 0.8rem;
+            position: relative;
+        }
+
+        .header__wordlogo {
+            width: 250px;            
+        }
+    }
+
+    nav {
+        width: 40%;
+        margin: 1rem 0 0 0.8rem;
+        overflow: visible;        
+
+        .butterflys {
+            float: none;
+            margin: 0 0 0 0.8rem;
+            
+            a {
+                span {
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+
+            li {
+                position: absolute;
+                padding: 0;
+                margin: 0;
+            }
+
+            li:first-child { // blue butterfly
+                top: 96px;
+                
+                img {
+                    width: 40%;
+                }
+            }
+            
+            li:nth-child(2) { // green butterfly
+                top: 57px;
+                left: 69px;
+
+                img {
+                    transform: rotate(40deg);
+                }
+            }
+    
+            li:nth-child(3) { // orange butterfly
+                top: 30px;
+                left: 150px;
+
+                img {
+                    width: 75%;
+                    transform: rotate(45deg);
+                }
+            }
+    
+            li:nth-child(4) { // red butterfly
+                top: 120px;
+                left: 198px;
+
+                img {
+                    width: 40%;
+                }
+            }
+        }
+
+        .buttons {
+            float: left;
+            margin: 2rem 0 0 0.8rem;
+        }
+    }
+}
+
+@mixin navigation--1080 {
+    nav {
+
+        .buttons {
+            position: absolute;
+            top: 280px;
+            right: 1rem;
+            display: inline;
+            
+            li {
+                display: inline-block;
+                margin: 0 0 0 2rem;
+            }
+        }
+    }
+}
+
+@mixin navigation--1200 {
+    nav {
+
+        .buttons {
+            
+            a {
+                padding: 0.7rem 2rem 0.4rem 2rem;
+            }
+        }
+    }
+}

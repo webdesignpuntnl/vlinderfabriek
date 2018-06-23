@@ -1,38 +1,42 @@
 /*  ######################################### 
-     320
+     very small
     ######################################### */
 @media screen and (min-width:320px) {
     // use @include here and @mixin in the partial
+    @include navigation--320;
 
 }
 
 /*  ######################################### 
-     512
+     small
     ######################################### */
 @media screen and (min-width:512px) {
-    
-    
+    @include navigation--512;
+    @include main--512;
+    @include footer--512;    
 }
 
 /*  ######################################### 
-    600
-    ######################################### */
-@media screen and (min-width:600px) {
-    
-}
-
-/*  ######################################### 
-    768
+    medium
     ######################################### */
 @media screen and (min-width:768px) {
+    @include main--768;
 
 }
 
+/*  ######################################### 
+     medium-large
+    ######################################### */
+@media screen and (min-width:1080px) {
+    @include main--1080;
+    @include navigation--1080;
+}
 
 /*  ######################################### 
-     1200
+     large
     ######################################### */
 @media screen and (min-width:1200px) {
-
+    @include navigation--1200;
+    @include main--1200;
 }
 
