@@ -76,16 +76,16 @@ main {
     
     main {
         float: right;
-        width: 60%;
+        width: 50%;
         margin: 2rem 0.8rem 5rem 0.8rem;
-           
+        padding: 0.8rem;   
     }
 }
 
 @mixin main--768 {
 
     main {
-        width: 70%;
+        width: 65%;
     }
 }
 
@@ -96,7 +96,7 @@ main {
         float: none;
         display: block;
         width: 98%;
-        // margin: 2rem 0.8rem;
+        margin: 5rem 0.8rem;
     }
 }
 

@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="../media/images/vlinder.ico">
     <title>Stichting de Vlinderfabriek</title>
     <!-- inject:css -->
+    <link rel="stylesheet" href="../css/vlinderfabriek-styles.css">
     <!-- endinject -->
 </head>
 <body id="backToTop"> 
@@ -21,21 +22,34 @@
             </div>
             <nav> <!-- main naviagtion on the left -->
                 <ul class="butterflys">
-                    <li><a href="../pages/verdieping.html"><img src="../media/images/vlinder-groen-outline.png" alt="logo"><span>verdieping</span></a></li>
-                    <li><a href="../pages/lesaanbod.html"><img src="../media/images/vlinder-rood-outline.png" alt="logo"><span>lesaanbod</span></a></li>
-                    <li><a href="#" class="butterflys__active--orange"><img src="../media/images/vlinder-oranje.png" alt="logo"><span>op school</span></a></li>
+                    <li><a href="lesaanbod.html"><img src="../media/images/vlinder-rood-outline.png" alt="logo"><span>lesaanbod</span></a></li>
+                    <li><a href="verdieping.html"><img src="../media/images/vlinder-groen-outline.png" alt="logo"><span>verdieping</span></a></li>
+                    <li><a href="opschool.html" class="butterflys__active--orange"><img src="../media/images/vlinder-oranje.png" alt="logo"><span>op school</span></a></li>
                     <li><a href="../index.html"><img src="../media/images/vlinder-blauw-outline.png" alt="logo"><span>home</span></a></li>
                 </ul>
                 <ul class="buttons buttons--orange">
-                    <li><a href="basisonderwijs.html" title="basisonderwijs">basisonderwijs</a></li>
-                    <li><a href="#" title="kinderboekenweek">kinderboekenweek</a></li>
-                    <li><a href="#" title="specials">specials</a></li>
-                    <li><a href="#" title="plus">plus</a></li>
+                    <li><a href="basisonderwijs.html" title="basisonderwijs">basisonderwijs</a>
+                    <!--<ul class="buttons__second-level--orange"> 
+                            <li><a href="nieuw.html" title="nieuw">nieuw</a></li>
+                            <li><a href="zo-trots-als-een-pauw.html" title="zo trots als een pauw">zo trots als een pauw</a></li>
+                            <li><a href="sprookjes-op-ijn-kop.html" title="sprookjes op zijn kop">sprookjes op zijn kop</a></li>
+                            <li><a href="theaterhelden.html" title="Theaterhelden">Theaterhelden</a></li>
+                            <li><a href="eerste-hulp-bij-musicals.html" title="E.H.B.M.">E.H.B.M.</a></li>
+                        </ul> -->
+                    </li>
+                    <li><a href="#" class="buttons__active--orange" title="kinderboekenweek">kinderboekenweek</a>
+                        <ul class="buttons__second-level--orange"> 
+                            <li><a href="bovenbouw.html" title="bovenbouw">bovenbouw</a></li>
+                            <li><a href="middenbouw.html" title="middenbouw">middenbouw</a></li>
+                            <li><a href="onderbouw.html" title="onderbouw">onderbouw</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="specials.html" title="specials">specials</a></li>
+                    <li><a href="plus.html" title="plus">plus</a></li>
                 </ul>
-            </nav>
         </header>
-        <main class="main main--orange"> <!-- text section on the right side -->
-            <h1>Op school</h1>
+        <main class="main main--orange"> <!-- text section -->
+            <h1>Kinderboekenweek</h1>
             <article>
                 <p>
                     Iedereen die in aanraking komt met kunst en cultuur krijgt de mogelijkheid om een ontdekkingsreis aan te gaan in hoofd en hart.
@@ -52,10 +66,11 @@
         </main>
     </div>
     <footer class="footer--orange">
-        <a href="#backToTop"><img src="../media/images/pijl-terug-blauw.png" alt="klik voor terug omhoog" title="klik voor terug omhoog"></a> <!-- arrow back to top on small screens -->
+        <a href="#backToTop"><img src="../media/images/pijl-terug-oranje.png" alt="klik voor terug omhoog" title="klik voor terug omhoog"></a> <!-- arrow back to top on small screens -->
         <a href="https://www.webdesignpuntnl.com">&copy; Webdesignpuntnl</a>
     </footer>
     <!-- inject:js -->
+    <script src="../js/bundle.js"></script>
     <!-- endinject -->
 </body>
 </html>

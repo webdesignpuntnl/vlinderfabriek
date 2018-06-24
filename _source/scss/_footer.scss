@@ -3,7 +3,6 @@ footer {
     margin: 2rem 0.8rem 0 0.8rem;
     padding: 0 0 0.5rem 0;
     text-align: center;
-    border: 1px solid $colorBlue; 
     
     img {
         width: 70px;
@@ -15,6 +14,22 @@ footer {
         @include fontRegular(0.8rem);
         color: $colorGrey;
     }
+}
+
+.footer--blue {
+    border: 2px solid $colorBlue; 
+}
+
+.footer--orange {
+    border: 2px solid $colorOrange; 
+}
+
+.footer--red {
+    border: 2px solid $colorRed; 
+}
+
+.footer--green {
+    border: 2px solid $colorGreen; 
 }
 
 @mixin footer--512 {

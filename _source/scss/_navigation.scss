@@ -23,7 +23,7 @@ nav {
         }
 
         a {
-            @include fontBold(0.8rem);
+            @include fontBold(0.75rem);
             text-decoration: none;
             text-transform: uppercase;
             color: $colorWhite;
@@ -167,9 +167,15 @@ nav {
     }
 
     .buttons--orange {
-        a:hover {
-            color: $colorOrange;
-            border-color: $colorOrange; 
+
+        a {
+            font-size: 0.7rem;
+            padding: 0.7rem 0.8rem 0.4rem 0.8rem;
+
+            &:hover {
+                color: $colorOrange;
+                border-color: $colorOrange; 
+            }
         }
     }
 
@@ -179,24 +185,38 @@ nav {
             border-color: $colorBlue; 
         }
     }
-    .buttons__sub { // button menu under the main button. Orange butterfly only
+    
+    .buttons__second-level--orange { // button menu under the main button. Orange section
        list-style-type: none;
+       border: 2px solid $colorOrange;
+       border-radius: 5px;
+       margin: 0.5rem 0 0 0;
 
        li {
         margin: 0;
 
-        a {
-            background-color: transparent;
-            border: none;  
-            color: $colorWhite;
-            text-align: left;
+            a {
+                font-size: 0.66rem;
+                padding: 0.7rem 0.5rem;
+                background-color: transparent;
+                border: none;  
+                color: $colorWhite;
+                text-align: left;
 
 
-            &:after {
-                background-color: transparent; 
-                border: none; 
+                &:after {
+                    background-color: transparent; 
+                    border: none;
+                }
+
+                &:hover {
+                    background-color: $colorWhite;
+                    border-radius: initial;
+                    text-decoration: underline;
+                    border-left: 1px solid $colorOrange;
+                    border-right: 1px solid $colorOrange;
+                }
             }
-        }
        }
     }
 }
@@ -290,6 +310,37 @@ nav {
         .buttons {
             float: left;
             margin: 2rem 0 0 0.8rem;
+
+            a {
+                font-size: 0.85rem;
+                padding: 0.7rem 1.5rem 0.4rem 1.5rem;
+            }
+        }
+
+        .buttons--orange {
+            a {
+                padding: 0.7rem 1rem 0.4rem 1rem;
+            }
+        }
+
+        .buttons__second-level--orange { // button menu under the main button. Orange section
+     
+            li {
+     
+                a {
+                    font-size: 0.7rem;
+                    padding: 0.7rem 0.5rem;
+                }
+            }
+         }
+    }
+}
+
+@mixin navigation--768 {
+   
+    nav {
+        .buttons--orange {
+            margin: 2rem 0 5rem 0.8rem;
         }
     }
 }
@@ -301,13 +352,45 @@ nav {
             position: absolute;
             top: 280px;
             right: 1rem;
-            display: inline;
+            // display: inline;
             
             li {
                 display: inline-block;
                 margin: 0 0 0 2rem;
             }
         }
+
+        .buttons--orange {
+            width: 75%;
+            text-align: right;
+            
+            li  {
+                min-width: 180px;
+                margin: 0 0 0 1rem;
+
+                a {
+                    padding: 0.7rem 1rem 0.4rem 1rem;  
+                }
+            }
+        
+        }
+
+        .buttons__second-level--orange { // button menu under the main button. Orange section
+            position: absolute;
+            left: 4rem;
+            margin: 1rem 0;
+
+            li {
+                display: inline-block;
+                padding: 0;
+                margin: 0;
+                min-width: initial;
+
+                a {
+                    font-size: 0.8rem;
+                }
+            }
+         }
     }
 }
 
@@ -320,5 +403,29 @@ nav {
                 padding: 0.7rem 2rem 0.4rem 2rem;
             }
         }
+
+        .buttons--orange {
+            
+            li  {
+                margin: 0 0 0 2rem;
+            }
+        }
+
+        .buttons__second-level--orange { // button menu under the main button. Orange section
+            position: absolute;
+            left: 4rem;
+            margin: 1rem 0;
+
+            li {
+                display: inline-block;
+                padding: 0;
+                margin: 0;
+                min-width: initial;
+
+                a {
+                    font-size: 0.8rem;
+                }
+            }
+         }
     }
 }

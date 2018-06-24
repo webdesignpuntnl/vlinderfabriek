@@ -20,8 +20,8 @@
     medium
     ######################################### */
 @media screen and (min-width:768px) {
+    @include navigation--768;
     @include main--768;
-
 }
 
 /*  ######################################### 
