@@ -1,8 +1,9 @@
 footer {
+    @include clearfix;
     background-color: $colorWhite;
     margin: 2rem 0.8rem 0 0.8rem;
     padding: 0 0 0.5rem 0;
-    text-align: center;
+    // text-align: center;
     
     img {
         width: 70px;
@@ -13,8 +14,36 @@ footer {
     a:nth-child(2) {
         @include fontRegular(0.8rem);
         color: $colorGrey;
+        float: right;
+        margin: 0 0.8rem 0;
+    }
+
+    a:last-child {
+        @include fontRegular(0.8rem);
+        color: $colorGrey;
+        float: left;
+        margin: 0 0 0 0.8rem;
     }
 }
+
+// cookies
+.noat-cookie__consent {
+    @include fontBold;
+    background-color: $colorGrey;
+    opacity: 0.9;
+}
+
+// .noat-cookie-consent__banner
+// .noat-cookie-consent-banner__text
+// .noat-cookie-consent-banner__other-actions
+// .noat-cookie-consent-banner-other-actions__privacy-policy
+// .noat-cookie-consent-banner-other-actions__deny
+
+.noat-cookie-consent-banner__allow {
+    background-color: $colorWhite !important;
+    color: $colorGrey;
+}
+
 
 .footer--blue {
     border: 2px solid $colorBlue; 

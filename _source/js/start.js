@@ -1,7 +1,7 @@
-import 'jquery';
+
+import '../js/cookieBar';
 
 window.onload = function load() {
-
   const butterflysListItem = Array.from(document.querySelectorAll('.butterflys li'));
 
   const imgPad = '../media/images/'; // set the path where the images are located
@@ -42,5 +42,4 @@ window.onload = function load() {
   // eventlisteners
   butterflysListItem.forEach(link => link.addEventListener('mouseover', swapImage)); // butterfly's
   butterflysListItem.forEach(link => link.addEventListener('mouseout', swapImage)); // butterfly's
-  
 };
