@@ -14,10 +14,16 @@ const paths = {
   scss: './_source/scss/*.scss',
 };
 
-// copy index html 
-gulp.task('html', function () {
+// copy index html dev
+gulp.task('htmldev', function () {
     return gulp.src('_source/*.html')
     .pipe(gulp.dest('www/'))
+});
+
+// copy index html build
+gulp.task('htmlbuild', function () {
+  return gulp.src(['_source/*.html', '_source/*.png', '_source/*.xml', '_source/*.ico', '_source/*.svg', '_source/*.webmanifest'])
+  .pipe(gulp.dest('www/'))
 });
 
 // copy pages folder 
@@ -134,7 +140,7 @@ gulp.task('clean', function() {
 })
 
 
-gulp.task('dev', ['clean', 'webpackdev', 'sassdev', 'image', 'pages', 'html', 'injectIndexDev', 'injectPagesDev', 'browser-sync'], () => {
-  gulp.watch(['_source/scss/*.scss', '_source/js/*.js', '_source/images/**', '_source/*.html', '_source/pages/*.html'], ['webpackdev', 'html', 'injectIndexDev', 'injectPagesDev', 'pages', 'sassdev', 'image']);
+gulp.task('dev', ['clean', 'webpackdev', 'sassdev', 'image', 'pages', 'htmldev', 'injectIndexDev', 'injectPagesDev', 'browser-sync'], () => {
+  gulp.watch(['_source/scss/*.scss', '_source/js/*.js', '_source/images/**', '_source/*.html', '_source/pages/*.html'], ['webpackdev', 'htmldev', 'injectIndexDev', 'injectPagesDev', 'pages', 'sassdev', 'image']);
 });
-gulp.task('build', ['clean', 'sassbuild', 'webpackbuild', 'image', 'html', 'pages', 'injectIndex', 'injectPages']);
+gulp.task('build', ['clean', 'sassbuild', 'webpackbuild', 'image', 'htmlbuild', 'pages', 'injectIndex', 'injectPages']);

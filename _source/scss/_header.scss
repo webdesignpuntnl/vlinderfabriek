@@ -204,10 +204,10 @@ nav {
             border-color: $colorBlue; 
         }
     }
-    
-    .buttons__second-level--orange { // button menu under the main button. Orange section
-       list-style-type: none;
-       border: 2px solid $colorOrange;
+
+    .buttons__second-level {
+        list-style-type: none;
+        border: 2px solid $colorWhite;
        border-radius: 5px;
        margin: 0.5rem 0 0 0;
 
@@ -232,12 +232,52 @@ nav {
                     background-color: $colorWhite;
                     border-radius: initial;
                     text-decoration: underline;
-                    border-left: 1px solid $colorOrange;
-                    border-right: 1px solid $colorOrange;
                 }
             }
-       }
+        }
     }
+    
+    .buttons__second-level--orange { // button menu under the main button. Orange section
+       border-color: $colorOrange;
+
+        .buttons__second-level__active { // active button in the button second level
+            background-color: $colorWhite;
+            color: $colorOrange;
+            border-radius: inherit;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .buttons__second-level--red { // button menu under the main button. Orange section
+        border-color: $colorRed;
+            
+         .buttons__second-level__active { // active button in the button second level
+             background-color: $colorWhite;
+             color: $colorRed;
+             border-radius: inherit;
+    
+             &:hover {
+                 text-decoration: none;
+             }
+         }
+     }
+
+     .buttons__second-level--green { // button menu under the main button. Orange section
+        border-color: $colorGreen;
+            
+         .buttons__second-level__active { // active button in the button second level
+             background-color: $colorWhite;
+             color: $colorGreen;
+             border-radius: inherit;
+    
+             &:hover {
+                 text-decoration: none;
+             }
+         }
+     }
 }
 
 @mixin navigation--320 {

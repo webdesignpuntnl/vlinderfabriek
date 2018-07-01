@@ -27,26 +27,7 @@
     }, t.p = "", t(t.s = 0);
 }([ function(e, t, n) {
     "use strict";
-    n(1), window.onload = function() {
-        function e(e) {
-            var t = this.querySelector("img"), n = this.querySelector("a"), o = t.src;
-            if (!n.hasAttribute("class")) if ("mouseover" === e.type) {
-                var r = o.replace("-outline", "");
-                t.src = r;
-            } else {
-                var i = o.replace(".png", "-outline.png");
-                t.src = i;
-            }
-        }
-        var t = Array.from(document.querySelectorAll(".butterflys li")), n = [], o = [ "vlinder-blauw.png", "vlinder-groen.png", "vlinder-oranje.png", "vlinder-rood.png", "fabriek-oranje.svg", "fabriek-groen.svg", "fabriek-rood.svg" ];
-        o.map(function(e, t) {
-            n[t] = new Image(), n[t].src = "../media/images/" + o[t];
-        }), t.forEach(function(t) {
-            return t.addEventListener("mouseover", e);
-        }), t.forEach(function(t) {
-            return t.addEventListener("mouseout", e);
-        });
-    };
+    n(1), n(3), n(4);
 }, function(e, t, n) {
     "use strict";
     n(2), window.noat || (window.noat = {}), window.noat.cookieConsent = {
@@ -559,5 +540,32 @@
             }), e.cookieconsent_status || (0, r.render)((0, r.h)(a.default, null), document.body);
         });
     } ]);
+}, function(e, t, n) {
+    "use strict";
+    window.onload = function() {
+        var e = [], t = document.querySelector("#index"), n = [ "vlinder-blauw.png", "vlinder-groen.png", "vlinder-oranje.png", "vlinder-rood.png", "fabriek-oranje.svg", "fabriek-groen.svg", "fabriek-rood.svg" ];
+        n.map(function(o, r) {
+            t ? (e[r] = new Image(), e[r].src = "media/images/" + n[r]) : (e[r] = new Image(), 
+            e[r].src = "../media/images/" + n[r]);
+        });
+    };
+}, function(e, t, n) {
+    "use strict";
+    function o(e) {
+        var t = this.querySelector("img"), n = this.querySelector("a"), o = t.src;
+        if (!n.hasAttribute("class")) if ("mouseover" === e.type) {
+            var r = o.replace("-outline", "");
+            t.src = r;
+        } else {
+            var i = o.replace(".png", "-outline.png");
+            t.src = i;
+        }
+    }
+    var r = Array.from(document.querySelectorAll(".butterflys li"));
+    r.forEach(function(e) {
+        return e.addEventListener("mouseover", o);
+    }), r.forEach(function(e) {
+        return e.addEventListener("mouseout", o);
+    });
 } ]);
 //# sourceMappingURL=bundle.js.map

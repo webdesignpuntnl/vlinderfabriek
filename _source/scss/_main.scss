@@ -2,6 +2,7 @@ main {
     margin: 1rem 0.8rem;
     padding: 0.5rem;
     background-color: $colorWhite;
+    border: 2px solid $colorWhite;
 
     h1 {
         @include fontBold(2rem);
@@ -41,7 +42,7 @@ main {
 }
 
 .main--blue {
-    border: 2px solid $colorBlue;
+    border-color: $colorBlue;
 
     h1 {
         color: $colorBlue;
@@ -57,7 +58,7 @@ main {
 }
 
 .main--orange {
-    border: 2px solid $colorOrange;
+    border-color: $colorOrange;
 
     h1 {
         color: $colorOrange;
@@ -68,6 +69,38 @@ main {
 
         &:hover {
             color: $colorOrange;
+        }
+    }
+}
+
+.main--red {
+    border-color: $colorRed;
+
+    h1 {
+        color: $colorRed;
+    }
+
+    a {
+        color: $colorGrey;
+
+        &:hover {
+            color: $colorRed;
+        }
+    }
+}
+
+.main--green {
+    border-color: $colorGreen;
+
+    h1 {
+        color: $colorGreen;
+    }
+
+    a {
+        color: $colorGrey;
+
+        &:hover {
+            color: $colorGreen;
         }
     }
 }
