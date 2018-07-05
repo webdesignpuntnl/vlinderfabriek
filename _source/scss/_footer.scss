@@ -11,16 +11,18 @@ footer {
         display: block;
     }
 
-    a:nth-child(2) {
-        @include fontRegular(0.8rem);
+    a {
+        @include fontRegular(0.6rem);
         color: $colorGrey;
+
+    }
+
+    a:nth-child(2) {
         float: right;
         margin: 0 0.8rem 0;
     }
 
     a:last-child {
-        @include fontRegular(0.8rem);
-        color: $colorGrey;
         float: left;
         margin: 0 0 0 0.8rem;
     }
@@ -84,10 +86,10 @@ footer {
         bottom: 0;     
         display: block;
         width: 100%;
-        margin: 0;
+        margin: 2rem 0 0 0;
 
         a {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             padding: 0.5rem 0 0.5rem 0.8rem;
 
             img {

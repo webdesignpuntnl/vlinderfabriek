@@ -6,7 +6,7 @@ main {
 
     h1 {
         @include fontBold(2rem);
-        margin: 1rem 0;
+        margin: 0 0 1rem 0;
     }
 
     h2 {
@@ -110,7 +110,7 @@ main {
     main {
         float: right;
         width: 50%;
-        margin: 2rem 0.8rem 5rem 0.8rem;
+        margin: 2rem 0.8rem 8rem 0.8rem;
         padding: 0.8rem;   
     }
 }
@@ -119,6 +119,11 @@ main {
 
     main {
         width: 65%;
+        font-size: 1rem;
+
+        a {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -127,9 +132,10 @@ main {
     main {
         @include clearfix;
         float: none;
+        font-size: 1.1rem;
         display: block;
         width: 98%;
-        margin: 5rem 0.8rem;
+        margin: 5rem 0.8rem 8rem 0.8rem;
     }
 }
 

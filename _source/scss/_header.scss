@@ -172,16 +172,27 @@ nav {
     }
 
     .buttons--green {
-        a:hover {
-            color: $colorGreen;
-            border-color: $colorGreen; 
+        a {
+            font-size: 0.7rem;
+            padding: 0.7rem 0.8rem 0.4rem 0.8rem;
+
+
+            &:hover {
+                color: $colorGreen;
+                border-color: $colorGreen; 
+            }
         }
     }
 
     .buttons--red {
-        a:hover {
-            color: $colorRed;
-            border-color: $colorRed; 
+        a {
+            font-size: 0.7rem;
+            padding: 0.7rem 0.8rem 0.4rem 0.8rem;
+
+            a:hover {
+                color: $colorRed;
+                border-color: $colorRed; 
+            }
         }
     }
 
@@ -208,8 +219,9 @@ nav {
     .buttons__second-level {
         list-style-type: none;
         border: 2px solid $colorWhite;
-       border-radius: 5px;
-       margin: 0.5rem 0 0 0;
+        border-radius: 5px;
+        margin: 0.5rem 0 0 0;
+        text-align: left;
 
        li {
         margin: 0;
@@ -241,12 +253,14 @@ nav {
        border-color: $colorOrange;
 
         .buttons__second-level__active { // active button in the button second level
-            background-color: $colorWhite;
-            color: $colorOrange;
-            border-radius: inherit;
-
-            &:hover {
-                text-decoration: none;
+            a {
+                background-color: $colorWhite;
+                color: $colorOrange;
+                border-radius: inherit;
+    
+                &:hover {
+                    text-decoration: none;
+                }
             }
         }
     }
@@ -424,19 +438,12 @@ nav {
             position: absolute;
             top: 277px;
             right: 1rem;
-            // display: inline;
-            
-            li {
-                display: inline-block;
-                margin: 0 0 0 2rem;
-            }
-        }
-
-        .buttons--orange {
             width: 75%;
             text-align: right;
             
-            li  {
+            li {
+                display: inline-block;
+                // margin: 0 0 0 2rem;
                 min-width: 180px;
                 margin: 0 0 0 1rem;
 
@@ -444,27 +451,34 @@ nav {
                     padding: 0.7rem 1rem 0.4rem 1rem;  
                 }
             }
-        
         }
-
-        .buttons__second-level--orange { // button menu under the main button. Orange section
+        
+        .buttons--blue {
+            li {
+                min-width: 140px;
+            }
+        }
+        
+        .buttons__second-level {
             position: absolute;
             left: 4rem;
-            margin: 1rem 0;
-
+            margin: 1rem 0 0 0;
+            text-align: left;
+            
             li {
                 display: inline-block;
                 padding: 0;
                 margin: 0;
                 min-width: initial;
-
+                
                 a {
                     font-size: 0.8rem;
                 }
             }
-         }
+        }
     }
 }
+
 
 @mixin navigation--1200 {
     nav {
@@ -475,29 +489,5 @@ nav {
                 padding: 0.7rem 2rem 0.4rem 2rem;
             }
         }
-
-        .buttons--orange {
-            
-            li  {
-                margin: 0 0 0 2rem;
-            }
-        }
-
-        .buttons__second-level--orange { // button menu under the main button. Orange section
-            position: absolute;
-            left: 4rem;
-            margin: 1rem 0;
-
-            li {
-                display: inline-block;
-                padding: 0;
-                margin: 0;
-                min-width: initial;
-
-                a {
-                    font-size: 0.8rem;
-                }
-            }
-         }
     }
 }
