@@ -1,5 +1,6 @@
 // change the image on hover
-const butterflysListItem = Array.from(document.querySelectorAll('.butterflys li'));
+const butterflysListItem = Array.from(
+  document.querySelectorAll('.butterflys li'));
 
 function swapImage(e) {
   const butterfly = this.querySelector('img');
@@ -18,5 +19,7 @@ function swapImage(e) {
 }
 
 // eventlisteners
-butterflysListItem.forEach(link => link.addEventListener('mouseover', swapImage)); // butterfly's
-butterflysListItem.forEach(link => link.addEventListener('mouseout', swapImage)); // butterfly's
+butterflysListItem.forEach(link =>
+  link.addEventListener('mouseover', swapImage));
+butterflysListItem.forEach(link =>
+  link.addEventListener('mouseout', swapImage));
