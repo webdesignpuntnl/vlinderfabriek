@@ -189,7 +189,7 @@ nav {
             font-size: 0.7rem;
             padding: 0.7rem 0.8rem 0.4rem 0.8rem;
 
-            a:hover {
+            &:hover {
                 color: $colorRed;
                 border-color: $colorRed; 
             }
@@ -253,7 +253,6 @@ nav {
        border-color: $colorOrange;
 
         .buttons__second-level__active { // active button in the button second level
-            a {
                 background-color: $colorWhite;
                 color: $colorOrange;
                 border-radius: inherit;
@@ -263,7 +262,7 @@ nav {
                 }
             }
         }
-    }
+    
 
     .buttons__second-level--red { // button menu under the main button. Orange section
         border-color: $colorRed;
@@ -436,48 +435,47 @@ nav {
 
         .buttons {
             position: absolute;
-            top: 277px;
-            right: 1rem;
-            width: 75%;
-            text-align: right;
-            
-            li {
-                display: inline-block;
-                // margin: 0 0 0 2rem;
-                min-width: 180px;
-                margin: 0 0 0 1rem;
+            top: 220px;
+            left: 14rem;
+            width: 98%;
 
-                a {
-                    padding: 0.7rem 1rem 0.4rem 1rem;  
+                li {
+                    display: inline-block;
+                    min-width: 180px;
+                    margin: 0 0 0 1rem;
+    
+                    a {
+                        padding: 0.7rem 1rem 0.4rem 1rem;  
+                    }
                 }
             }
-        }
-        
-        .buttons--blue {
-            li {
-                min-width: 140px;
-            }
-        }
-        
-        .buttons__second-level {
-            position: absolute;
-            left: 4rem;
-            margin: 1rem 0 0 0;
-            text-align: left;
             
-            li {
-                display: inline-block;
-                padding: 0;
-                margin: 0;
-                min-width: initial;
+            .buttons--blue {
+                li {
+                    min-width: 140px;
+                }
+            }
+            
+            .buttons__second-level {
+                position: absolute;
+                left: 1rem;
+                margin: 1rem 0 0 0;
+                text-align: center;
                 
-                a {
-                    font-size: 0.8rem;
+                li {
+                    display: inline-block;
+                    padding: 0;
+                    margin: 0;
+                    min-width: initial;
+                    
+                    a {
+                        font-size: 0.8rem;
+                    }
                 }
             }
         }
     }
-}
+
 
 
 @mixin navigation--1200 {
