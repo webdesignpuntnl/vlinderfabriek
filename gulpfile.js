@@ -141,6 +141,6 @@ gulp.task('clean', function() {
 
 
 gulp.task('dev', ['clean', 'webpackdev', 'sassdev', 'image', 'pages', 'htmldev', 'injectIndexDev', 'injectPagesDev', 'browser-sync'], () => {
-  gulp.watch(['_source/scss/*.scss', '_source/js/*.js', '_source/images/**', '_source/*.html', '_source/pages/*.html'], ['webpackdev', 'htmldev', 'injectIndexDev', 'injectPagesDev', 'pages', 'sassdev', 'image']);
+  gulp.watch(['_source/scss/*.scss', '_source/js/*.js', '_source/media/images/**', '_source/*.html', '_source/pages/*.html'], ['webpackdev', 'htmldev', 'injectIndexDev', 'injectPagesDev', 'pages', 'sassdev', 'image']);
 });
 gulp.task('build', ['clean', 'sassbuild', 'webpackbuild', 'image', 'htmlbuild', 'pages', 'injectIndex', 'injectPages']);

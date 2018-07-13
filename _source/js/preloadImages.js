@@ -11,7 +11,9 @@ window.onload = function load() {
     'vlinder-rood.png',
     'fabriek-oranje.svg',
     'fabriek-groen.svg',
-    'fabriek-rood.svg'
+    'fabriek-rood.svg',
+    'logo-facebook-normal.svg',
+    'logo-facebook-state.svg',
   ];
 
   // preload the butterflys
