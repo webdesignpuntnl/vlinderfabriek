@@ -44,35 +44,58 @@
         </header>
         <main class="main main--blue"> <!-- text section on the right side -->
             <h1>Contact</h1>
-            <article>
-                <h2>Culemborg</h2>
-                <p>
-                    De lessen in Culemborg zijn op maandag, dinsdag &amp; woensdag.
-                    <a href="culemborg.html">Meer info over de wekelijkse lessen in Culemborg</a>
-                </p>
+            <article class="contact">
+                <h2 class="contact__h2">Bent u nieuwsgierig? Heeft u vragen of wilt u meer informatie?</h2>
+                <p>Neem vrijblijvend contact met ons op via onderstaand formulier of <a href="tel:0345-508090">bel: 0345-508090</a></p>
+                <ol class="contact__adresInfo contact__adresInfo__artistik">
+                    <li><h3 class="contact__adresInfo__h3">Sylke van de Calseijde</h3></li>
+                    <li>artistiek leider</li>
+                    <li>contactpersoon Culemborg</li>
+                    <li><a href="mailto:sylke@vlinderfabriek.nl">sylke@vlinderfabriek.nl</a></li>
+                    <li><a href="tel:06-18681468">06-18681468</a></li>
+                </ol>
+                <ol class="contact__adresInfo contact__adresInfo__bussiness">
+                    <li><h3 class="contact__adresInfo__h3">Claudette Efrosina</h3></li>
+                    <li>zakelijk leider</li>
+                    <li>contactpersoon Breda</li>
+                    <li><a href="mailto:claudette@vlinderfabriek.nl">claudette@vlinderfabriek.nl</a></li>
+                    <li><a href="tel:06-28319135">06-28319135</a></li>
+                </ol>
+                <ol class="contact__adresInfo">
+                    <li>Stichting de Vlinderfabriek</li>
+                    <li>KvK-nummer: 54730597</li>
+                    <li>IBAN nummer: NL70RABO0122381270</li>
+                    <li></li>
+                    <li>Onze voorwaarden &amp; privacy beleid <a href="privacy.html">privacy &amp; voorwaarden</a></li>
+                </ol>
             </article>
-            <article>
-                <h2>Breda</h2>
-                <p>
-                    De lessen in Breda zijn op maandag, dinsdag (Prinsenbeek) en donderdag.
-                    <a href="breda.html">Meer info over de wekelijkse lessen in Breda</a>
-                </p>
-            </article>
-            <article class="main main__article--extraInfo">
-                <h2>extra informatie</h2>
-                <p>Houdt voor meer info de site &amp; <a href="https://www.facebook.com/pages/De-Vlinderfabriek/365229100205779" target="_blank">Facebookpagina</a> in de gaten!</p>
-                <p>Sinds januari 2014 zijn wij aangesloten bij het <a href="jeugdcultuurfonds.html" target="_blank">Jeugdcultuurfonds</a></p>
-            </article> 
+            <form id="contactForm" class="form form__contactForm" method="post" action="contact-verzonden.html" enctype="multipart/form-data" autocomplete="on">
+                <fieldset>
+                    <label for="nameField">naam&#42;
+                        <input name="name" type="text" id="nameField" required pattern="^[a-zA-Z ]*$" placeholder="bijv Joep Jansen" title="gebruik alleen letters en geen cijfers">
+                    </label>
+                    <label for="subjectField">onderwerp
+                        <input name="onderwerp" type="text"  id="subjectField" placeholder="bijv informatie over de lessen" title="vul hier een onderwerp in">
+                    </label>
+                    <label for="emailField">email&#42;
+                        <input name="email" type="email"  id="emailField" required placeholder="bijv joep@jansen.nl" pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$" title="vul een geldig emailadres in">
+                    </label>
+                    <label for="remarksField">stel uw vraag&#42;</label>
+                    <textarea name="remarks"  id="remarksField" rows="8" required placeholder="uw vraag of opmerking"></textarea>
+                    <p><span>* invullen verplicht</span></p>
+                    <input name="insturen" type="submit" id="formSubmitButton" value="verzenden">    
+                </fieldset>
+            </form>
         </main>
     </div>
     <footer class="footer footer--blue">
         <a class="footer__link" href="#backToTop">
             <img class="footer__link__arrow" src="../media/images/pijl-terug-blauw.png" alt="klik voor terug omhoog" title="klik voor terug omhoog">
         </a> <!-- arrow back to top on small screens -->
-        <a class="footer__link" href="https://www.facebook.com/De-Vlinderfabriek-365229100205779/" target="_blank">
+        <a class="footer__link" href="https://www.facebook.com/De-Vlinderfabriek-365229100205779" target="_blank">
             <img class="footer__link__facebookLogo" src="../media/images/logo-facebook-normal.svg" alt="facebook" title="facebook">
         </a>
-        <a class="footer__link footer__link__copyright"href="https://www.webdesignpuntnl.com">&copy; Webdesignpuntnl</a>
+        <a class="footer__link footer__link__copyright" href="https://www.webdesignpuntnl.com">&copy; Webdesignpuntnl</a>
         <a class="footer__link footer__link__cookieSetup" href="#" id="noat-cookie-consent__setup">cookie instellingen</a>
     </footer>
     <!-- inject:js -->

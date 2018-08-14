@@ -19,6 +19,8 @@ function swapButterfly(e) {
   }
 }
 
+
+//! does not swap correct and not on evey page
 const facebookLogo = document.querySelector('.footer__link__facebookLogo');
 const oldFacebookLogosource = facebookLogo.src;
 
