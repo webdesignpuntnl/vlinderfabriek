@@ -158,15 +158,12 @@ main {
       transition: 0.5s;
     }
   }
-
-  input[type="checkbox"] {
-    
-  }
-
+  
   input[type='submit'] {
     @include fontBold;
     color: $colorGrey;
     display: block;
+    margin: 0 auto 1rem auto;
     text-align: center;
     text-transform: uppercase;
     border: 1px solid $colorGrey;
@@ -190,6 +187,7 @@ main {
 }
 
 .form__subscribe {
+
   fieldset {
     background: lighten($colorRed, 50%);
     border: 1px solid $colorRed;
@@ -230,13 +228,65 @@ main {
     border: 1px solid $colorRed;
   }
 
-  input[type='checkbox'] {
-    // box-shadow: none;
-    // transform: scale(1.2);
+  .form__subscribe__confirmation {
+    position: relative;
+  }
+
+  .form__subscribe__confirmation__label {
+    display: block;
+    margin-bottom: 50px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .form__subscribe__confirmation__input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
   }
+
+  .form__subscribe__confirmation__checkmark {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 22px;
+    width: 22px;
+    background-color: $colorWhite;
+    border: 1px solid $colorRed;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .form__subscribe__confirmation__label:hover input ~ .form__subscribe__confirmation__checkmark {
+    box-shadow: 0 2px 2px $colorGrey;
+    width: 23px;
+    background: lighten($colorGrey, 35%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .form__subscribe__confirmation__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .form__subscribe__confirmation__label input:checked ~ .form__subscribe__confirmation__checkmark:after {
+    display: block;
+  }
+
+  .form__subscribe__confirmation__label .form__subscribe__confirmation__checkmark:after {
+    left: 7px;
+    top: 2px;
+    width: 8px;
+    height: 14px;
+    border: 2px solid $colorBlack;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+
 
   input[type='submit'] {
     &:hover {
