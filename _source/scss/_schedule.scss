@@ -1,0 +1,105 @@
+.lesrooster__table {
+    @include fontRegular(0.9rem);
+    color: $colorGrey;
+    width: 100%;
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid $colorRed;
+    }
+
+    td {
+        border: none;
+		position: relative;
+        padding: 0.2rem 0 0.2rem 30%; 
+        background: lighten($colorRed, 50%);
+
+        &:before {
+        @include fontBold(0.9rem); 
+        color: $colorBlack;
+		position: absolute;
+		left: 6px;
+		width: 25%; 
+		padding-right: 10px; 
+        white-space: nowrap;
+        
+        }
+    }
+
+    td:nth-of-type(1):before { content: "dag"; }
+    td:nth-of-type(2):before { content: "wie"; }
+	td:nth-of-type(3):before { content: "wat"; }
+	td:nth-of-type(4):before { content: "waar"; }
+	td:nth-of-type(5):before { content: "tijd"; }
+	td:nth-of-type(6):before { content: "lessen"; }
+	td:nth-of-type(7):before { content: "begint"; }
+	td:nth-of-type(8):before { content: "prijs"; }
+}
+
+.lesrooster__h2 {
+    color: $colorRed;
+    font-size: 1.2rem;
+    margin: 2rem 0 0 0;
+}
+
+@mixin schedule--1080 {
+    .lesrooster__table {
+        border-collapse: separate;
+        
+        table {
+            display: table;
+            border: none;
+        }
+        
+        tbody {
+            display: table-row-group;
+            background: lighten($colorRed, 50%);
+        }
+        
+        thead {
+            display: table-header-group;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            background: lighten($colorRed, 40%);
+        }
+        
+        thead tr {
+            display: table-row;
+            text-align: left;
+            position: initial;
+            top: 0;
+            left: 0;
+        }
+        
+        th {
+            display: table-cell;
+            padding: 0.5rem 0.5rem 0 0.5rem;
+        }
+        
+        tr {
+            display: table-row;
+            font-size: 1rem;
+        }
+
+        
+        td {
+            display: table-cell;
+            position: initial;
+            padding: 0.5rem;
+            background: none;
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
