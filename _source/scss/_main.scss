@@ -3,6 +3,7 @@ main {
   padding: 0.5rem;
   background-color: $colorWhite;
   border: 2px solid $colorWhite;
+  overflow: hidden;
 
   h1 {
     @include fontBold(2rem);
@@ -297,10 +298,6 @@ main {
   }
 }
 
-.main__kinderboekenweek {
-  position: relative;
-}
-
 .main__kinderboekenweek__h1 {
   text-align: center;
   font-size: 2.1rem;
@@ -318,11 +315,38 @@ main {
 
 .main__kinderboekenweek__picture img {
   display: block;
+  height: auto;
+  width: 100%;
+  border: 1px solid $colorOrange;
+  box-shadow: 1px 1px 15px 2px $colorGrey;
+  opacity: 0.6;
+  transition: opacity 0.5s;
+}
+
+.main__kinderboekenweek__picture {
+  font-size: 0;
+  position: relative;
   width: 60%;
   max-width: 200px;
   margin: 0 auto 1rem auto;
-  border: 1px solid $colorOrange;
-  box-shadow: 1px 1px 15px 2px $colorGrey;
+
+  &:hover img {
+    opacity: 1;
+  }
+}
+
+.main__kinderboekenweek__picture__overlay {
+  position: absolute;
+  background: $colorOrange;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.3;
+
+  &:hover {
+    opacity: 0;
+  }
 }
 
 @mixin main--512 {
@@ -373,7 +397,7 @@ main {
     margin: 1rem 0;
   }
 
-  .main__kinderboekenweek__picture img {
+  .main__kinderboekenweek__picture {
     float: right;
     width: 30%;
     max-width: 200px;
@@ -396,16 +420,21 @@ main {
     position: relative;
   }
 
+  .main__kinderboekenweek__p--bolder {
+    width: 60%;
+  }
+
   .main__kinderboekenweek__h1 {
     text-align: left;
   }
 
-  .main__kinderboekenweek__picture img {
+  .main__kinderboekenweek__picture {
     max-width: 235px;
     position: absolute;
     top: -4rem; 
     right:-1rem;
     transform: rotate(25deg);
+    position: absolute;
   }
 }
 
