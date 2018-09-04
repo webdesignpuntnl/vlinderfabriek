@@ -297,6 +297,34 @@ main {
   }
 }
 
+.main__kinderboekenweek {
+  position: relative;
+}
+
+.main__kinderboekenweek__h1 {
+  text-align: center;
+  font-size: 2.1rem;
+}
+
+.main__kinderboekenweek__h2 {
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.main__kinderboekenweek__p--bolder {
+  @include fontBold;
+  margin: 1rem 0;
+}
+
+.main__kinderboekenweek__picture img {
+  display: block;
+  width: 60%;
+  max-width: 200px;
+  margin: 0 auto 1rem auto;
+  border: 1px solid $colorOrange;
+  box-shadow: 1px 1px 15px 2px $colorGrey;
+}
+
 @mixin main--512 {
   main {
     float: right;
@@ -330,6 +358,28 @@ main {
       margin-left: 5rem;
     }
   }
+
+  .main__kinderboekenweek__h2 {
+    margin: 0 0 1rem 0;
+  }
+
+  .main__kinderboekenweek__p {
+    float: left;
+    width: 60%;
+  }
+
+  .main__kinderboekenweek__p--bolder {
+    @include fontBold(1.1rem);
+    margin: 1rem 0;
+  }
+
+  .main__kinderboekenweek__picture img {
+    float: right;
+    width: 30%;
+    max-width: 200px;
+    margin: 2rem 1rem 1rem 0;
+    transform: rotate(15deg);
+  }
 }
 
 @mixin main--1080 {
@@ -340,6 +390,22 @@ main {
     display: block;
     width: 98%;
     margin: 5rem 0.8rem 8rem 0.8rem;
+  }
+
+  .main__kinderboekenweek {
+    position: relative;
+  }
+
+  .main__kinderboekenweek__h1 {
+    text-align: left;
+  }
+
+  .main__kinderboekenweek__picture img {
+    max-width: 235px;
+    position: absolute;
+    top: -4rem; 
+    right:-1rem;
+    transform: rotate(25deg);
   }
 }
 
