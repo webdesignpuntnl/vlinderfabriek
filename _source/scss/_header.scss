@@ -116,7 +116,7 @@ nav {
             border-radius: 10px;
             position: relative;
 
-            &:after { // second white border around the grey one
+            &::after { // second white border around the grey one
                 content: " ";
                 position: absolute;
                 z-index: -1;
@@ -137,6 +137,10 @@ nav {
             &:hover {
                 color: $colorWhite;
                 border-color: $colorGrey;
+            
+                &::after {
+                    border: 5px solid $colorWhite;
+                }
             }
         }
 
@@ -147,6 +151,10 @@ nav {
             &:hover {
                 color: $colorWhite;
                 border-color: $colorGrey;
+                
+                &::after {
+                    border: 5px solid $colorWhite;
+                }
             }
         }
 
@@ -157,6 +165,10 @@ nav {
             &:hover {
                 color: $colorWhite;
                 border-color: $colorGrey;
+
+                &::after {
+                    border: 5px solid $colorWhite;
+                }
             }
         }
 
@@ -167,6 +179,10 @@ nav {
             &:hover {
                 color: $colorWhite;
                 border-color: $colorGrey;
+
+                &::after {
+                    border: 5px solid $colorWhite;
+                }
             }
         }
     }
@@ -178,8 +194,13 @@ nav {
 
 
             &:hover {
-                color: $colorGreen;
-                border-color: $colorGreen; 
+                color: $colorWhite;
+                border-color: $colorGreenDark; 
+                background-color: $colorGreen;
+
+                &::after {
+                    border: 5px solid $colorGreenLight;
+                }
             }
         }
     }
@@ -190,8 +211,13 @@ nav {
             padding: 0.7rem 0.8rem 0.4rem 0.8rem;
 
             &:hover {
-                color: $colorRed;
-                border-color: $colorRed; 
+                color: $colorWhite;
+                border-color: $colorRedDark; 
+                background-color: $colorRed;
+
+                &::after {
+                    border: 5px solid $colorRedLight;
+                }
             }
         }
     }
@@ -203,16 +229,26 @@ nav {
             padding: 0.7rem 0.8rem 0.4rem 0.8rem;
 
             &:hover {
-                color: $colorOrange;
-                border-color: $colorOrange; 
+                color: $colorWhite;
+                border-color: $colorOrangeDark; 
+                background-color: $colorOrange;
+
+                &::after {
+                    border: 5px solid $colorOrangeLight;
+                }
             }
         }
     }
 
     .buttons--blue {
         a:hover {
-            color: $colorBlue;
-            border-color: $colorBlue; 
+            color: $colorWhite;
+            border-color: $colorBlueDark;
+            background-color: $colorBlue;
+
+            &::after {
+                border: 5px solid $colorBlueLight;
+            }
         }
     }
 
@@ -234,23 +270,33 @@ nav {
                 color: $colorWhite;
                 text-align: left;
 
+                &:hover {
+                    // color: red;
+                    background-color: $colorWhite;
+                    border: none;
+                    border-radius: initial;
+                    text-decoration: underline;
+                }
 
-                &:after {
+                &::after {
                     background-color: transparent; 
                     border: none;
                 }
 
-                &:hover {
-                    background-color: $colorWhite;
-                    border-radius: initial;
-                    text-decoration: underline;
-                }
             }
         }
     }
     
     .buttons__second-level--orange { // button menu under the main button. Orange section
        border-color: $colorOrange;
+
+       a:hover {
+           color: $colorOrange;
+
+           &::after {
+               border: none;
+           }
+       }
 
         .buttons__second-level__active { // active button in the button second level
                 background-color: $colorWhite;
@@ -259,6 +305,7 @@ nav {
     
                 &:hover {
                     text-decoration: none;
+                    color: $colorOrange;
                 }
             }
         }
@@ -266,6 +313,14 @@ nav {
 
     .buttons__second-level--red { // button menu under the main button. Orange section
         border-color: $colorRed;
+
+        a:hover {
+            color: $colorRed;
+ 
+            &::after {
+                border: none;
+            }
+        }
             
          .buttons__second-level__active { // active button in the button second level
              background-color: $colorWhite;
@@ -274,12 +329,21 @@ nav {
     
              &:hover {
                  text-decoration: none;
+                 color: $colorRed;
              }
          }
      }
 
      .buttons__second-level--green { // button menu under the main button. Orange section
         border-color: $colorGreen;
+
+        a:hover {
+            color: $colorGreen;
+ 
+            &::after {
+                border: none;
+            }
+        }
             
          .buttons__second-level__active { // active button in the button second level
              background-color: $colorWhite;
@@ -288,6 +352,7 @@ nav {
     
              &:hover {
                  text-decoration: none;
+                 color: $colorGreen;
              }
          }
      }
