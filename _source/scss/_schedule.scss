@@ -16,7 +16,7 @@
     tr {
         margin-bottom: 1rem;
         border: 1px solid $colorRed;
-        background: lighten($colorRed, 50%);
+        background: lighten($colorRed, 45%);
         padding: 0.5rem;
     }
     
@@ -119,6 +119,18 @@
 
     .table--courses {
         
+        tbody {
+            tr:nth-child(1),
+            tr:nth-child(2),
+            tr:nth-child(6),
+            tr:nth-child(7)
+            {
+                background: lighten($colorRed, 45%);
+            }
+        }
+    }
+
+    .table--lesrooster {
         tbody {
             tr:nth-child(1),
             tr:nth-child(2),
