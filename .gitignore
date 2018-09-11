@@ -41,10 +41,9 @@ Thumbs.db
 # config files #
 ######################
 
-config.rb
-gruntfile.js
+_source-files
 node_modules
-package.json
+
 
 # movie files #
 ######################
