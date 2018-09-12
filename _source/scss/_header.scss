@@ -330,8 +330,10 @@ nav {
 
 
     .buttons__second-level { // second level of buttons wich appear on click
+        display: none;
+        height: 0;
         list-style-type: none;
-        border: 2px solid $colorWhite;
+        border: 2px solid transparent;
         border-radius: 5px;
         margin: 0.5rem 0 0 0;
         text-align: left;
@@ -457,7 +459,12 @@ nav {
             }
         }
     }
+    .openSubmenu {
+        display: block;
+        height: 100%;
+    }
 }
+
 
 
 @mixin navigation--320 {
