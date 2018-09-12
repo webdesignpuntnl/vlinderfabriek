@@ -4,6 +4,7 @@ main {
   background-color: $colorWhite;
   border: 2px solid $colorWhite;
   overflow: hidden;
+  position: relative;
 
   h1 {
     @include fontBold(2rem);
@@ -21,7 +22,7 @@ main {
     @include fontRegular(0.9rem);
     margin: 0 0 2rem 0;
     color: $colorGrey;
-    width: 80%;
+    width: 70%;
   }
 
   a {
@@ -345,17 +346,16 @@ main {
   margin: 1rem 0;
 }
 
-.main__kinderboekenweek__picture img {
+.sidepicture img {
   display: block;
   height: auto;
   width: 100%;
-  border: 1px solid $colorOrange;
   box-shadow: 1px 1px 15px 2px $colorGrey;
   opacity: 0.6;
   transition: opacity 0.5s;
 }
 
-.main__kinderboekenweek__picture {
+.sidepicture {
   font-size: 0;
   position: relative;
   width: 60%;
@@ -367,9 +367,16 @@ main {
   }
 }
 
-.main__kinderboekenweek__picture__overlay {
+.sidepicture--blue {
+  border: 2px solid $colorBlue;
+}
+
+.sidepicture--orange {
+  border: 2px solid $colorOrange;
+}
+
+.sidepicture__overlay {
   position: absolute;
-  background: $colorOrange;
   top: 0;
   bottom: 0;
   left: 0;
@@ -379,6 +386,14 @@ main {
   &:hover {
     opacity: 0;
   }
+}
+
+.sidepicture__overlay--orange {
+  background: $colorOrange;
+}
+
+.sidepicture__overlay--blue {
+  background: $colorBlue;
 }
 
 .schedule__h2 {
@@ -454,7 +469,7 @@ main {
     margin: 1rem 0;
   }
 
-  .main__kinderboekenweek__picture {
+  .sidepicture {
     float: right;
     width: 30%;
     max-width: 200px;
@@ -485,7 +500,7 @@ main {
     text-align: left;
   }
 
-  .main__kinderboekenweek__picture {
+  .sidepicture {
     max-width: 235px;
     position: absolute;
     top: -4rem; 
