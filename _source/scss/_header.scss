@@ -117,7 +117,7 @@ nav {
             position: relative;
 
             &::after { // second white border around the grey one
-                content: " ";
+                content: "";
                 position: absolute;
                 z-index: -1;
                 top: -5px;
@@ -127,6 +127,28 @@ nav {
                 border: 5px solid $colorWhite;
                 background: $colorWhite;
                 border-radius: 10px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                // right: -5px;
+                // bottom: -5px;
+                // border: 5px solid $colorWhite;
+                background: $colorBlue;
+                border-radius: 9px;
+                height: 100%;
+                width: 0;
+                transition: all 0.5s ease-in-out;
+                opacity: 0;
+            }
+
+            &:hover::before {
+                width: 100%;
+                opacity: 0.5;
             }
         }
 
@@ -242,11 +264,13 @@ nav {
 
     .buttons--blue {
         a:hover {
-            color: $colorWhite;
+            color: $colorBlack;
             border-color: $colorBlueDark;
-            background-color: $colorBlue;  
-
+            // background-color: $colorBlue;  
+            
             &::after {
+                transition: border 0.5s ease-in-out;
+                color: $colorBlack;
                 border: 5px solid $colorBlueLight;
             }
         }
