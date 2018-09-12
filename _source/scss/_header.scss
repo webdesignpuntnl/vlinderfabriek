@@ -93,7 +93,7 @@ nav {
         
     }
 
-    .buttons {
+    .buttons { // basic styling for all the round buttons
         float: right;
         list-style-type: none;
         margin: 2.5rem 0.8rem 0 0;
@@ -111,172 +111,225 @@ nav {
             color: $colorGrey;
             background-color: $colorWhite;
             display: block;
-            padding: 0.6rem 1rem 0.3rem 1rem;
-            border: 2px solid $colorGrey;
+            padding: 0.9rem 1rem 0.6rem 1rem;
             border-radius: 10px;
             position: relative;
+            z-index: 0;
+
+            &:hover {
+                color: $colorWhite;
+            }
 
             &::after { // second white border around the grey one
                 content: "";
                 position: absolute;
-                z-index: -1;
-                top: -5px;
-                left: -5px;
-                right: -5px;
-                bottom: -5px;
-                border: 5px solid $colorWhite;
+                z-index: -2;
+                top: 3px;
+                left: 3px;
+                right: 3px;
+                bottom: 3px;
+                border: 2px solid $colorGrey;
                 background: $colorWhite;
                 border-radius: 10px;
             }
 
-            &::before {
+            &::before { // color fill from left to right
                 content: "";
                 position: absolute;
-                z-index: 1;
+                z-index: -1;
                 top: 0;
                 left: 0;
-                // right: -5px;
-                // bottom: -5px;
-                // border: 5px solid $colorWhite;
-                background: $colorBlue;
-                border-radius: 9px;
+                border-radius: 10px;
                 height: 100%;
                 width: 0;
-                transition: all 0.5s ease-in-out;
-                opacity: 0;
-            }
-
-            &:hover::before {
-                width: 100%;
-                opacity: 0.5;
+                transition: all 0.3s ease-in-out;
             }
         }
 
-        .buttons__active--green {
-            background-color: $colorGreen;
+        .buttons__active--green { // state of the active button light green border dark green bg
+            background-color: $colorGreenLight;
             color: $colorWhite;
 
             &:hover {
                 color: $colorWhite;
-                border-color: $colorGrey;
-            
-                &::after {
-                    border: 5px solid $colorWhite;
+
+                &::after { // no colorfill on hover
+                    transition: none;
+                    border: 0;
+                    border: 2px solid $colorGrey;
                 }
+
+                &::before { // no colorfill on hover
+                    transition: none;
+                    width: 0;
+                    border: 0;
+                }
+            }
+
+            &::after {
+                background-color: $colorGreen;
             }
         }
 
         .buttons__active--red {
-            background-color: $colorRed;
+            background-color: $colorRedLight;
             color: $colorWhite;
 
             &:hover {
                 color: $colorWhite;
-                border-color: $colorGrey;
-                
+
                 &::after {
-                    border: 5px solid $colorWhite;
+                    transition: none;
+                    border: 0;
+                    border: 2px solid $colorGrey;
                 }
+
+                &::before {
+                    transition: none;
+                    width: 0;
+                    border: 0;
+                }
+            }
+
+            &::after {
+                background-color: $colorRed;
             }
         }
 
         .buttons__active--orange {
-            background-color: $colorOrange;
+            background-color: $colorOrangeLight;
             color: $colorWhite;
 
             &:hover {
                 color: $colorWhite;
-                border-color: $colorGrey;
 
                 &::after {
-                    border: 5px solid $colorWhite;
+                    transition: none;
+                    border: 0;
+                    border: 2px solid $colorGrey;
                 }
+
+                &::before {
+                    transition: none;
+                    width: 0;
+                    border: 0;
+                }
+            }
+
+            &::after {
+                background-color: $colorOrange;
             }
         }
 
         .buttons__active--blue {
-            background-color: $colorBlue;
+            background-color: $colorBlueLight;
             color: $colorWhite;
+    
 
             &:hover {
                 color: $colorWhite;
-                border-color: $colorGrey;
-
+                
                 &::after {
-                    border: 5px solid $colorWhite;
+                    transition: none;
+                    border: 0;
+                    border: 2px solid $colorGrey;
                 }
+
+                &::before {
+                    transition: none;
+                    width: 0;
+                    border: 0;
+                }
+            }
+
+            &::after {
+                background-color: $colorBlue;
             }
         }
     }
 
-    .buttons--green {
-        a {
-            font-size: 0.7rem;
-            padding: 0.7rem 0.8rem 0.4rem 0.8rem;
+    .buttons--green { // styling for the $color section of buttons
+        a:hover {
+            border-color: $colorGreenDark; 
 
-
-            &:hover {
-                color: $colorWhite;
-                border-color: $colorGreenDark; 
-                background-color: $colorGreen;
-
-                &::after {
-                    border: 5px solid $colorGreenLight;
-                }
+            &::after {
+                border: 5px solid $colorGreenLight;
+                transition: border 0.5s ease-in-out;
             }
+
+            &::before {
+                width: 100%;
+                border: 3px solid $colorGreenLight;            
+            }
+        }
+
+        a::before {
+            background: $colorGreen;
         }
     }
 
     .buttons--red {
-        a {
-            font-size: 0.7rem;
-            padding: 0.7rem 0.8rem 0.4rem 0.8rem;
+        a:hover {
+            border-color: $colorRedDark; 
 
-            &:hover {
-                color: $colorWhite;
-                border-color: $colorRedDark; 
-                background-color: $colorRed;
-
-                &::after {
-                    border: 5px solid $colorRedLight;
-                }
+            &::after {
+                border: 5px solid $colorRedLight;
+                transition: border 0.5s ease-in-out;
             }
+
+            &::before {
+                width: 100%;
+                border: 3px solid $colorRedLight;            
+            }
+        }
+
+        a::before {
+            background: $colorRed;
         }
     }
 
     .buttons--orange {
+        a:hover {
+            border-color: $colorOrangeDark; 
 
-        a {
-            font-size: 0.7rem;
-            padding: 0.7rem 0.8rem 0.4rem 0.8rem;
-
-            &:hover {
-                color: $colorWhite;
-                border-color: $colorOrangeDark; 
-                background-color: $colorOrange;
-
-                &::after {
-                    border: 5px solid $colorOrangeLight;
-                }
+            &::after {
+                border: 5px solid $colorOrangeLight;
+                transition: border 0.5s ease-in-out;
             }
+
+            &::before {
+                width: 100%;
+                border: 3px solid $colorOrangeLight;            
+            }
+        }
+
+        a::before {
+            background: $colorOrange;
         }
     }
 
     .buttons--blue {
         a:hover {
-            color: $colorBlack;
             border-color: $colorBlueDark;
-            // background-color: $colorBlue;  
             
             &::after {
-                transition: border 0.5s ease-in-out;
-                color: $colorBlack;
                 border: 5px solid $colorBlueLight;
+                transition: border 0.5s ease-in-out;
             }
+
+            &::before {
+                width: 100%;
+                border: 3px solid $colorBlueLight;            
+            }
+        }
+        
+        a::before {
+            background: $colorBlue;
         }
     }
 
-    .buttons__second-level {
+
+    .buttons__second-level { // second level of buttons wich appear on click
         list-style-type: none;
         border: 2px solid $colorWhite;
         border-radius: 5px;
@@ -319,6 +372,14 @@ nav {
 
            &::after {
                border: none;
+               background-color: $colorWhite;
+           }
+
+           &::before {
+            border: none;
+            transition: none;
+            width: 0;
+            background-color: $colorWhite;
            }
        }
 
@@ -343,44 +404,61 @@ nav {
  
             &::after {
                 border: none;
+                background-color: $colorWhite;
             }
-        }
-            
-         .buttons__second-level__active { // active button in the button second level
-             background-color: $colorWhite;
-             color: $colorRed;
-             border-radius: inherit;
-    
-             &:hover {
-                 text-decoration: none;
-                 color: $colorRed;
-             }
-         }
-     }
 
-     .buttons__second-level--green { // button menu under the main button. Orange section
-        border-color: $colorGreen;
-
-        a:hover {
-            color: $colorGreen;
- 
-            &::after {
+            &::before {
                 border: none;
+                transition: none;
+                width: 0;
+                background-color: $colorWhite;
             }
         }
             
-         .buttons__second-level__active { // active button in the button second level
-             background-color: $colorWhite;
-             color: $colorGreen;
-             border-radius: inherit;
-    
-             &:hover {
-                 text-decoration: none;
-                 color: $colorGreen;
-             }
-         }
-     }
+        .buttons__second-level__active { // active button in the button second level
+            background-color: $colorWhite;
+            color: $colorRed;
+            border-radius: inherit;
+
+            &:hover {
+                text-decoration: none;
+                color: $colorRed;
+            }
+        }
+    }
+
+    .buttons__second-level--green { // button menu under the main button. Orange section
+    border-color: $colorGreen;
+
+    a:hover {
+        color: $colorGreen;
+
+        &::after {
+            border: none;
+            background-color: $colorWhite;
+        }
+
+        &::before {
+            border: none;
+            transition: none;
+            width: 0;
+            background-color: $colorWhite;
+        }
+    }
+        
+        .buttons__second-level__active { // active button in the button second level
+            background-color: $colorWhite;
+            color: $colorGreen;
+            border-radius: inherit;
+
+            &:hover {
+                text-decoration: none;
+                color: $colorGreen;
+            }
+        }
+    }
 }
+
 
 @mixin navigation--320 {
     nav {
@@ -388,7 +466,7 @@ nav {
         .buttons {
 
             a {
-                padding: 0.7rem 1.8rem 0.4rem 1.8rem;
+                padding: 0.9rem 1.8rem 0.6rem 1.8rem;
             }
         }
     }
@@ -474,7 +552,7 @@ nav {
 
             a {
                 font-size: 0.85rem;
-                padding: 0.7rem 1.5rem 0.4rem 1.5rem;
+                padding: 0.9rem 1.5rem 0.6rem 1.5rem;
             }
         }
 
@@ -534,7 +612,7 @@ nav {
                     margin: 0 0 0 1rem;
     
                     a {
-                        padding: 0.7rem 1rem 0.4rem 1rem;  
+                        padding: 1rem 1rem 0.7rem 1rem;  
                     }
                 }
             }
