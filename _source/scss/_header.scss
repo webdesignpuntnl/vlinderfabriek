@@ -330,8 +330,6 @@ nav {
 
 
     .buttons__second-level { // second level of buttons wich appear on click
-        display: none;
-        height: 0;
         list-style-type: none;
         border: 2px solid transparent;
         border-radius: 5px;
@@ -365,6 +363,32 @@ nav {
             }
         }
     }
+
+    .openSubmenu {
+        opacity: 1;
+        height: 105%;
+        border-color: transparent;
+        transition: all 0.4s ease-in-out;
+        
+        li a {
+            font-size: 0.66rem;
+            transition: font 0.4s ease-in-out;
+            
+        }
+    }
+    
+    .closeSubmenu {
+        border: none;
+        height: 0;
+        font-size: 0;
+        opacity: 0;
+
+        li a {
+            font-size: 0;
+        }
+    }
+
+
     
     .buttons__second-level--orange { // button menu under the main button. Orange section
        border-color: $colorOrange;
@@ -459,10 +483,6 @@ nav {
             }
         }
     }
-    .openSubmenu {
-        display: block;
-        height: 100%;
-    }
 }
 
 
@@ -496,7 +516,7 @@ nav {
 
     nav {
         width: 40%;
-        margin: 1rem 0 0 0.8rem;
+        margin: 1rem 0 0 1rem;
         overflow: visible;        
 
         .butterflys {
@@ -609,7 +629,7 @@ nav {
 
         .buttons {
             position: absolute;
-            top: 220px;
+            top: 209px;
             left: 14rem;
             width: 98%;
 
@@ -632,7 +652,7 @@ nav {
             
             .buttons__second-level {
                 position: absolute;
-                left: 0.8rem;
+                left: 1rem;
                 margin: 1rem 0 0 0;
                 
                 li {
