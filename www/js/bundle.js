@@ -89,7 +89,7 @@
             return o(e.nodeName, r(r({}, e.attributes), t), arguments.length > 2 ? [].slice.call(arguments, 2) : e.children);
         }
         function a(e) {
-            !e._dirty && (e._dirty = !0) && 1 == L.push(e) && (S.debounceRendering || E)(s);
+            !e._dirty && (e._dirty = !0) && 1 == L.push(e) && (S.debounceRendering || P)(s);
         }
         function s() {
             var e, t = L;
@@ -115,7 +115,7 @@
                 if (o && "string" != typeof o && "string" != typeof n || (e.style.cssText = o || ""), 
                 o && "object" == typeof o) {
                     if ("string" != typeof n) for (var i in n) i in o || (e.style[i] = "");
-                    for (var i in o) e.style[i] = "number" == typeof o[i] && !1 === P.test(i) ? o[i] + "px" : o[i];
+                    for (var i in o) e.style[i] = "number" == typeof o[i] && !1 === E.test(i) ? o[i] + "px" : o[i];
                 }
             } else if ("dangerouslySetInnerHTML" === t) o && (e.innerHTML = o.__html || ""); else if ("o" == t[0] && "n" == t[1]) {
                 var a = t !== (t = t.replace(/Capture$/, ""));
@@ -175,13 +175,13 @@
                     c = t[x], p = null;
                     var S = c.key;
                     if (null != S) h && void 0 !== m[S] && (p = m[S], m[S] = void 0, h--); else if (!p && _ < b) for (i = _; i < b; i++) if (void 0 !== f[i] && (N = a = f[i], 
-                    E = r, "string" == typeof (T = c) || "number" == typeof T ? void 0 !== N.splitText : "string" == typeof T.nodeName ? !N._componentConstructor && l(N, T.nodeName) : E || N._componentConstructor === T.nodeName)) {
+                    P = r, "string" == typeof (T = c) || "number" == typeof T ? void 0 !== N.splitText : "string" == typeof T.nodeName ? !N._componentConstructor && l(N, T.nodeName) : P || N._componentConstructor === T.nodeName)) {
                         p = a, f[i] = void 0, i === b - 1 && b--, i === _ && _++;
                         break;
                     }
                     p = v(p, c, n, o), s = d[x], p && p !== e && p !== s && (null == s ? e.appendChild(p) : p === s.nextSibling ? u(s) : e.insertBefore(p, s));
                 }
-                var N, T, E;
+                var N, T, P;
                 if (h) for (var x in m) void 0 !== m[x] && y(m[x], !1);
                 for (;_ <= b; ) void 0 !== (p = f[b--]) && y(p, !1);
             }(i, w, n, o, A || null != h.dangerouslySetInnerHTML), function(e, t, n) {
@@ -227,21 +227,21 @@
                 e.props = l, e.state = u, e.context = p), e.prevProps = e.prevState = e.prevContext = e.nextBase = null, 
                 e._dirty = !1, !T) {
                     i = e.render(l, u, p), e.getChildContext && (p = r(r({}, p), e.getChildContext()));
-                    var E, P, L = i && i.nodeName;
+                    var P, E, L = i && i.nodeName;
                     if ("function" == typeof L) {
                         var j = c(i);
-                        (a = N) && a.constructor === L && j.key == a.__key ? b(a, j, 1, p, !1) : (E = a, 
+                        (a = N) && a.constructor === L && j.key == a.__key ? b(a, j, 1, p, !1) : (P = a, 
                         e._component = a = _(L, j, p), a.nextBase = a.nextBase || k, a._parentComponent = e, 
-                        b(a, j, 0, p, !1), g(a, 1, n, !0)), P = a.base;
-                    } else s = C, (E = N) && (s = e._component = null), (C || 1 === t) && (s && (s._component = null), 
-                    P = m(s, i, p, n || !w, C && C.parentNode, !0));
-                    if (C && P !== C && a !== N) {
+                        b(a, j, 0, p, !1), g(a, 1, n, !0)), E = a.base;
+                    } else s = C, (P = N) && (s = e._component = null), (C || 1 === t) && (s && (s._component = null), 
+                    E = m(s, i, p, n || !w, C && C.parentNode, !0));
+                    if (C && E !== C && a !== N) {
                         var A = C.parentNode;
-                        A && P !== A && (A.replaceChild(P, C), E || (C._component = null, y(C, !1)));
+                        A && E !== A && (A.replaceChild(E, C), P || (C._component = null, y(C, !1)));
                     }
-                    if (E && x(E), e.base = P, P && !o) {
-                        for (var M = e, D = e; D = D._parentComponent; ) (M = D).base = P;
-                        P._component = M, P._componentConstructor = M.constructor;
+                    if (P && x(P), e.base = E, E && !o) {
+                        for (var M = e, D = e; D = D._parentComponent; ) (M = D).base = E;
+                        E._component = M, E._componentConstructor = M.constructor;
                     }
                 }
                 if (!w || n ? U.unshift(e) : T || (e.componentDidUpdate && e.componentDidUpdate(d, v, h), 
@@ -281,7 +281,7 @@
         }), n.d(t, "options", function() {
             return S;
         });
-        var S = {}, N = [], T = [], E = "function" == typeof Promise ? Promise.resolve().then.bind(Promise.resolve()) : setTimeout, P = /acit|ex(?:s|g|n|p|$)|rph|ows|mnc|ntw|ine[ch]|zoo|^ord/i, L = [], U = [], O = 0, j = !1, A = !1, M = {};
+        var S = {}, N = [], T = [], P = "function" == typeof Promise ? Promise.resolve().then.bind(Promise.resolve()) : setTimeout, E = /acit|ex(?:s|g|n|p|$)|rph|ows|mnc|ntw|ine[ch]|zoo|^ord/i, L = [], U = [], O = 0, j = !1, A = !1, M = {};
         r(k.prototype, {
             setState: function(e, t) {
                 var n = this.state;
@@ -578,17 +578,15 @@
     }), a.addEventListener("mouseover", r), a.addEventListener("mouseout", r);
 }, function(e, t, n) {
     "use strict";
-    function o() {
-        document.body.clientWidth >= 1080 && (a.style.top = s + "px");
-    }
-    var r = document.querySelector(".buttons__second-level"), i = document.querySelector(".buttons__second-level__active"), a = document.querySelector(".buttons"), s = (document.body, 
-    272);
-    r && !i && (r.classList.add("closeSubmenu"), r.style.display = "none", r.style.display = "block", 
+    var o = document.querySelector(".buttons__second-level"), r = document.querySelector(".buttons__second-level__active"), i = document.querySelector(".buttons"), a = 272;
+    o && !r && (o.classList.add("closeSubmenu"), o.style.display = "none", o.style.display = "block", 
     setTimeout(function() {
-        r.classList.add("openSubmenu"), r.classList.remove("closeSubmenu");
+        o.classList.add("openSubmenu"), o.classList.remove("closeSubmenu");
         var e = setInterval(function() {
-            s <= 272 && (s--, a.style.top = s + "px", 207 === s && clearInterval(e));
+            a <= 272 && (a--, i.style.top = a + "px", 207 === a && clearInterval(e));
         }, 5);
-    }, 50)), o(), window.addEventListener("resize", o);
+    }, 50)), function() {
+        document.body.clientWidth >= 1080 && (i.style.top = a + "px");
+    }();
 } ]);
 //# sourceMappingURL=bundle.js.map
