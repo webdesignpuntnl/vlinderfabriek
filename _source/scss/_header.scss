@@ -330,11 +330,16 @@ nav {
 
 
     .buttons__second-level { // second level of buttons wich appear on click
+        overflow: hidden;
         list-style-type: none;
         border: 2px solid transparent;
         border-radius: 5px;
         margin: 0.5rem 0 0 0;
         text-align: left;
+        height: auto;
+        max-height: 500px;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
 
        li {
         margin: 0;
@@ -364,24 +369,28 @@ nav {
         }
     }
 
-    .openSubmenu {
-        opacity: 1;
-        height: 105%;
-        border-color: transparent;
-        transition: all 0.4s ease-in-out;
+    // .openSubmenu {
+    //     display: block;
+    //     opacity: 1;
+    //     height: 105%;
+    //     border-color: transparent;
+    //     transition: all 5s ease-in-out;
         
-        li a {
-            font-size: 0.66rem;
-            transition: font 0.4s ease-in-out;
+    //     li a {
+    //         font-size: 0.66rem;
+    //         transition: font 5s ease-in-out;
             
-        }
-    }
+    //     }
+    // }
     
     .closeSubmenu {
+        height: auto;
         border: none;
-        height: 0;
+        max-height: 0;
         font-size: 0;
         opacity: 0;
+        transition: all 0.3s ease-in-out;
+        
 
         li a {
             font-size: 0;
