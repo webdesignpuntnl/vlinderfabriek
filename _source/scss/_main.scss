@@ -7,14 +7,14 @@ main {
   position: relative;
 
   h1 {
-    @include fontBold(2rem);
+    @include fontBold(2.1rem);
     margin: 0 0 1rem 0;
     padding: 0 1rem 0 0;
     word-break: break-word;
   }
 
   h2 {
-    @include fontBold(1.5rem);
+    @include fontBold(1.2rem);
     color: $colorGrey;
   }
 
@@ -135,12 +135,24 @@ main {
   }
 
   h2 {
-    margin: 1.8rem 0 0 0;
+    margin: 1rem 0 0 0;
   }
 
   p {
       margin: 0 0 0.8rem 0;
   }
+}
+
+.list { // ul on the bleu section on behind the scenes
+  list-style-type: none;
+  @include fontRegular(1.1rem);
+  color: $colorGrey;
+  margin: 0.3rem 0 1.5rem 0.5rem;
+}
+
+.behindScenes__paragraph {
+  margin: 0;
+  @include fontBold(1.1rem);
 }
 
 .form {
@@ -450,6 +462,8 @@ main {
 
 
   main .main__article--extraInfo {
+    margin-top: 4rem;
+
       p {
         margin: 0.3rem 0 0 0;
       }
