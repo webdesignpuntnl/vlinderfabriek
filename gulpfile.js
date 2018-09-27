@@ -120,6 +120,7 @@ gulp.task('browser-sync', () => {
     server: {
       baseDir: 'www',
     },
+    port: 8080,
     // host: '192.168.1.5',
     // tunnel: true,
     notify: false,
