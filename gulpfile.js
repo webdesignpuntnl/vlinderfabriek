@@ -35,7 +35,7 @@ gulp.task('pages', function () {
 // inject css and js in index for dev
 gulp.task('injectIndexDev', ['webpackdev','sassdev'], function () {
   return target = gulp.src('_source/index.html')
-  .pipe(inject(gulp.src(['www/css/*.css', 'www/js/*.js'], {read: false}), {ignorePath: 'www/', addRootSlash: false}, {relative: true}))
+  .pipe(inject(gulp.src(['www/css/*.css', 'www/js/*.js'], {read: false}), {ignorePath: 'www/', addRootSlash: false}, {relative: true, quiet: true}))
   .pipe(gulp.dest('www/'));
 });
 
@@ -43,7 +43,7 @@ gulp.task('injectIndexDev', ['webpackdev','sassdev'], function () {
 // inject css and js in pages for dev
 gulp.task('injectPagesDev', ['webpackdev','sassdev'], function () {
   return target = gulp.src('_source/pages/*.html')
-  .pipe(inject(gulp.src(['www/css/*.css', 'www/js/*.js'], {read: false}), {ignorePath: 'www/', addRootSlash: false, addPrefix: '..'}))
+  .pipe(inject(gulp.src(['www/css/*.css', 'www/js/*.js'], {read: false}), {ignorePath: 'www/', addRootSlash: false, addPrefix: '..', quiet: true}))
   .pipe(gulp.dest('www/pages/'));
 }); 
 
