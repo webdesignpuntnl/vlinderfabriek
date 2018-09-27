@@ -37,7 +37,7 @@ main {
     h2 {
       position: absolute;
       top: -9999px;
-      left: -9999px;      
+      left: -9999px;
     }
 
     p {
@@ -72,6 +72,7 @@ main {
 
   h1 {
     color: $colorOrange;
+    margin-top: 0.8rem
   }
 
   a {
@@ -139,11 +140,12 @@ main {
   }
 
   p {
-      margin: 0 0 0.8rem 0;
+    margin: 0 0 0.8rem 0;
   }
 }
 
-.list { // ul on the bleu section on behind the scenes
+.list {
+  // ul on the bleu section on behind the scenes
   list-style-type: none;
   @include fontRegular(1.1rem);
   color: $colorGrey;
@@ -157,7 +159,7 @@ main {
 
 .form {
   @include fontRegular;
-  
+
   ::placeholder {
     font-size: 0.8rem;
     // padding: 0.3rem 0;
@@ -182,7 +184,8 @@ main {
     border-radius: 5px;
     background: $colorWhite;
     padding: 0.5rem 0 0.2rem 0.3rem;
-    margin-bottom: 1rem; &:nth-child(8) {
+    margin-bottom: 1rem;
+    &:nth-child(8) {
       color: red;
     }
     outline: none;
@@ -196,7 +199,7 @@ main {
       background: lighten($colorBlue, 50%);
     }
   }
-  
+
   input[type='submit'] {
     @include fontBold;
     color: $colorGrey;
@@ -225,7 +228,6 @@ main {
 }
 
 .form__subscribe {
-
   fieldset {
     background: lighten($colorRed, 50%);
     border: 1px solid $colorRed;
@@ -305,24 +307,29 @@ main {
     transition: all 0.5s ease-in-out;
   }
 
-  .form__subscribe__confirmation__label:hover input ~ .form__subscribe__confirmation__checkmark {
+  .form__subscribe__confirmation__label:hover
+    input
+    ~ .form__subscribe__confirmation__checkmark {
     box-shadow: 0 2px 2px $colorGrey;
     width: 23px;
     background: lighten($colorRed, 45%);
     transition: all 0.5s ease-in-out;
   }
-  
+
   .form__subscribe__confirmation__checkmark:after {
-    content: "";
+    content: '';
     position: absolute;
     display: none;
   }
 
-  .form__subscribe__confirmation__label input:checked ~ .form__subscribe__confirmation__checkmark:after {
+  .form__subscribe__confirmation__label
+    input:checked
+    ~ .form__subscribe__confirmation__checkmark:after {
     display: block;
   }
 
-  .form__subscribe__confirmation__label .form__subscribe__confirmation__checkmark:after {
+  .form__subscribe__confirmation__label
+    .form__subscribe__confirmation__checkmark:after {
     left: 7px;
     top: 2px;
     width: 8px;
@@ -331,8 +338,6 @@ main {
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
   }
-
-
 
   input[type='submit'] {
     &:hover {
@@ -459,14 +464,12 @@ main {
     }
   }
 
-
-
   main .main__article--extraInfo {
     margin-top: 4rem;
 
-      p {
-        margin: 0.3rem 0 0 0;
-      }
+    p {
+      margin: 0.3rem 0 0 0;
+    }
   }
 
   .main__kinderboekenweek__h2 {
@@ -517,8 +520,8 @@ main {
   .sidepicture {
     max-width: 235px;
     position: absolute;
-    top: -4rem; 
-    right:-1rem;
+    top: -4rem;
+    right: -1rem;
     transform: rotate(25deg);
     position: absolute;
   }
