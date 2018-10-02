@@ -38,6 +38,12 @@ gulp.task('php', function () {
   .pipe(gulp.dest('www/php/'))
 });
 
+// copy forms folder 
+gulp.task('forms', function () {
+  return gulp.src('_source/forms/**')
+  .pipe(gulp.dest('www/forms/'))
+});
+
 // inject css and js in index for dev
 gulp.task('injectIndexDev', ['webpackdev','sassdev'], function () {
   return target = gulp.src('_source/index.html')
@@ -150,4 +156,4 @@ gulp.task('clean', function() {
 gulp.task('dev', ['clean', 'webpackdev', 'sassdev', 'image', 'pages', 'htmldev', 'injectIndexDev', 'injectPagesDev', 'browser-sync'], () => {
   gulp.watch(['_source/scss/*.scss', '_source/js/*.js', '_source/media/images/**', '_source/*.html', '_source/pages/*.html'], ['webpackdev', 'htmldev', 'injectIndexDev', 'injectPagesDev', 'pages', 'sassdev', 'image']);
 });
-gulp.task('build', ['clean', 'sassbuild', 'webpackbuild', 'image', 'htmlbuild', 'pages', 'php', 'injectIndex', 'injectPages']);
+gulp.task('build', ['clean', 'sassbuild', 'webpackbuild', 'image', 'htmlbuild', 'pages', 'php', 'forms', 'injectIndex', 'injectPages']);

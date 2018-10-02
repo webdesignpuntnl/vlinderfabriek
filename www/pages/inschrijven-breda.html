@@ -28,9 +28,9 @@
       </div>
       <nav> <!-- main naviagtion on the left -->
           <ul class="butterflys">
-              <li><a href="../pages/verdieping.html"><img src="../media/images/vlinder-groen-outline.png" alt="logo"><span>verdieping</span></a></li>
-              <li><a href="../pages/lesaanbod.html" class="butterflys__active--red"><img src="../media/images/vlinder-rood.png" alt="logo"><span>lesaanbod</span></a></li>
-              <li><a href="../pages/op-school.html"><img src="../media/images/vlinder-oranje-outline.png" alt="logo"><span>op school</span></a></li>
+              <li><a href="verdieping.html"><img src="../media/images/vlinder-groen-outline.png" alt="logo"><span>verdieping</span></a></li>
+              <li><a href="lesaanbod.html" class="butterflys__active--red"><img src="../media/images/vlinder-rood.png" alt="logo"><span>lesaanbod</span></a></li>
+              <li><a href="op-school.html"><img src="../media/images/vlinder-oranje-outline.png" alt="logo"><span>op school</span></a></li>
               <li><a href="../index.html"><img src="../media/images/vlinder-blauw-outline.png" alt="logo"><span>home</span></a></li>
           </ul>
           <ul class="buttons buttons--red">
@@ -49,20 +49,20 @@
   </header>
     <main class="main main--red"> <!-- text section on the right side -->
       <h1>Inschrijven Naschoolse lessen locatie Breda</h1>
+      <a href="../forms/inschrijvenbreda.pdf" class="getForm" title="download het formulier als PDF" target="_blank">formulier downloaden</a>
       <p class="form__pargraph">Aanmelden voor een van de Vlinderfabriek cursussen kan vanaf nu digitaal! 
         U hoeft alleen onderstaand formulier in te vullen. Indien u op de verzendknop drukt dan gaat u akkoord met onze <a href="../forms/algemenevoorwaarden.pdf">algemene voorwaarden</a>. Wij slaan de gegevens die u invult op, kijk voor meer informatie op onze <a href="../privacy.html">privacy-pagina</a>
         Het formulier is ook te downloaden en uit te printen door op de pijl te klikken. 
         Heeft u vragen? Of wilt u liever een formulier per e-mail? Neem dan gerust contact met ons op <a href="mailto:info@vlinderfabriek.nl">info@vlinderfabriek.nl</a> </p>
       <p> 
-      <a href="pages/inschrijven-verlengen-breda.html">Mijn gegevens zijn bekend ik wil mijn kind opnieuw opgeven</a></p>
-      <!-- <div class="downloadIcon"> <a href="forms/inschrijvenbreda.pdf" target="_blank"><img src="images/downloadIcon.png" alt="formulier dowloaden als PDF" width="35" height="35" id="downLoadIcon" title="download het formulier als PDF" /></a> </div> -->
-      <form class="form form__subscribe" method="post" action="php/formmailBreda.php" name="formBreda" enctype="multipart/form-data"  autocomplete="on">
-        <!-- <input type="hidden" name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" />
+      <a href="inschrijven-verlengen-breda.html">Mijn gegevens zijn bekend ik wil mijn kind opnieuw opgeven</a></p>
+      <form class="form form__subscribe" method="post" action="../php/formmailBreda.php" name="formBreda" enctype="multipart/form-data"  autocomplete="on">
+        <input type="hidden" name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" />
         <input type="hidden" name="recipients" value="administratie@vlinderfabriek.nl, claudette@vlinderfabriek.nl" />
-        <input type="hidden" name="good_url" value="../pages/formulier-verzonden.html" />
-        <input type="hidden" name="bad_url" value="../pages/formulier-niet-verzonden.html" />
+        <input type="hidden" name="good_url" value="formulier-verzonden.html" />
+        <input type="hidden" name="bad_url" value="formulier-niet-verzonden.html" />
         <input type="hidden" name="Locatie" value="Eerste inschrijving Breda 2018" />
-        <input type="hidden" name="subject" value="Eerste inschrijving Breda 2018" /> -->
+        <input type="hidden" name="subject" value="Eerste inschrijving Breda 2018" />
         <fieldset>
           <!-- first part for the student data -->
           <legend>gevens deelnemer / cursist</legend>
@@ -203,19 +203,18 @@
           <div class="courseSelect">
             <select name="locatie en cursus">
               <option>kies locatie en cursus &ast;</option>
-              <!-- <option disabled>test</option> -->
               <optgroup label="Locatie: Breda">
-              <option value="Locatie: Breda de Vlinderklas ">de Vlinderklas</option>
-              <option value="Locatie: Breda Spelersklas 1">Spelersklas 1</option>
-              <option value="Locatie: Breda Spelersklas 2">Spelersklas 2</option>
-              <option value="Locatie: Breda Fabriek">Fabriek</option>
-              <option disabled></option>
+                <option value="Locatie: Breda de Vlinderklas ">de Vlinderklas</option>
+                <option value="Locatie: Breda Spelersklas 1">Spelersklas 1</option>
+                <option value="Locatie: Breda Spelersklas 2">Spelersklas 2</option>
+                <option value="Locatie: Breda Fabriek">Fabriek</option>
+                <option disabled label=" "></option>
               </optgroup>
               <optgroup label="Locatie: Prinsenbeek" >
-              <option value="Locatie: Prinsenbeek de Vlinderklas">de Vlinderklas</option>
-              <option value="Locatie: Prinsenbeek Spelersklas">Spelersklas</option>
-              <option value="Locatie: Prinsenbeek Fabriek">Fabriek</option>
-              <option disabled></option>
+                <option value="Locatie: Prinsenbeek de Vlinderklas">de Vlinderklas</option>
+                <option value="Locatie: Prinsenbeek Spelersklas">Spelersklas</option>
+                <option value="Locatie: Prinsenbeek Fabriek">Fabriek</option>
+                <option disabled label=" "></option>
               </optgroup>
             </select>
             <p class="form__subscribe__starObligated">&ast; verplicht</p>
@@ -323,7 +322,7 @@
             <textarea name="opmerkingen" id="remarks" placeholder="typ hier vragen en / of opmerkingen"></textarea>
           </fieldset>
         </div>
-        <p class="form__pargraph">
+        <p class="form__pargraph--bottom">
             Door op de verzendknop te drukken geeft u toestemming aan Stichting de Vlinderfabriek, Incassant ID: NL24ZZZ547305970000, 
             om een eenmalige incasso-opdracht te sturen naar uw bank om een bedrag van uw rekening af te schrijven 
             wegens het volgen van theaterlessen, en uw bank om eenmalig een bedrag van uw rekening af te schrijven 
@@ -333,7 +332,7 @@
             Met het verzenden van dit formulier gaat u tevens akkoord met de <a href="../forms/algemenevoorwaarden.pdf">algemene voorwaarden</a> van de Vlinderfabriek 
             die van toepassing zijn op deze inschrijving.
         </p>
-        <p class="form__pargraph">
+        <p class="form__pargraph--bottom">
             Wij slaan de gegevens die u op dit formulier invult op. Dit is nodig voor het voeren van een administratie, om eventueel contact 
             met u op te kunnen nemen en om de spelersgroepen samen te kunnen stellen. Wij hebben privacy hoog in het vaandel staan en gaan zo veillig mogelijk
             met uw gegevens om. U kunt meer informatie krijgen op de <a href="../privacy.html">privacy-pagina</a>.

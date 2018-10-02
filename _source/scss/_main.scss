@@ -60,7 +60,7 @@ main {
   display: block;
 }
 
-  .getProject {
+.getProject {
   @include fontBold;
   text-decoration: none;
   text-transform: uppercase;
@@ -81,6 +81,25 @@ main {
   &--green {
     background-color: $colorGreen;    // width: 70%;    float: left;
 
+  }
+}
+
+.getForm {
+  @include fontBold(0.9rem);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.6rem 0.6rem 0.3rem 0.6rem;
+  margin: 0 0 1.5rem 0;
+  color: $colorWhite !important;
+  background-color: $colorRed;
+  border: 2px solid $colorBlack;
+  border-radius: 5px;
+  display: block;
+  max-width: 10rem;
+  text-align: center;
+
+  &:hover {
+    color: $colorBlack !important;
   }
 }
 
@@ -602,6 +621,16 @@ main {
 
   }
 
+  main {
+    .form__pargraph {
+      width: 70%;
+
+      &--bottom {
+        width: 100%;
+      }
+    }
+  }
+
   .main__kinderboekenweek {
     position: relative;
   }
@@ -624,6 +653,12 @@ main {
   }
 
   .getProject {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .getForm {
     position: absolute;
     top: 1rem;
     right: 1rem;

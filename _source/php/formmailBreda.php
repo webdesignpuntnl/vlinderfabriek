@@ -1,10 +1,10 @@
 <?php
-$FM_VERS = "9.14"; // script version
+$FM_VERS = "9.15"; // script version
 
 /* ex:set ts=4 sw=4 et:
  * FormMail PHP script from Tectite.com.  This script requires PHP 5 or later.
  * Versions of Tectite FormMail are available for PHP 4 (look for versions 8 and below).
- * Copyright (c) 2001-2015 Open Concepts (Vic) Pty Ltd
+ * Copyright (c) 2001-2017 Open Concepts (Vic) Pty Ltd
  * (ABN 12 130 429 248), Melbourne, Australia.
  * This script is free for all use as described in the "Copying and Use" and
  * "Warranty and Disclaimer" sections below.
@@ -16,7 +16,7 @@ $FM_VERS = "9.14"; // script version
  ***  Visit www.tectite.com for free <a href="http://www.tectite.com/">FormMail</a>.
  *
  * Author: Russell Robinson
- * First released: 2nd October 2001
+ * First released: 2nd October 2001 
  *
  * Read This First
  * ~~~~~~~~~~~~~~~
@@ -421,7 +421,7 @@ if (isset($aServerVars['SERVER_NAME']) && $aServerVars['SERVER_NAME'] !== "") {
  * You can use this to set variables that can be used in the
  * configuration section.
  */
-@include("../../php/formmail-preconfig.inc.php");
+@include("formmail-preconfig.inc.php");
 
 /*****************************************************************************/
 /* CONFIGURATION (do not alter this line in any way!!!)                      */
@@ -760,8 +760,10 @@ $ATTACK_DETECTION_MANY_URL_FIELDS = 0;
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_url_patterns.php */
 $ATTACK_DETECTION_URL_PATTERNS = array(
-	'(^|[^-a-z_.0-9]+)(?<!@)([-a-z0-9]+\.)+(com|org|net|biz|info|name|pro|tel|asia|cat)\b',
-	'(^|[^-a-z_.0-9]+)(?<!@)([-a-z0-9]+\.)+(com{0,1}|org|net)\.[a-z][a-z]\b'
+	'(^|[^-a-z_.0-9]+)(?<!@)([-a-z0-9]+\.)+(com|org|net|biz|info|name|pro|tel|asia|cat|pw|study|party|click|gdn|gq|top|cf|loan|link|webcam|racing|stream|trade|club|review|bid|racing|win)\b',
+	'(^|[^-a-z_.0-9]+)(?<!@)([-a-z0-9]+\.)+(com{0,1}|org|net)\.[a-z][a-z]\b',
+	'(^|[^-a-z_.0-9]+)(?<!@)([-a-z0-9]+\.)+(xn--[a-z0-9]+)\b',
+	'\b(bit\.ly|goo\.gl|owl\.ly|deck\.ly|su\.pr|lnk\.co|fur\.ly)/'
 );
 
 /* Help: http://www.tectite.com/fmdoc/attack_detection_ignore_errors.php */
@@ -900,12 +902,12 @@ class Settings
  * You can use this to set variables or make adjustments
  * based on the results of the configuration section.
  */
-@include("../../php/formmail-preconfigdefs.inc.php");
+@include("formmail-preconfigdefs.inc.php");
 
 /*
  * Many configuration settings used to be constants.  However, constants
  * cannot be re-defined in PHP.  This limitation reduced the value
- * of "../../php/formmail-postconfig.inc.php" and other hook scripts.
+ * of "formmail-postconfig.inc.php" and other hook scripts.
  * Therefore, all configuration settings have been changed to be global
  * variables (no define's).
  *
@@ -963,7 +965,7 @@ if (IsAjax()) {
  * You can use this to set variables or make adjustments
  * based on the results of the configuration section.
  */
-@include("../../php/formmail-postconfig.inc.php");
+@include("formmail-postconfig.inc.php");
 
 //
 // the following constants define all FormMail messages
@@ -1113,7 +1115,7 @@ define('MSG_AND',133); // "$ITEM1" and "$ITEM2"
 define('MSG_NEXT_PLUS_GOOD',134); // The form specifies both next_form and....
 define('MSG_MULTIFORM',135); // You must set either MULTIFORMDIR or MULTIFORMURL...
 define('MSG_MULTIFORM_FAILED',136); // Failed to process multi-page form template "$NAME"...
-define('MSG_NEED_THIS_FORM',137); // Multi-page forms require "../../php/this_form" field...
+define('MSG_NEED_THIS_FORM',137); // Multi-page forms require "this_form" field...
 define('MSG_NO_PHP_SELF',138); // PHP on the server is not providing "PHP_SELF"
 define('MSG_RETURN_URL_INVALID',139); // Return "$URL" is not valid...
 define('MSG_GO_BACK',140); // Cannot 'go back' if not a multi-page form...
@@ -1266,8 +1268,8 @@ function LoadLanguageFile()
 	global $aMessages,$sLangID,$sHTMLCharSet;
 
 	AddIncludePath();
-	if (!@include("../../php/language.inc.php")) {
-		@include("../../php/language.inc");
+	if (!@include("language.inc.php")) {
+		@include("language.inc");
 	}
 	ResetIncludePath();
 	if (isset($sHTMLCharSet) && $sHTMLCharSet !== "") {
@@ -2285,10 +2287,10 @@ function LoadBuiltinLanguage()
 	$aMessages[MSG_MULTIFORM_FAILED] = 'Failed to process multi-page form template "$NAME"';
 
 	// MSG_NEED_THIS_FORM is sent in an Alert message
-	// when a multi-page form does not specify the "../../php/this_form" field.
+	// when a multi-page form does not specify the "this_form" field.
 	// Parameters:
 	//  none
-	$aMessages[MSG_NEED_THIS_FORM] = 'Multi-page forms require "../../php/this_form" field';
+	$aMessages[MSG_NEED_THIS_FORM] = 'Multi-page forms require "this_form" field';
 
 	// MSG_NO_PHP_SELF is sent in an Alert message
 	// when FormMail requires the "PHP_SELF" server variable and PHP is not
@@ -3105,6 +3107,9 @@ $SPECIAL_NOSTRIP = array(
 	"fmcompute",
 	"recaptcha_response_field",
 	"recaptcha_challenge_field",
+	"g-recaptcha-response",
+	"arverify",
+	"imgverify",
 );
 
 //
@@ -3273,7 +3278,7 @@ if (Settings::get('RECAPTCHA_PRIVATE_KEY') !== "") {
 	if (isset($aFormVars['g-recaptcha-response']) && $aFormVars['g-recaptcha-response'] != '') {
 		$bRecaptchaVersion = 2;
 	}
-	if ($bRecaptchaVersion == 1 && !include_once("../../php/recaptchalib.php")) {
+	if ($bRecaptchaVersion == 1 && !include_once("recaptchalib.php")) {
 		$bRecaptchaVersion = 2;
 	}
 
@@ -3318,15 +3323,15 @@ if (Settings::get('RECAPTCHA_PRIVATE_KEY') !== "") {
 				$s_url = 'https://www.google.com/recaptcha/api/siteverify';
 
 				$a_post_data = array(
-					'secret'=>$this->_sPrivate,
-					'response'=>$s_response
+					'secret'   => $this->_sPrivate,
+					'response' => $s_response
 				);
 				if (isset($_SERVER['REMOTE_ADDR'])) {
 					$a_post_data['remoteip'] = $_SERVER['REMOTE_ADDR'];
 				}
 
 				FMDebug('Posting to google reCaptcha');
-				$recaptcha = new HTTPPost($s_url);
+				$recaptcha    = new HTTPPost($s_url);
 				$a_resp_lines = $recaptcha->Post($a_post_data);
 
 				if ($a_resp_lines === false) {
@@ -4010,9 +4015,9 @@ function LineFolding($s_str,$i_max_line,$s_before,$s_after,$s_fold)
 				if ($b_found) {
 					$s_str      = substr($s_str,0,$jj) . $s_fold . substr($s_str,$jj);
 					$i_fold_len = strlen($s_fold);
-					$i_str_len += $i_fold_len; // the additional chars we inserted
-					$i_start = $jj + $i_fold_len; // start of the next line
-					$b_done  = true;
+					$i_str_len  += $i_fold_len; // the additional chars we inserted
+					$i_start    = $jj + $i_fold_len; // start of the next line
+					$b_done     = true;
 				}
 			}
 			//
@@ -4030,8 +4035,8 @@ function LineFolding($s_str,$i_max_line,$s_before,$s_after,$s_fold)
 			// end of line found - reset counters
 			//
 			$i_line_len = 0;
-			$ii += 2;
-			$i_start = $ii;
+			$ii         += 2;
+			$i_start    = $ii;
 		} else {
 			$ii++;
 			$i_line_len++;
@@ -5510,7 +5515,7 @@ function CreateDerived($a_form_data)
 			$a_form_data[$s_name] = DeriveValue($a_form_data,$a_value_spec,$s_name,$a_errors);
 		}
 		if (count($a_errors) > 0) {
-			SendAlert(GetMessage(MSG_DERIVED_INVALID) . implode("\n",$a_errors));
+			SendAlertIgnoreSpam(GetMessage(MSG_DERIVED_INVALID) . implode("\n",$a_errors));
 			Error("derivation_failure",GetMessage(MSG_INT_FORM_ERROR));
 		}
 	}
@@ -5570,7 +5575,7 @@ function SetFileNames($s_name_spec,$a_order,$a_fields,$a_raw_fields,$a_all_raw_v
                                             array("NAME"=>$s_name)));*/
 	}
 	if (count($a_errors) > 0) {
-		SendAlert(GetMessage(MSG_FILE_NAMES_INVALID) . implode("\n",$a_errors));
+		SendAlertIgnoreSpam(GetMessage(MSG_FILE_NAMES_INVALID) . implode("\n",$a_errors));
 		Error("file_names_derivation_failure",GetMessage(MSG_INT_FORM_ERROR));
 	}
 	return (array($a_order,$a_fields,$a_raw_fields,$a_all_raw_values,$a_file_vars));
@@ -5704,8 +5709,8 @@ function ProcessOptions($s_name,$a_form_data,&$a_options,$a_valid_options)
 		ProcessAttributeList($s_name,$a_form_data,$a_list,$a_options,$a_errors,$a_valid_options);
 	}
 	if (count($a_errors) > 0) {
-		SendAlert(GetMessage(MSG_OPTIONS_INVALID,array("OPT" => $s_name)) .
-		          implode("\n",$a_errors));
+		SendAlertIgnoreSpam(GetMessage(MSG_OPTIONS_INVALID,array("OPT" => $s_name)) .
+		                    implode("\n",$a_errors));
 	}
 }
 
@@ -6437,7 +6442,7 @@ function DoMail($s_to,$s_subject,$s_mesg,$a_headers,$s_options)
 		//
 		// Note that PEAR Mail seems to take responsibility for header line folding
 		//
-		require_once("../../php/Mail.php");
+		require_once("Mail.php");
 
 		$a_params = array("host" => Settings::get('PEAR_SMTP_HOST'),
 		                  "port" => Settings::get('PEAR_SMTP_PORT')
@@ -6673,16 +6678,16 @@ function SendAlert($s_error,$b_filter = true,$b_non_error = false)
 
 		if ($b_non_error) {
 			$s_preamble = $s_error . Settings::get('BODY_LF') . Settings::get('BODY_LF');
-			$s_mesg .= $s_preamble;
-			$s_subj = GetMessage(MSG_FM_ALERT);
+			$s_mesg     .= $s_preamble;
+			$s_subj     = GetMessage(MSG_FM_ALERT);
 			if (!empty($s_form_subject)) {
 				$s_subj .= " ($s_form_subject)";
 			}
 		} else {
 			$s_preamble = GetMessage(MSG_FM_ERROR_LINE) . Settings::get('BODY_LF') .
 			              $s_error . Settings::get('BODY_LF') . Settings::get('BODY_LF');
-			$s_mesg .= $s_preamble;
-			$s_subj = GetMessage(MSG_FM_ERROR);
+			$s_mesg     .= $s_preamble;
+			$s_subj     = GetMessage(MSG_FM_ERROR);
 			if (!empty($s_form_subject)) {
 				$s_subj .= " ($s_form_subject)";
 			}
@@ -6722,7 +6727,7 @@ function SendAlert($s_error,$b_filter = true,$b_non_error = false)
 			$s_new_mesg .= GetMessage(MSG_FILTERED,array("FILTER" => $s_filter_name)) .
 			               Settings::get('BODY_LF') . Settings::get('BODY_LF') .
 			               $s_filtered_results;
-			$s_mesg = $s_new_mesg;
+			$s_mesg     = $s_new_mesg;
 		}
 		$s_mesg .= Settings::get('BODY_LF');
 
@@ -7118,13 +7123,19 @@ class   NetIO
 
 	function _SSLOpen($s_ip,&$errno,&$errstr,$i_timeout)
 	{
+		global $ExecEnv;
+
 		FMDebug("Using _SSLOpen (stream_socket_client), SNI, host=" . $this->GetHost());
 		$context = stream_context_create();
 		$result  = stream_context_set_option($context,'ssl','verify_host',true);
 		$result  = stream_context_set_option($context,'ssl','verify_peer',false);
 		$result  = stream_context_set_option($context,'ssl','allow_self_signed',true);
 		$result  = stream_context_set_option($context,'ssl','SNI_enabled',true);
-		$result  = stream_context_set_option($context,'ssl','SNI_server_name',$this->GetHost());
+		if ($ExecEnv->IsPHPAtLeast("5.6.0")) {
+			$result = stream_context_set_option($context,'ssl','peer_name',$this->GetHost());
+		} else {
+			$result = stream_context_set_option($context,'ssl','SNI_server_name',$this->GetHost());
+		}
 		//
 		// Note that even if SNI fails, the socket will still open, but the
 		// web server should send a 400 error.
@@ -7383,7 +7394,7 @@ class   HTTPGet extends NetIO
 		//
 		// End of request headers
 		//
-		$s_req .= "\r\n";
+		$s_req           .= "\r\n";
 		$this->_sRequest = $s_req;
 	}
 
@@ -8697,7 +8708,7 @@ function AdvancedRequired($s_cond,$i_span,$a_vars,&$s_missing,&$a_missing_list)
 				//
 				// failed
 				//
-				$s_missing .= "$s_error_mesg\n";
+				$s_missing               .= "$s_error_mesg\n";
 				$a_missing_list[$s_fld1] = "$s_error_mesg";
 				$b_ok                    = false;
 			}
@@ -8739,8 +8750,8 @@ function CheckRequired($s_reqd,$a_vars,&$s_missing,&$a_missing_list)
 				} else {
 					$s_mesg = "$s_friendly ($s_mesg)";
 				}
-				$b_bad = true;
-				$s_missing .= "$s_mesg\n";
+				$b_bad                  = true;
+				$s_missing              .= "$s_mesg\n";
 				$a_missing_list[$s_fld] = "$s_mesg";
 			}
 		} elseif (!AdvancedRequired($s_cond,$i_span,$a_vars,
@@ -8757,7 +8768,7 @@ function CheckRequired($s_reqd,$a_vars,&$s_missing,&$a_missing_list)
 	//
 	if (!Settings::isEmpty('REQUIRE_CAPTCHA')) {
 		if ($SPECIAL_VALUES["imgverify"] === "") {
-			$s_missing .= Settings::get('REQUIRE_CAPTCHA') . "\n";
+			$s_missing                   .= Settings::get('REQUIRE_CAPTCHA') . "\n";
 			$a_missing_list['imgverify'] = Settings::get('REQUIRE_CAPTCHA');
 			$b_bad                       = true;
 		}
@@ -9137,7 +9148,7 @@ class Conditions
 
 	private function _recordField($s_fld_name,$s_mesg)
 	{
-		$this->_sMissing .= $s_mesg . "\n";
+		$this->_sMissing                  .= $s_mesg . "\n";
 		$this->_aMissingList[$s_fld_name] = $s_mesg;
 	}
 
@@ -9716,7 +9727,7 @@ class   CSVFormat
      * Parameters:  $s_esc_policy   a string specifying the escape processing
      *                              policy to use
      * Returns:     void
-     * Description:
+     * Description: 
      *  Set the escape processing policy.
      */
 	function SetEscPolicy($s_esc_policy)
@@ -9742,7 +9753,7 @@ class   CSVFormat
      * Method:      SetSep
      * Parameters:  $c_sep      the separator character to use
      * Returns:     void
-     * Description:
+     * Description: 
      *  Set the separator character for between fields.
      */
 	function SetSep($c_sep)
@@ -9754,7 +9765,7 @@ class   CSVFormat
      * Method:      SetQuote
      * Parameters:  $c_quote      the quote character to use
      * Returns:     void
-     * Description:
+     * Description: 
      *  Set the quote character for quoting fields.
      */
 	function SetQuote($c_quote)
@@ -9766,7 +9777,7 @@ class   CSVFormat
      * Method:      SetIntSep
      * Parameters:  $c_int_sep      the internal separator character to use
      * Returns:     void
-     * Description:
+     * Description: 
      *  Set the internal separator character for inside fields.
      */
 	function SetIntSep($c_int_sep)
@@ -9778,7 +9789,7 @@ class   CSVFormat
      * Method:      SetCleanFunc
      * Parameters:  $s_clean_func   the name of a cleaning function (can be NULL)
      * Returns:     void
-     * Description:
+     * Description: 
      *  Set the cleaning function for fields.
      */
 	function SetCleanFunc($s_clean_func)
@@ -9788,10 +9799,10 @@ class   CSVFormat
 
 	/*
      * Method:      _Escape
-     * Parameters:  $m_value    the field value; string or array of strings
+     * Parameters:  $m_value    the field value; string or array of strings 
      * Returns:     mixed       the field value escaped according to the
      *                          escape processing policy
-     * Description:
+     * Description: 
      *  Escapes a field value according to the configured requirements.
      */
 	function _Escape($m_value)
@@ -9861,7 +9872,7 @@ class   CSVFormat
      *                              s   force to be a string
      *                              r   remove carriage returns
      * Returns:     string      the formatted value
-     * Description:
+     * Description: 
      *  Formats a value.
      */
 	function _Format($s_value,$s_format = "")
@@ -9911,7 +9922,7 @@ class   CSVFormat
      * Parameters:  $s_col_spec a column specification
      * Returns:     array       the column name and the format specifier, if
      *                          any
-     * Description:
+     * Description: 
      *  Returns the column name and any format specifier.
      */
 	function _GetColumn($s_col_spec)
@@ -9934,8 +9945,8 @@ class   CSVFormat
      *                              (field name).
      *                              A data value can be a string or an array
      *                              of strings.
-     * Returns:     string          the comma-separated value
-     * Description:
+     * Returns:     string          the comma-separated value    
+     * Description: 
      *  Creates a single CSV record for a list of columns.
      */
 	function MakeCSVRecord($a_column_list,$a_vars)
@@ -9969,8 +9980,8 @@ class   CSVFormat
      * Method:      MakeHeading
      * Parameters:  $a_column_list  a list of column names (field names) to
      *                              include
-     * Returns:     string          the comma-separated heading record
-     * Description:
+     * Returns:     string          the comma-separated heading record    
+     * Description: 
      *  Creates a heading record for the CSV data.
      */
 	function MakeHeading($a_column_list)
@@ -10491,7 +10502,7 @@ function FixInputText($s_name,$s_value,$s_buf)
 	//
 
 	// handle type attribute first
-	$s_pat = '/(<\s*input[^>]*type="(?:text|password)"[^>]*name="';
+	$s_pat = '/(<\s*input[^>]*type="(?:text|password|email|tel|search|number|date|month|datetime|datetime-local|time|week|range|url|color)"[^>]*name="';
 	$s_pat .= preg_quote($s_name,"/");
 	$s_pat .= '"[^>]*)(value="[^"]*")([^>]*?)(\s*\/\s*)?>';
 	$s_pat .= '/ims';
@@ -10500,7 +10511,7 @@ function FixInputText($s_name,$s_value,$s_buf)
 	// handle name attribute first
 	$s_pat = '/(<\s*input[^>]*name="';
 	$s_pat .= preg_quote($s_name,"/");
-	$s_pat .= '"[^>]*type="(?:text|password)"[^>]*)(value="[^"]*")([^>]*?)(\s*\/\s*)?>';
+	$s_pat .= '"[^>]*type="(?:text|password|email|tel|search|number|date|month|datetime|datetime-local|time|week|range|url|color)"[^>]*)(value="[^"]*")([^>]*?)(\s*\/\s*)?>';
 	$s_pat .= '/ims';
 	$s_buf = preg_replace($s_pat,'$1$3$4>',$s_buf);
 
@@ -10510,7 +10521,7 @@ function FixInputText($s_name,$s_value,$s_buf)
 	$s_repl = '$1 value="' . htmlspecialchars(RegReplaceQuote($s_value)) . '" $2>';
 
 	// handle type attribute first
-	$s_pat = '/(<\s*input[^>]*type="(?:text|password)"[^>]*name="';
+	$s_pat = '/(<\s*input[^>]*type="(?:text|password|email|tel|search|number|date|month|datetime|datetime-local|time|week|range|url|color)"[^>]*name="';
 	$s_pat .= preg_quote($s_name,"/");
 	$s_pat .= '"[^>]*?)(\s*\/\s*)?>';
 	$s_pat .= '/ims';
@@ -10519,7 +10530,7 @@ function FixInputText($s_name,$s_value,$s_buf)
 	// handle name attribute first
 	$s_pat = '/(<\s*input[^>]*name="';
 	$s_pat .= preg_quote($s_name,"/");
-	$s_pat .= '"[^>]*type="(?:text|password)"[^>]*?)(\s*\/\s*)?>';
+	$s_pat .= '"[^>]*type="(?:text|password|email|tel|search|number|date|month|datetime|datetime-local|time|week|range|url|color)"[^>]*?)(\s*\/\s*)?>';
 	$s_pat .= '/ims';
 	$s_buf = preg_replace($s_pat,$s_repl,$s_buf);
 
@@ -10695,12 +10706,12 @@ function FixSelect($s_name,$s_value,$s_buf)
 	//  </select>
 	//
 
-	$s_pat = '/(<\s*select[^>]*name="';
-	$s_pat .= preg_quote($s_name,"/");
-	$s_pat .= '".*?<\s*option[^>]*value="';
-	$s_pat .= preg_quote($s_value,"/");
-	$s_pat .= '"[^>]*)>';
-	$s_pat .= '/ims';
+	$s_pat  = '/(<\s*select[^>]*name="';
+	$s_pat  .= preg_quote($s_name,"/");
+	$s_pat  .= '".*?<\s*option[^>]*value="';
+	$s_pat  .= preg_quote($s_value,"/");
+	$s_pat  .= '"[^>]*)>';
+	$s_pat  .= '/ims';
 	$s_repl = '$1 selected="selected">';
 	//  echo "<p>pat: ".htmlspecialchars($s_pat);
 	$s_buf = preg_replace($s_pat,$s_repl,$s_buf);
@@ -10721,12 +10732,12 @@ function FixMultiSelect($s_name,$a_values,$s_buf)
 	//
 
 	foreach ($a_values as $s_value) {
-		$s_pat = '/(<\s*select[^>]*name="';
-		$s_pat .= preg_quote($s_name,"/");
-		$s_pat .= '\[\]".*?<\s*option[^>]*value="';
-		$s_pat .= preg_quote($s_value,"/");
-		$s_pat .= '"[^>]*)>';
-		$s_pat .= '/ims';
+		$s_pat  = '/(<\s*select[^>]*name="';
+		$s_pat  .= preg_quote($s_name,"/");
+		$s_pat  .= '\[\]".*?<\s*option[^>]*value="';
+		$s_pat  .= preg_quote($s_value,"/");
+		$s_pat  .= '"[^>]*)>';
+		$s_pat  .= '/ims';
 		$s_repl = '$1 selected="selected">';
 		//  echo "<p>pat: ".htmlspecialchars($s_pat);
 		$s_buf = preg_replace($s_pat,$s_repl,$s_buf);
@@ -10906,6 +10917,8 @@ function ProcessReturnToForm($s_url,$a_values,$a_strip = array())
 //
 function GetReturnLink($s_this_script,$i_form_index)
 {
+	global $aServerVars;
+
 	if (!CheckValidURL($s_this_script)) {
 		Error("not_valid_url",GetMessage(MSG_RETURN_URL_INVALID,
 		                                 array("URL" => $s_this_script)),false,false);
@@ -11935,15 +11948,15 @@ function GetFilterList($b_file_fields)
 	return (false);
 }
 
-/*
+/* 
  * Function:    GetFilterSpec
  * Parameters:  $s_filter       returns the filter name
  *              $m_filter_list  returns the list of fields to filter (an array)
  *                              or is set to false if there is no filter list
  *              $b_file_fields  if true, return file fields, otherwise return non-file fields
  * Returns:     bool            true if filtering a list of fields of the specified type
- * Description:
- *  Checks whether the form has specified to filter a list of
+ * Description:     
+ *  Checks whether the form has specified to filter a list of 
  *  fields of the specified type (file fields or non-file fields).
  */
 function GetFilterSpec(&$s_filter,&$m_filter_list,$b_file_fields = false)
@@ -12053,7 +12066,7 @@ function SendResults($a_fld_order,$a_clean_fields,$s_to,$s_cc,$s_bcc,$a_raw_fiel
 		$s_sender = $a_headers['From'] = SafeHeader(UnMangle($s_sender));
 	}
 
-	/*
+	/* 
          * Override sender if $FIXED_SENDER is set.
          */
 	if (Settings::get('FIXED_SENDER') !== "") {
@@ -12661,7 +12674,7 @@ function MultiFormReturn($i_return_to)
 		}
 	} else
 		//
-		// we probably should include
+		// we probably should include 
 		//  $SessionAccessor->CopyIn(...,true);
 		// at some stage in the future to get the session values....need to think about this
 		// and run some case studies.
@@ -13180,6 +13193,11 @@ function DetectAttacks($a_fields)
 			$b_attacked = true;
 		}
 	}
+	if (function_exists('FMHookDetectAttacks')) {
+		if (FMHookDetectAttacks($a_fields,$s_attack,$s_info,$s_user_info)) {
+			$b_attacked = true;
+		}
+	}
 
 	if ($b_attacked) {
 		if (function_exists('FMHookAttacked')) {
@@ -13229,10 +13247,10 @@ function DetectRevCaptchaAttack($a_revcap_spec,$a_form_data,&$s_attack,&$s_info,
 			    $a_form_data[$s_fld_name] !== ""
 			) {
 				$b_attacked = true;
-				$s_info .= "\n" . GetMessage(MSG_ATTACK_REV_CAP_INFO,
-				                             array("FLD"     => $s_fld_name,
-				                                   "CONTENT" => $a_form_data[$s_fld_name]
-				                             ),false);
+				$s_info     .= "\n" . GetMessage(MSG_ATTACK_REV_CAP_INFO,
+				                                 array("FLD"     => $s_fld_name,
+				                                       "CONTENT" => $a_form_data[$s_fld_name]
+				                                 ),false);
 			}
 		} else {
 			$n_non_empty++;
@@ -13240,13 +13258,13 @@ function DetectRevCaptchaAttack($a_revcap_spec,$a_form_data,&$s_attack,&$s_info,
 			    $a_form_data[$s_fld_name] !== $s_value
 			) {
 				$b_attacked = true;
-				$s_info .= "\n" . GetMessage(MSG_ATTACK_REV_CAP_INFO,
-				                             array("FLD"     => $s_fld_name,
-				                                   "CONTENT" =>
-					                                   isset($a_form_data[$s_fld_name]) ?
-						                                   $a_form_data[$s_fld_name] :
-						                                   ""
-				                             ),false);
+				$s_info     .= "\n" . GetMessage(MSG_ATTACK_REV_CAP_INFO,
+				                                 array("FLD"     => $s_fld_name,
+				                                       "CONTENT" =>
+					                                       isset($a_form_data[$s_fld_name]) ?
+						                                       $a_form_data[$s_fld_name] :
+						                                       ""
+				                                 ),false);
 			}
 		}
 	}
@@ -13285,7 +13303,7 @@ function CheckCaptchaSubmit()
 			$s_error = '';
 			if (!$reCaptchaProcessor->Check($SPECIAL_VALUES["imgverify"],$SPECIAL_VALUES,$s_error)) {
 				$s_error_mesg = GetMessage(MSG_RECAPTCHA_MATCH,array("ERR" => $s_error));
-				UserError("recaptcha",$s_error_mesg,array(),array('imgverify' => $s_error_mesg));
+				UserError("recaptcha",$s_error_mesg,'',array('imgverify' => $s_error_mesg));
 			}
 		}
 		//
@@ -13310,14 +13328,14 @@ function CheckCaptchaSubmit()
 				    strtoupper(GetSession("VerifyImgString"))
 				) {
 					$s_error_mesg = GetMessage(MSG_VERIFY_MATCH);
-					UserError("img_verify",$s_error_mesg,array(),array('imgverify' => $s_error_mesg));
+					UserError("img_verify",$s_error_mesg,'',array('imgverify' => $s_error_mesg));
 				}
 			} else {
 				if (strtoupper(str_replace(" ","",$SPECIAL_VALUES["imgverify"])) !==
 				    strtoupper(GetSession("turing_string"))
 				) {
 					$s_error_mesg = GetMessage(MSG_VERIFY_MATCH);
-					UserError("img_verify",$s_error_mesg,array(),array('imgverify' => $s_error_mesg));
+					UserError("img_verify",$s_error_mesg,'',array('imgverify' => $s_error_mesg));
 				}
 			}
 		}
@@ -13326,7 +13344,7 @@ function CheckCaptchaSubmit()
 
 /*
  * Class:       AutoResponder
- * Description:
+ * Description:     
  *  Implements the auto responding feature of FormMail.
  *  The object must only be created after special fields have been
  *  processed.
@@ -13360,8 +13378,8 @@ class   AutoResponder
 	/*
      * Method:      AutoResponder ctor
      * Parameters:  void
-     * Returns:     n/a
-     * Description:
+     * Returns:     n/a 
+     * Description: 
      *  Constructs the object.
      */
 	function __construct()
@@ -13432,8 +13450,8 @@ class   AutoResponder
      * Method:      AutoResponder::IsRequested
      * Parameters:  void
      * Returns:     bool    true if autoresponding has been requested
-     * Description:
-     *  Determines if autoresponding has been requested by the HTML.
+     * Description: 
+     *  Determines if autoresponding has been requested by the HTML.  
      */
 	function IsRequested()
 	{
@@ -13444,7 +13462,7 @@ class   AutoResponder
      * Method:      AutoResponder::Process
      * Parameters:  $b_check_only   if true, perform checks but do not send
      * Returns:     void
-     * Description:
+     * Description: 
      *  Processes the autorespond.
      */
 	function Process($b_check_only = false)
@@ -13484,8 +13502,8 @@ class   AutoResponder
 	/*
      * Method:      AutoResponder::_CheckCaptcha
      * Parameters:  void
-     * Returns:     void
-     * Description:
+     * Returns:     void 
+     * Description: 
      *  Checks the type of CAPTCHA that has been processed.
      *  This method should only be called if autoresponse has been requested
      *  by the form (i.e. IsRequested returns true).
@@ -13577,7 +13595,7 @@ class   AutoResponder
      * Method:      AutoResponder::_Send
      * Parameters:  $b_use_template  if true, allow template, otherwise file
      * Returns:     void
-     * Description:
+     * Description: 
      *  Sends an autoreponse using a template.
      */
 	function _Send($b_use_template)
@@ -13623,7 +13641,7 @@ class   AutoResponder
      *              $a_values   field values to access
      *              $b_use_template if true, use a template, otherwise plain file
      * Returns:     bool        true on success, otherwise false
-     * Description:
+     * Description: 
      *  Sends an autoresponse email to the user.
      */
 	function _SendEmail($s_to,$s_subj,$a_values,$b_use_template)
@@ -13656,7 +13674,7 @@ class   AutoResponder
 		$s_type = "";
 		if ($b_use_template) {
 			if (IsAROptionSet('PlainTemplate')) {
-				$s_type .= "PlainTemplate ";
+				$s_type     .= "PlainTemplate ";
 				$s_template = GetAROption("PlainTemplate");
 				if (!ProcessTemplate($s_template,$a_lines,$a_values,
 				                     GetAROption('TemplateMissing'),
@@ -13716,9 +13734,9 @@ class   AutoResponder
 	}
 }
 
-/*
+/* 
  * Class:       SessionAccess
- * Description:
+ * Description:     
  *  Implements access to the general PHP session.
  *  This provides a secure way of copy data to and from the
  *  user's PHP session.
@@ -13732,7 +13750,7 @@ class   SessionAccess
      * Method:      SessionAccess ctor
      * Parameters:  $a_access_list      list of variables that can be accessed
      * Returns:     n/a
-     * Description:
+     * Description: 
      *  Constructs the object.
      */
 	function __construct($a_access_list)
@@ -13746,7 +13764,7 @@ class   SessionAccess
      *              $b_overwrite_empty  if true, the session value will overwrite
      *                          an empty array variable
      * Returns:     int         number of values copied
-     * Description:
+     * Description: 
      *  Copies in the list of variables from the session to the given array.
      */
 	function CopyIn(&$a_vars,$b_overwrite_empty)
@@ -13774,7 +13792,7 @@ class   SessionAccess
      * Parameters:  $a_vars     reference to an array of values (keyed on name)
      *              $a_fields   an array of fields to copy
      * Returns:     int         number of values copied
-     * Description:
+     * Description: 
      *  Copies the variables from the given array into the session.
      *  The list of fields to copy is specified in _aAccessList.
      *  If $a_fields is provided, it contains a list of fields to copy, which
@@ -14408,12 +14426,12 @@ if (!empty($SPECIAL_VALUES["fmcompute"])) {
 		}
 	}
 
-	/*
+	/* 
      * Function:    MergeFileArrays
      * Parameters:  $a_new_files    the list of files just submitted by the form
      *              $a_saved_files  the list of files that have been previously saved (can be NULL)
      * Returns:     array           a merged array
-     * Description:
+     * Description:     
      *  Intelligently merges two arrays of file definitions.
      *  If a file has been newly uploaded, its definition takes precedence.
      */
