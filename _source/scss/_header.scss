@@ -1,7 +1,21 @@
 .header__logo {
-        width: 30%;
+        width: 11%;
         margin: 1.5rem 0 0 0.8rem;
+        animation-name: logo;
+        animation-duration: 1s;
+        animation-delay: 500ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: backwards;
     }
+
+@keyframes logo {
+    from {
+        width: 30%;
+    }
+    to {
+        width: 11%;
+    }
+}
 
 .header__wordlogo {
     float: right;
@@ -40,7 +54,15 @@ nav {
         
         img {
             width: 40px;
+            
+        &:hover {
+            animation-name: butterfly;
+            animation-duration: 500ms;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            }
         }
+
 
         a {
             @include fontBold(0.75rem);
@@ -54,6 +76,15 @@ nav {
                 margin: 0 0 2rem 0;
             }
             
+        }
+
+        @keyframes butterfly {
+            from {
+                transform: rotate(initial) scale(initial);
+            }
+            to {
+                transform: rotate(55deg) scale(1.2);
+            }
         }
         
         li:first-child a:hover { // green butterfly
@@ -78,18 +109,30 @@ nav {
 
         .butterflys__active--green {
             // color: $colorGreen;
+            img:hover {
+                animation: initial;
+            }
         }
 
         .butterflys__active--red{
             // color: $colorRed;
+            img:hover {
+                animation: initial;
+            }
         }
 
         .butterflys__active--orange {
             // color: $colorOrange;
+            img:hover {
+                animation: initial;
+            }
         }
 
         .butterflys__active--blue {
             // color: $colorBlue;
+            img:hover {
+                animation: initial;
+            }
         }
         
     }
@@ -517,6 +560,7 @@ nav {
             width: 200px;
             margin: 10rem 0 0 0.8rem;
             position: relative;
+            animation-name: initial;
         }
 
         .header__wordlogo {

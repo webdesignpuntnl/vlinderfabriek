@@ -57,8 +57,8 @@
       <form class="form form__subscribe" method="post" action="../php/formmailBreda.php" name="formBreda" enctype="multipart/form-data"  autocomplete="on">
         <input type="hidden" name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" />
         <input type="hidden" name="recipients" value="administratie@vlinderfabriek.nl, claudette@vlinderfabriek.nl" />
-        <input type="hidden" name="good_url" value="formulier-verzonden.html" />
-        <input type="hidden" name="bad_url" value="formulier-niet-verzonden.html" />
+        <input type="hidden" name="good_url" value="../pages/formulier-verzonden.html" />
+        <input type="hidden" name="bad_url" value="../pages/formulier-niet-verzonden.html" />
         <input type="hidden" name="Locatie" value="verlengen Breda 2018" />
         <input type="hidden" name="subject" value="verlengen Breda 2018" />
         <fieldset>
@@ -300,7 +300,7 @@
             <textarea name="opmerkingen" id="remarks" placeholder="typ hier vragen en / of opmerkingen"></textarea>
           </fieldset>
         </div>
-        <p class="form__pargraph">
+        <p class="form__pargraph--bottom">
             Door op de verzendknop te drukken geeft u toestemming aan Stichting de Vlinderfabriek, Incassant ID: NL24ZZZ547305970000, 
             om een eenmalige incasso-opdracht te sturen naar uw bank om een bedrag van uw rekening af te schrijven 
             wegens het volgen van theaterlessen, en uw bank om eenmalig een bedrag van uw rekening af te schrijven 
@@ -310,7 +310,7 @@
             Met het verzenden van dit formulier gaat u tevens akkoord met de <a href="../forms/algemenevoorwaarden.pdf">algemene voorwaarden</a> van de Vlinderfabriek 
             die van toepassing zijn op deze inschrijving.
         </p>
-        <p class="form__pargraph">
+        <p class="form__pargraph--bottom">
             Wij slaan de gegevens die u op dit formulier invult op. Dit is nodig voor het voeren van een administratie, om eventueel contact 
             met u op te kunnen nemen en om de spelersgroepen samen te kunnen stellen. Wij hebben privacy hoog in het vaandel staan en gaan zo veillig mogelijk
             met uw gegevens om. U kunt meer informatie krijgen op de <a href="../privacy.html">privacy-pagina</a>.

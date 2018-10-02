@@ -44,54 +44,11 @@
         </header>
         <main class="main main--blue"> <!-- text section on the right side -->
             <h1>Contact</h1>
-            <article class="contact">
-                <h2 class="contact__h2">Bent u nieuwsgierig? Heeft u vragen of wilt u meer informatie?</h2>
-                <p>Neem vrijblijvend contact met ons op via onderstaand formulier of <a href="tel:0345-508090">bel: 0345-508090</a></p>
-                <ul class="contact__adresInfo contact__adresInfo__artistik">
-                    <li><h3 class="contact__adresInfo__h3">Sylke van de Calseijde</h3></li>
-                    <li>artistiek leider</li>
-                    <li>contactpersoon Culemborg</li>
-                    <li><a href="mailto:sylke@vlinderfabriek.nl">sylke@vlinderfabriek.nl</a></li>
-                    <li><a href="tel:06-18681468">06-18681468</a></li>
-                </ul>
-                <ul class="contact__adresInfo contact__adresInfo__bussiness">
-                    <li><h3 class="contact__adresInfo__h3">Claudette Efrosina</h3></li>
-                    <li>zakelijk leider</li>
-                    <li>contactpersoon Breda</li>
-                    <li><a href="mailto:claudette@vlinderfabriek.nl">claudette@vlinderfabriek.nl</a></li>
-                    <li><a href="tel:06-28319135">06-28319135</a></li>
-                </ul>
-                <ul class="contact__adresInfo">
-                    <li>Stichting de Vlinderfabriek</li>
-                    <li>KvK-nummer: 54730597</li>
-                    <li>IBAN nummer: NL70RABO0122381270</li>
-                    <li></li>
-                    <li>Onze voorwaarden &amp; privacy beleid <a href="privacy.html">privacy &amp; voorwaarden</a></li>
-                </ul>
-            </article>
-            <form id="contactForm" class="form form__contactForm" method="post" action="../php/formmailContact.php" enctype="multipart/form-data" autocomplete="on">
-                <input type="hidden" name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" />
-                <input type="hidden" name="recipients" value="administratie@vlinderfabriek.nl, info@vlinderfabriek.nl" />
-                <input type="hidden" name="good_url" value="../pages/contact-verzonden.html" />
-                <input type="hidden" name="bad_url" value="../pages/contact-niet-verzonden.html" />
-                <input type="hidden" name="Locatie" value="contactformulier" />
-                <input type="hidden" name="subject" value="contactformulier" />
-                <fieldset>
-                    <label for="nameField">naam&#42;
-                        <input name="name" type="text" id="nameField" required pattern="^[a-zA-Z ]*$" placeholder="bijv Joep Jansen" title="gebruik alleen letters en geen cijfers">
-                    </label>
-                    <label for="subjectField">onderwerp
-                        <input name="onderwerp" type="text"  id="subjectField" placeholder="bijv informatie over de lessen" title="vul hier een onderwerp in">
-                    </label>
-                    <label for="emailField">email&#42;
-                        <input name="email" type="email"  id="emailField" required placeholder="bijv joep@jansen.nl" pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$" title="vul een geldig emailadres in">
-                    </label>
-                    <label for="remarksField">stel uw vraag&#42;</label>
-                    <textarea name="opmerkingen"  id="remarksField" rows="8" required placeholder="uw vraag of opmerking"></textarea>
-                    <p><span>* invullen verplicht</span></p>
-                    <input name="insturen" type="submit" id="formSubmitButton" value="verzenden">    
-                </fieldset>
-            </form>
+            <p>
+                Uw vraag is niet verzonden. 
+                U kunt terug naar de vorige pagina en het nogmaals proberen of maak gebruik
+                van de andere contactmogelijkheden.
+            </p>
         </main>
     </div>
     <footer class="footer footer--blue">
