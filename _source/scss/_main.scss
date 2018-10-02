@@ -34,7 +34,7 @@ main {
     @include fontRegular(0.9rem);
 
     &:visited {
-      color: $colorBlack;
+      color: $colorGrey;
     }
   }
 
@@ -111,8 +111,8 @@ main {
   }
 
   a {
-    color: $colorGrey;
-
+    color: $colorBlack;
+    
     &:hover {
       color: $colorBlue;
     }
@@ -128,7 +128,7 @@ main {
   }
 
   a {
-    color: $colorGrey;
+    color: $colorBlack;
 
     &:hover {
       color: $colorOrange;
@@ -144,7 +144,7 @@ main {
   }
 
   a {
-    color: $colorGrey;
+    color: $colorBlack;
 
     &:hover {
       color: $colorRed;
@@ -160,7 +160,7 @@ main {
   }
 
   a {
-    color: $colorGrey;
+    color: $colorBlack;
 
     &:hover {
       color: $colorGreen;
