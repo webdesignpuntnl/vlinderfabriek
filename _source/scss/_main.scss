@@ -6,10 +6,11 @@ main {
   overflow: hidden;
   position: relative;
 
+
   h1 {
     @include fontBold(2.1rem);
     margin: 0 0 1rem 0;
-    padding: 0 1rem 0 0;
+    // padding: 0 1rem 0 0;
     word-break: break-word;
   }
 
@@ -18,11 +19,15 @@ main {
     color: $colorGrey;
   }
 
+  h3 {
+    @include fontBold(1rem);
+    color: $colorGrey;
+  }
+
   p {
     @include fontRegular(0.9rem);
     margin: 0 0 2rem 0;
     color: $colorGrey;
-    width: 70%;
   }
 
   a {
@@ -51,6 +56,34 @@ main {
   }
 }
 
+.blockSpan {
+  display: block;
+}
+
+  .getProject {
+  @include fontBold;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.8rem 0.8rem 0.5rem 0.8rem;
+  margin: 0 0 1.5rem 0;
+  color: $colorWhite !important;
+  background-color: $colorOrange;
+  border: 2px solid $colorBlack;
+  border-radius: 5px;
+  display: block;
+  max-width: 10rem;
+  text-align: center;
+
+  &:hover {
+    color: $colorBlack !important;
+  }
+
+  &--green {
+    background-color: $colorGreen;    // width: 70%;    float: left;
+
+  }
+}
+
 .main--blue {
   border-color: $colorBlue;
 
@@ -72,7 +105,7 @@ main {
 
   h1 {
     color: $colorOrange;
-    margin-top: 0.8rem
+    margin-top: 0.8rem;
   }
 
   a {
@@ -145,7 +178,7 @@ main {
 }
 
 .list {
-  // ul on the bleu section on behind the scenes
+  // ul on the blue section on behind the scenes
   list-style-type: none;
   @include fontRegular(1.1rem);
   color: $colorGrey;
@@ -220,6 +253,12 @@ main {
       box-shadow: 0 2px 5px $colorGrey;
       transition: all 0.5s;
     }
+  }
+}
+
+main {
+  .form__pargraph {
+    width: 100%;
   }
 }
 
@@ -429,6 +468,41 @@ main {
   margin-bottom: 0.5rem;
 }
 
+.table__school {
+  margin: 0.2rem 0 1.5rem 0.5rem;
+
+  td:first-child {
+    @include fontBold;
+    color: $colorGrey;
+    vertical-align: top;
+  }
+
+  td:last-child {
+    @include fontRegular(0.9rem);
+    color: $colorGrey;
+    padding: 0 0 0 1rem;
+  }
+}
+
+.ehbm__list {
+  @include fontRegular(0.9rem);
+  color: $colorGrey;
+  list-style-type: none;
+  margin: -1rem 0 0 0.3rem;
+
+  li::before {
+    content: '-';
+    margin: 0 0.3rem 0 0;
+  }
+}
+
+.courses__list {
+  @include fontRegular(0.9rem);
+  color: $colorGrey;
+  list-style-type: disc;
+  margin: 0 0 0 1rem;
+  width: 70%;
+}
 
 @mixin main--512 {
   main {
@@ -477,7 +551,7 @@ main {
   }
 
   .main__kinderboekenweek__p {
-    float: left;
+    // float: left;
     width: 60%;
   }
 
@@ -490,8 +564,26 @@ main {
     float: right;
     width: 30%;
     max-width: 200px;
-    margin: 2rem 1rem 1rem 0;
+    margin: 2rem 0 1rem 2rem;
     transform: rotate(15deg);
+  }
+
+  .table__school {
+    td:first-child {
+      font-size: 1.1rem;
+    }
+
+    td:last-child {
+      font-size: 1.1rem;
+    }
+  }
+
+  .ehbm__list {
+    font-size: 1.1rem;
+  }
+
+  .courses__list {
+    font-size: 1.1rem;
   }
 }
 
@@ -503,6 +595,11 @@ main {
     display: block;
     width: 98%;
     margin: 5rem 0.8rem 8rem 0.8rem;
+    
+    p {
+      width: 70%;
+    }
+
   }
 
   .main__kinderboekenweek {
@@ -524,6 +621,12 @@ main {
     right: -1rem;
     transform: rotate(25deg);
     position: absolute;
+  }
+
+  .getProject {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
 }
 

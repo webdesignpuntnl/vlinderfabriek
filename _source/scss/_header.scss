@@ -31,7 +31,8 @@
 
 nav {
     @include clearfix;
-    
+    // height: 0;
+
     .butterflys {
         float: left;
         list-style-type: none;
@@ -56,39 +57,39 @@ nav {
         }
         
         li:first-child a:hover { // green butterfly
-            color: $colorGreen;
+            // color: $colorGreen;
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
         }
         
         li:nth-child(2) a:hover { // red butterfly
-            color: $colorRed;
+            // color: $colorRed;
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
         }
 
         li:nth-child(3) a:hover { // orange butterfly
-            color: $colorOrange;
+            // color: $colorOrange;
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
         }
 
         li:nth-child(4) a:hover { // blue butterfly
-            color: $colorBlue;
+            // color: $colorBlue;
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
         }
 
         .butterflys__active--green {
-            color: $colorGreen;
+            // color: $colorGreen;
         }
 
         .butterflys__active--red{
-            color: $colorRed;
+            // color: $colorRed;
         }
 
         .butterflys__active--orange {
-            color: $colorOrange;
+            // color: $colorOrange;
         }
 
         .butterflys__active--blue {
-            color: $colorBlue;
+            // color: $colorBlue;
         }
         
     }
@@ -334,23 +335,23 @@ nav {
         list-style-type: none;
         border: 2px solid transparent;
         border-radius: 5px;
-        margin: 0.5rem 0 0 0;
-        text-align: left;
+        margin: 0.5rem auto 0 auto;
         height: auto;
         max-height: 500px;
         opacity: 1;
         transition: all 0.3s ease-in-out;
-
-       li {
-        margin: 0;
-
+        
+        li {
+            margin: 0;
+            text-align: center;
+            
             a {
                 font-size: 0.66rem;
                 padding: 0.7rem 0.5rem;
                 background-color: transparent;
                 border: none;  
                 color: $colorWhite;
-                text-align: left;
+                text-align: center;
 
                 &:hover {
                     // color: red;
@@ -661,14 +662,20 @@ nav {
             
             .buttons__second-level {
                 position: absolute;
-                left: 1rem;
+                left: -14rem;
                 margin: 1rem 0 0 0;
+                font-size: 0;
                 
                 li {
                     display: inline-block;
                     padding: 0;
                     margin: 0;
                     min-width: initial;
+                    border-right: 2px solid $colorWhite;
+
+                    &:last-child {
+                        border-right: transparent;
+                    }
                     
                     a {
                         font-size: 0.8rem;
