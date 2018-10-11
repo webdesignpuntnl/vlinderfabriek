@@ -1,0 +1,79 @@
+extends ../layout/layout
+ 
+
+block prepend header
+    - var page = "contact"
+     - var color = "blue"
+
+block prepend head
+    - var title = "contact" 
+
+
+block buttons
+    ul(class="buttons buttons--blue")
+        li
+            a(href="../index.html" title="nieuws") nieuws 
+        li
+            a(href="../pages/over-ons.html" title="over ons") over ons
+        li
+            a(href="../pages/wie-zijn-wij.html" title="wij zijn wij") wij zijn wij
+        li
+            a(href="../pages/contact.html" class="buttons__active--blue" title="contact") contact
+        li
+            a(href="../pages/achter-de-schermen.html" title="bestuur") bestuur
+        li
+            a(href="../pages/privacy.html" title="privacy") privacy
+
+
+block content
+    main(class="main main--blue")
+        h1 contact
+        article(class="contact")
+            h2(class="contact__h2") Bent u nieuwsgierig? Heeft u vragen of wilt u meer informatie?
+            p Neem vrijblijvend contact met ons op via onderstaand formulier of 
+             a(href="tel:0345-508090") bel: 0345-508090
+            ul(class="contact__adresInfo contact__adresInfo__artistik")
+                li
+                    h3(class="contact__adresInfo__h3") Sylke van de Calseijde
+                li artistiek leider
+                li contactpersoon Culemborg
+                li
+                    a(href="mailto:sylke@vlinderfabriek.nl") sylke@vlinderfabriek.nl
+                li
+                    a(href="tel:06-18681468") 06&ndash;18681468
+            ul(class="contact__adresInfo contact__adresInfo__bussiness")
+                li
+                    h3(class="contact__adresInfo__h3") Claudette Efrosina
+                li zakelijk leider
+                li contactpersoon Breda
+                li
+                    a(href="mailto:claudette@vlinderfabriek.nl") claudette@vlinderfabriek.nl
+                li
+                    a(href="tel:06-28319135") 06&ndash;28319135
+            ul(class="contact__adresInfo")
+                li Stichting de Vlinderfabriek
+                li KvK-nummer&colon; 54730597
+                li IBAN nummer&colon; NL70RABO0122381270
+                li 
+                    span(class="fontSizeNone") lege rij
+                li Onze voorwaarden &amp; privacy beleid 
+                 a(href="privacy.html") privacy &amp; voorwaarden
+        form(id="contactForm" class="form form__contactForm" method="post" action="../php/formmailContact.php" enctype="multipart/form-data" autocomplete="on")
+            input(type="hidden" name="env_report" value="")
+            input(type="hidden" name="recipients" value="")
+            input(type="hidden" name="good_url" value="../pages/contact-verzonden.html")
+            input(type="hidden" name="bad_url" value="../pages/contact-niet-verzonden.html")
+            input(type="hidden" name="subject" value="contactformulier")
+            //- input(type="hidden" name="Locatie" value="contactformulier")
+            fieldset
+                label(for="nameField") naam&#42;
+                    input(name="name" type="text" id="nameField" required pattern="^[a-zA-Z ]*$" placeholder="bijv Joep Jansen" title="gebruik alleen letters en geen cijfers")
+                label(for="subjectField") onderwerp
+                    input(name="onderwerp" type="text"  id="subjectField" placeholder="bijv informatie over de lessen" title="vul hier een onderwerp in")
+                label(for="emailField") email&#42;
+                    input(name="email" type="email"  id="emailField" required placeholder="bijv joep@jansen.nl" pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$" title="vul een geldig emailadres in")
+                label(for="remarksField") stel uw vraag&#42; 
+                 textarea(name="opmerkingen"  id="remarksField" rows="8" required placeholder="uw vraag of opmerking")
+                p 
+                    span &#42; invullen verplicht
+                input(name="insturen" type="submit" id="formSubmitButton" value="verzenden")           

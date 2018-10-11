@@ -1,0 +1,24 @@
+extends ../layout/layout
+include ../mixins/green-buttons
+ 
+
+block prepend header
+    - var color = "green"
+
+block prepend head
+    - var title = "bijscholing" 
+
+block buttons 
+    +greenButtons("bijscholing")
+    
+block content
+    main(class="main main--green")
+        h1 Bijscholing
+        article
+            p   De Vlinderfabriek ontwikkelt workshops en trainingen op maat voor leerkrachten,
+                | schoolteams en professionals die met kinderen en jongeren werken.
+                | Cultuureducatie binnen het onderwijs moet vaak uitgevoerd worden door de
+                | leerkrachten zelf. Hoe doe je dat? Op welke manier integreer je kunstvakken binnen de
+                | dagelijkse lessen?
+                | Deze vragen worden beantwoord door de Vlinderfabriek in de workshops:
+                | ‘Kunst in de klas’ en ‘Help mijn klas moet een presentatie geven!’.

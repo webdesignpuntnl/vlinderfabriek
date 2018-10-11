@@ -1,0 +1,68 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+    - var workshop = "vroeger"
+    
+block prepend head
+    - var title = "vroeger" 
+
+block buttons 
+    +orangeButtons("basisonderwijs")
+    
+block content
+    main(class="main main--orange")
+        h1 
+            strong Vroeger&comma; 
+            | een canon vol inspiratie
+        a(href="contact.html" class="getProject") aanvragen
+        article
+            h2 voor groep 6&comma; 7 &amp; 8
+            p   In ‘Vroeger, een canon vol inspiratie’ zijn spannende en kleurrijke verhalen uit de Canon van
+                | Nederland startpunt om theater te maken.
+                | De projecten bestaan altijd uit een creatieve inleiding, nadenken en praten over een stukje
+                | geschiedenis, een vertaling naar het heden, een korte basistraining theater en natuurlijk het
+                | maken van een scene.
+            h2 Voorbeeldproject&colon; de workshop In de Lijn van de Stijl
+            p   Een theaterproject waarbij het laatste werk van Piet Mondriaan; Victory Boogie Woogie
+                | uitgangspunt en inspiratiebron is voor het maken van een persoonlijk, ritmisch en muzikaal
+                | lijnen spel met en zonder woorden op de spelvloer.
+            h2 Meerdere mogelijkheden
+            p   Het venster, zoals in het voorbeeld ‘de Stijl’ is in overleg inwisselbaar voor 1 van de andere
+                | vensters, denk aan ‘Anne Frank’, ‘Annie M.G. Schmidt’ of ‘de watersnoodramp’.
+                | Het project ‘Vroeger, een canon van...’ is als workshop & als korte lessenreeks beschikbaar.
+            h2 Specificaties
+            table(class="table__school")
+                tr
+                    td Voor&colon;
+                    td groep 6&comma; 7 &amp; 8
+                tr
+                    td Duur&colon;
+                    td 
+                        strong workshop 
+                        | 60 minuten
+                        span.blockSpan
+                            strong korte lessenreeks
+                            |  3 x 60 min
+                tr
+                    td Kosten&colon;
+                    td 
+                        strong workshop 
+                        | &euro; 135&comma;00 
+                        span.blockSpan
+                            strong korte lessenreeks
+                            |  &euro; 250&comma;00
+                tr
+                    td Waar&colon;
+                    td speelzaal of eigen lokaal
+                tr
+                    td Docent&colon;
+                    td 2 theaterdocenten van de Vlinderfabriek
+                tr
+                    td Kerndoel&colon;
+                    td 54&comma; 55 &amp; 56
+                tr
+                    td Kernwoorden&colon;
+                    td Erfgoed&comma; creativiteit&comma; ritme&comma; theater&comma; literatuur &amp; beeldende kunst

@@ -1,0 +1,20 @@
+mixin redButtons(active)
+    ul(class="buttons buttons--red")
+        li
+            a(href="culemborg.html" class=(active == "culemborg" ? "buttons__active--red" : '') title="culemborg") culemborg
+        li
+            a(href="breda.html" class=(active == "breda" ? "buttons__active--red" : '') title="breda") breda
+            if active ===  "breda"
+                ul(class="buttons__second-level buttons__second-level--red")
+                    li
+                        a(href="inschrijven-breda.html" class=(workshop == "inschrijvenBreda" ? "buttons__second-level__active" : '') title="inschrijven") inschrijven
+                    li
+                        a(href="inschrijven-verlengen-breda.html" class=(workshop == "verlengenBreda" ? "buttons__second-level__active" : '') title="verlengen") verlengen
+                    li
+                        a(href="locatie-breda.html" class=(workshop == "locatieBreda" ? "buttons__second-level__active" : '') title="locatie Breda") locatie Breda
+                    li
+                        a(href="locatie-prinsenbeek.html" class=(workshop == "locatiePrinsenbeek" ? "buttons__second-level__active" : '') title="locatie prinsenbeek") locatie Prinsenbeek
+                    li
+                        a(href="lesrooster-breda.html" class=(workshop == "roosterBreda" ? "buttons__second-level__active" : '') title="lesrooster Breda") lesrooster
+        li
+            a(href="jeugdcultuurfonds.html" class=(active == "jeugdcultuurfonds" ? "buttons__active--red" : '') title="jeugdcultuurfonds") jeugdcultuurfonds

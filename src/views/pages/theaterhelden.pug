@@ -1,0 +1,51 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+    - var workshop = "helden"
+
+block prepend head
+    - var title = "theaterhelden" 
+
+block buttons 
+    +orangeButtons("basisonderwijs")
+    
+block content
+    main(class="main main--orange")
+        h1 Theaterhelden
+        a(href="contact.html" class="getProject") aanvragen
+        article
+            h2 voor groep 6&comma; 7 &amp; 8
+            p   Theaterhelden is een workshop toneelspelen over literatuurhelden en dapper zijn - of
+                | willen worden. De leerlingen maken kennis met grote en kleine helden uit de
+                | jeugdliteratuur, maar ontdekken ook de held in zichzelf.
+                | De workshop begint met een kort verhaal, daarna gaan de leerlingen zelf aan de slag
+                | als verhalen- verzinners en acteurs!
+                | Spelplezier en fantasie staan voorop bij het maken van de scènes.
+                | De workshop eindigt met een kort presentatie moment waarbij de leerlingen een
+                | nieuw verhaal uit oude tijden of een oud verhaal in een nieuw jasje spelen.
+            h2 Specificaties
+            table(class="table__school")
+                tr
+                    td Voor&colon;
+                    td groep 6&comma; 7 &amp; 8
+                tr
+                    td Duur&colon;
+                    td 60 minuten
+                tr
+                    td Kosten&colon;
+                    td &euro; 135&comma;00 
+                tr
+                    td Waar&colon;
+                    td speelzaal of eigen lokaal
+                tr
+                    td Docent&colon;
+                    td 2 theaterdocenten van de Vlinderfabriek
+                tr
+                    td Kerndoel&colon;
+                    td 54 &amp; 55 
+                tr
+                    td Kernwoorden&colon;
+                    td lef&comma; weerbaarheid&comma; jeugdliteratuur&comma; fantasie&comma; toneel &amp; plezier

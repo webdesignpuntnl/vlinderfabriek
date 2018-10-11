@@ -1,0 +1,41 @@
+extends ../layout/layout
+include ../mixins/green-buttons
+ 
+
+block prepend header
+    - var color = "green"
+
+block prepend head
+    - var title = "mijn klas moet presenteren" 
+    - var workshop = "kunstKlas"
+
+block buttons 
+    +greenButtons("bijscholing")
+    
+block content
+    main(class="main main--green")
+        h1 Help mijn klas moet presenteren!
+        a(href="contact.html" class="getProject getProject--green") aanvragen
+        p   Een presentatie tijdens het open podium op school, de afsluiting van een groot project of de
+            | kerstviering; Hoe maak je als leerkracht met een hele klas een presentatie die (ook nog)
+            | interessant is voor het publiek?
+            | Tijdens deze interactieve workshop krijgen leerkrachten verschillende handvatten aangereikt
+            | die horen bij het maken van een goede presentatie. Denk aan stemgebruik, fysieke
+            | bewustwording, inspiratiebronnen en theatrale vormen voor grote groepen.
+            | Maar ook praktische en organisatorische zaken als planning, communicatie met het
+            | publiek en reflectie komen aan de orde.
+            | Applaus verzekerd!
+        h2 Specificaties
+        table(class="table__school")
+            tr
+                td Voor&colon;
+                td leerkrachten PO
+            tr
+                td Duur&colon;
+                td 3 uur
+            tr
+                td Kosten&colon;
+                td &euro; 350&comma;00
+            tr
+                td Docent&colon;
+                td 1 theaterdocent van de Vlinderfabriek

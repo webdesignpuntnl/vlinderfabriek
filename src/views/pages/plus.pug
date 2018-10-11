@@ -1,0 +1,28 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+
+block prepend head
+    - var title = "plus" 
+
+block buttons 
+    +orangeButtons("plus")
+
+block content
+    main(class="main main--orange")
+        h1 PLUS projecten voor hoogbegaafde kids
+        article
+            p
+                | Steeds meer scholen bieden naast hun reguliere onderwijssysteem ook Plus - of Eureka klassen of Leonardo onderwijs aan. 
+                | Hoogbegaafde kinderen zijn intellectueel hun leeftijdsgenoten ver vooruit en blijken vaak onbegrensd creatief. 
+                | De Vlinderfabriek biedt en ontwikkelt projecten en lessen die aansluiten bij de leerroute van hoogbegaafde leerlingen. Het
+                | is een ontdekkingstocht die gaat over ontplooiing van creativiteit, experimenteren, ervaren en beleven. 
+                | Er is ruimte voor reflectie bij de geleverde prestatie tijdens de lessen en bij de afsluiting van een project.        
+            p
+                | De leerlingen leren, naast het uitvoeren van een creatief en artistiek proces om te gaan met hun eigen hoogbegaafdheid. 
+                | De vraag wat is goed of fout, is niet aan de orde. 
+                | Op de spelvloer draait het om de actieve kunstbeleving en de ervaringen van de persoonlijke groei. 
+            

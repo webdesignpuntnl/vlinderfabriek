@@ -1,0 +1,100 @@
+extends ../layout/layout
+include ../mixins/red-buttons
+ 
+
+block prepend header
+    - var color = "red"
+
+block prepend head
+    - var title = "lesrooster Breda"
+    - var workshop = "roosterBreda" 
+
+block buttons 
+    +redButtons("breda")
+    
+block content
+    main(class="main main--red")
+        h1 Lesrooster 2018 &#47; 2019 Locatie Breda
+        article(class="schedule")
+            table(class="table table--lesrooster")
+                thead
+                    tr
+                        th dag
+                        th wie
+                        th wat
+                        th waar
+                        th tijd
+                        th lessen
+                        th start
+                        th prijs
+                tbody
+                    tr
+                        td maandag
+                        td groep 1&comma; 2 &amp; 3
+                        td Vlinderklas
+                        td Montessorischool+ Breda
+                        td 15.15 - 16.00 uur
+                        td 12
+                        td aug
+                        td &euro; 70&comma;00
+                    tr
+                        td maandag
+                        td groep 6&comma; 7 &amp; 8
+                        td Fabriek
+                        td Montessorischool+ Breda
+                        td 16.15 - 17.45 uur
+                        td 12
+                        td sept
+                        td &euro; 110&comma;00
+                    tr
+                        td dinsdag
+                        td groep 1&comma; 2 &amp; 3
+                        td Vlinderklas
+                        td Montessorischool+ Prinsenbeek
+                        td 15.00 - 15.45 uur
+                        td 12
+                        td aug
+                        td &euro; 70,00
+                    tr
+                        td dinsdag
+                        td groep 3&comma; 4 &amp; 5
+                        td Spelersklas
+                        td Montessorischool+ Prinsenbeek
+                        td 15.45 - 16.45 uur
+                        td 12
+                        td aug
+                        td &euro; 85,00 
+                    tr
+                        td dinsdag
+                        td groep 6&comma; 7 &amp; 8
+                        td Fabriek
+                        td Montessorischool+ Prinsenbeek
+                        td 16.45 - 18.15 uur
+                        td 12
+                        td sept
+                        td &euro; 110,00 
+                    tr
+                        td donderdag 
+                        td groep 3&comma; 4 &amp; 5
+                        td Spelersklas 1
+                        td Montessorischool+ Breda
+                        td 15.15 - 16.15 uur
+                        td 12
+                        td aug
+                        td &euro; 85,00 
+                    tr
+                        td donderdag 
+                        td groep 4&comma; 5 &amp; 6
+                        td Spelersklas 2
+                        td Montessorischool+ Breda
+                        td 16.15 - 17.15 uur
+                        td 12
+                        td aug
+                        td &euro; 85,00 
+            h2(class="schedule__h2") Goed om te weten
+            p In week 35 &amp; 36 zijn er gratis proeflessen op alle locaties.
+              | Je hoeft niet op de leslocatie op school te zitten om mee te mogen doen!	
+            p De Vlinderfabriek is aangesloten bij het 
+              a(href="https://www.jeugdcultuurfonds.nl" title="jeugdcultuurfonds" target="_blank") Jeugdcultuurfonds 
+              | mocht u zelf geen financiële mogelijkheden hebben betalen zij het cursus bedrag voor uw kind.
+            

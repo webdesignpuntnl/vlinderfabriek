@@ -1,0 +1,16 @@
+mixin greenButtons(active)
+    ul(class="buttons buttons--green")
+        li
+            a(href="begeleiding.html" class=(active == "begeleiding" ? "buttons__active--green" : '') title="begeleiding") begeleiding
+            if active ===  "begeleiding"
+                ul(class="buttons__second-level buttons__second-level--green")
+                    li
+                        a(href="ehbm-verdieping.html" class=(workshop == "ehbmVerdieping" ? "buttons__second-level__active" : '') title="ehbm verdieping") e.h.b.m.
+        li
+            a(href="bijscholing.html" class=(active == "bijscholing" ? "buttons__active--green" : '') title="bijscholing") bijscholing
+            if active ===  "bijscholing"
+                ul(class="buttons__second-level buttons__second-level--green")
+                    li
+                        a(href="kunst-in-de-klas.html" class=(workshop == "kunstKlas" ? "buttons__second-level__active" : '') title="kunst in de klas") kunst in de klas
+                    li
+                        a(href="mijn-klas-moet-presenteren.html" class=(workshop == "klasPresenteren" ? "buttons__second-level__active" : '') title="mijn klas moet presenteren") mijn klas moet presenteren

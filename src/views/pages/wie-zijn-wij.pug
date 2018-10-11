@@ -1,0 +1,53 @@
+extends ../layout/layout
+ 
+
+block prepend header
+    - var page = "wieZijnWij"
+     - var color = "blue"
+
+block prepend head
+    - var title = "wie zijn wij" 
+
+block buttons
+    ul(class="buttons buttons--blue")
+        li
+            a(href="../index.html" title="nieuws") nieuws 
+        li
+            a(href="../pages/over-ons.html" title="over ons") over ons
+        li
+            a(href="../pages/wie-zijn-wij.html" class="buttons__active--blue" title="wij zijn wij") wij zijn wij
+        li
+            a(href="../pages/contact.html" title="contact") contact
+        li
+            a(href="../pages/achter-de-schermen.html" title="bestuur") bestuur
+        li
+            a(href="../pages/privacy.html" title="privacy") privacy
+
+
+
+block content
+    main(class="main main--blue")
+        h1 Wie zijn wij
+        article
+            p   
+                span.blockSpan
+                    | Het begon met een idee,
+                span.blockSpan
+                    | en nog één en nog één en nog één……
+                span.blockSpan
+                    | tot er een berg van goede ideeën voor ons lag.
+                span.blockSpan
+                    | We hadden een ruimte nodig,
+                span.blockSpan
+                    | waar onze ideeën zich konden ontpoppen, 
+                span.blockSpan
+                    | en groeien en groeien en groeien…… 
+                span.blockSpan
+                    | totdat het projecten waren en zelfstandig konden fladderen.
+            p
+                | Toen zagen we de Vlinderfabriek, we waren verkocht, het was liefde op het eerste gezicht.
+                | Een plek waar grenzen verlegd kunnen worden en dromen gevoed.
+            p
+                | Sylke van de Calseijde zal vanaf januari 2012 als artistiek leider de Vlinderfabriek een eigen identiteit geven. 
+                | Sylke heeft Claudette Efrosina gevraagd de zakelijke leiding op zich te nemen en samen de motor van de Vlinderfabriek te vormen. Sylke en Claudette kennen elkaar van de theateropleiding in Arnhem. 
+                | Beiden hebben de afgelopen 15 jaar hun sporen verdiend binnen het jeugdtheater middels lessen, de ontwikkeling van kunsteducatieve projecten en de uitvoer hiervan.

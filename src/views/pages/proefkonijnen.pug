@@ -1,0 +1,57 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+    - var workshop = "proefkonijnen"
+
+block prepend head
+    - var title = "proefkonijnen" 
+
+block buttons 
+    +orangeButtons("basisonderwijs")
+    
+block content
+    main(class="main main--orange")
+        h1 Proefkonijnen
+        a(href="contact.html" class="getProject") aanvragen
+        article
+            h2 voor groep 1 &amp; 2
+            p
+                i Professor Ypsilon is uitvinder van de....
+                    span(class="blockSpan")
+                        | Ja, van wat eigenlijk? De uitvinding is in ieder geval bijna af.
+                    span(class="blockSpan")
+                        | En hoeft eigenlijk alleen nog maar getest worden door ..... de proefkonijnen
+            p   ‘Proefkonijnen’ is een actieve theaterworkshop over uitvinden, ontdekken en fantaseren.
+                | Na een korte introductie gespeeld door de acteurs van de Vlinderfabriek mogen de kleuters in
+                | het UitvindLab van professor Ypsilon zijn nieuwste uitvinding testen;
+                | de I.V.M.N.M. - de Ik Verveel Me Nooit Machine!
+                | Als je daar als Proefkonijn doorheen gaat krijg je extra veel fantasie en hoef je je nooit meer te
+                | vervelen. Uiteraard wordt ‘het resultaat’ getest met fantasievolle ontdekkingsreis naar zelf
+                | bedachte net alsof oorden op de spelvloer.
+            h2 Specificaties
+            table(class="table__school")
+                tr
+                    td Voor&colon;
+                    td groep 1 &amp; 2
+                tr
+                    td Duur&colon;
+                    td 45 minuten per groep &#40;
+                        i minimale afname 2 groepen op 1 dag &#41;
+                tr
+                    td Kosten&colon;
+                    td &euro; 90&comma;00 per klas
+                tr
+                    td Waar&colon;
+                    td speelzaal of eigen lokaal
+                tr
+                    td Docent&colon;
+                    td 2 theaterdocenten van de Vlinderfabriek
+                tr
+                    td Kerndoel&colon;
+                    td 54 &amp; 55
+                tr
+                    td Kernwoorden&colon;
+                    td receptief &amp; actief ontdekken, taal, fantasie, doen alsof &amp; spelplezier

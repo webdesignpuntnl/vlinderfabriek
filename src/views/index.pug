@@ -1,0 +1,59 @@
+extends layout/layout-index
+
+block prepend header
+    //- - var test = "index"
+
+block prepend head
+    - var title = "nieuws"
+
+block content
+    main(class="main main__vlindernieuws main--blue")
+        h1 Vlindernieuws
+        article
+            h2 fijne zomer
+            p   En dan ineens is er alweer een seizoen voorbij…. 
+                | Een prachtig jaar vol lessen, projecten, workshops, presentaties, voorstellingen en studiedagen. 
+                | Wij kijken er met heel veel plezier op terug!
+            div(class="sidepicture sidepicture--blue")
+                picture
+                    source(media="(max-width: 512px)" srcset="images/kids-hads-250.jpg")
+                    source(media="(max-width: 768px)" srcset="images/kids-hads-320.jpg")
+                    source(media="(min-width: 768px)" srcset="images/kids-hads-320.jpg")
+                    img(src="images/kids-hads-320.jpg" alt="2 kinderen in de les met badmutsen" title="2 kinderen in de les met badmutsen")
+                div(class="sidepicture__overlay sidepicture__overlay--blue")
+        article
+            h2 Volgend seizoen
+            p
+                | Na de zomer zijn we er weer met onze wekelijkse theaterlessen! 
+                | Gloednieuwe lessen vol toneelspelen, verhalen verzinnen en scènes maken voor iedereen van 4 ‐ 104!
+            p
+                | In september zijn er gratis 
+                span(class="textToUppercase") proeflessen
+                |  voor alle kinderen &amp; jongeren die nieuwsgierig zijn 
+                | en vrijblijvend een keertje mee willen doen. 
+                | Op de bekende locaties in 
+                strong Breda
+                | en 
+                strong Prinsenbeek!
+                span(class="blockSpan")
+                    a(href="pages/lesaanbod.html") Meer info over de wekelijkse lessen!
+        article
+            h2 goed om te weten
+            p
+                | In Culemborg zijn er komend seizoen helaas geen NA‐schoolse lessen. 
+                | Onze theaterdocent en locatie coördinator Sylke heeft een studie sabbatical. 
+                | Zodra we weer starten en nieuws hebben over nieuwe projecten communiceren we dit via de site, mail en Facebook.  
+        article(class="main main__article--extraInfo")
+            h2 extra informatie
+            p 
+                | Houdt voor meer info de site &amp; 
+                a(href="https://www.facebook.com/pages/De-Vlinderfabriek/365229100205779" target="_blank") Facebookpagina
+                |  in de gaten!
+            p 
+                | Sinds januari 2014 zijn wij aangesloten bij het 
+                a(href="pages/jeugdcultuurfonds.html" target="_blank") Jeugdcultuurfonds
+            p 
+                | Meer informatie over privacy en voorwaarden.
+                a(href="pages/privacy.html" target="_blank") privacy
+    
+            

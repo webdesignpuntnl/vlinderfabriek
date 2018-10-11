@@ -1,0 +1,23 @@
+extends ../layout/layout
+include ../mixins/red-buttons
+ 
+
+block prepend header
+    - var color = "red"
+
+block prepend head
+    - var title = "culemborg" 
+
+block buttons 
+    +redButtons("culemborg")
+    
+block content
+    main(class="main main--red")
+        h1 Lesaanbod ‐ Culemborg
+        article
+            p   In Culemborg zijn er komend seizoen helaas geen NA‐schoolse lessen. 
+                | Onze theaterdocent en locatie coördinator Sylke heeft een studie sabbatical. 
+                | Zodra we weer starten en nieuws hebben over nieuwe projecten communiceren we dit via de site, mail en Facebook. 
+                | Voor vragen kunt contact met ons op nemen via 
+                a(href="mailto:info@vlinderfabriek.nl") info@vlinderfabriek.nl
+            

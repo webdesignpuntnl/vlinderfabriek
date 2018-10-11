@@ -1,0 +1,54 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+    - var workshop = "sprookjes"
+
+block prepend head
+    - var title = "sprookjes op zijn kop" 
+
+block buttons 
+    +orangeButtons("basisonderwijs")
+    
+block content
+    main(class="main main--orange")
+        h1 Sprookjes op z'n kop
+        a(href="contact.html" class="getProject") aanvragen
+        article
+            h2 voor groep 3 &amp; 4
+            p
+                span.blockSpan   
+                    i Er was eens.... Ergens hier ver vandaan of heel dichtbij.
+                | En toen opeens....
+                | De workshop begint met een kort verhaal, gespeeld door 2 acteurs van de Vlinderfabriek.
+                | Daarna gaan de leerlingen zelf aan de slag als verhalen-verzinners, vertellers en spelers.
+                | Uitgangspunt zijn bekende sprookjes die de leerlingen op eigen wijze mogen veranderen.
+                | De workshop wordt afgesloten met een ‘op z’n kop moment’; de leerlingen zullen samen met
+                | de acteurs razendsnel een sprookje-op- z’n- kop spelen.
+            h2 Specificaties
+            table(class="table__school")
+                tr
+                    td Voor&colon;
+                    td groep 3 &amp; 4
+                tr
+                    td Duur&colon;
+                    td 60 minuten
+                tr
+                    td Kosten&colon;
+                    td &euro; 135&comma;00 
+                        i &#40;inclusief lesbrief&#41;
+                tr
+                    td Waar&colon;
+                    td speelzaal of gymlokaal
+                tr
+                    td Docent&colon;
+                    td 2 theaterdocenten van de Vlinderfabriek
+                tr
+                    td Kerndoel&colon;
+                    td 54 &amp; 55 
+                        i &#40;dit project is in overleg te koppelen aan de ankerverhalen&#41;
+                tr
+                    td Kernwoorden&colon;
+                    td fantaseren, taal, verhalen, improviseren, plezier &amp; samenwerken

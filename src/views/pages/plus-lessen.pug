@@ -1,0 +1,58 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+    - var workshop = "plusLessen"
+    
+block prepend head
+    - var title = "plus lessen" 
+
+block buttons 
+    +orangeButtons("plus")
+    
+block content
+    main(class="main main--orange")
+        h1 Plus Lessenreeks
+        a(href="contact.html" class="getProject") aanvragen
+        article
+            h2 voor bovenbouw en Plusklassen
+            p  
+                span.blockSpan
+                    i Logica brengt je van a naar b, verbeelding brengt je overal - A. Einstein
+                | In deze lessenreeks worden de leerlingen uitgedaagd een ontdekkingstocht aan te gaan die
+                | gaat over ontplooiing van creativiteit, experimenteren, ervaren en beleven.
+                | Op de spelvloer ontwikkelen de leerlingen hun vaardigheden in het uitvoeren van een creatief-
+                | en artistiek proces. Daarnaast leren zij spelenderwijs deze vaardigheden te vertalen voor
+                | ‘dagelijks gebruik’. De leerlingen leren stil te staan bij zichzelf, cultuur en de wereld om zich heen
+                | en zich hierover uit te drukken.
+            p   In overleg met de leerkracht wordt het overkoepelende thema bepaald.
+                | De lesstof/ thematiek van IPC kan bijvoorbeeld geïntegreerd worden binnen deze
+                | theaterlessen.
+                | Aan het einde van de lessenreeks wordt er afgesloten met een kleine presentatie. 
+        
+            h2 Specificaties
+            table(class="table__school")
+                tr
+                    td Voor&colon;
+                    td vanaf groep 6 en Plusklassen
+                tr
+                    td Duur&colon;
+                    td vanaf 3 x 60 minuten
+                tr
+                    td Kosten&colon;
+                    td &euro; 405&comma;00
+                tr
+                    td Waar&colon;
+                    td speelzaal
+                tr
+                    td Docent&colon;
+                    td 2 theaterdocenten van de Vlinderfabriek
+                tr
+                    td Kerndoel&colon;
+                    td 54 &amp; 55
+                tr
+                    td Kernwoorden&colon;
+                    td toneel&comma; beweging&comma; expressie&comma; samenwerken&comma; fantasie&comma; weerbaarheid&comma;
+                       | reflecteren&comma; creativiteit&comma; spelen voor publiek &amp; plezier

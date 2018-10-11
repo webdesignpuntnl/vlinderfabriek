@@ -1,0 +1,56 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+    - var workshop = "icarus"
+    
+block prepend head
+    - var title = "icarus" 
+
+block buttons 
+    +orangeButtons("plus")
+    
+block content
+    main(class="main main--orange")
+        h1 Icarus
+        a(href="contact.html" class="getProject") aanvragen
+        article
+            h2 voor bovenbouw en Plusklas - 
+                i Een voorstelling in 1 dag
+            p  
+                i 
+                    span.blockSpan Alles verandert, zei Daidalus, alles....
+                    span.blockSpan Zo ging het ook met Icarus
+                    span.blockSpan Ooit was hij een jongen, heel even werd hij een vogel
+            p   In de theaterworkshop Icarus is de toneeltekst van dit mythische verhaal het uitgangspunt om
+                | samen verhalen te vertellen en te spelen.
+                | Naast het werken aan de basisvaardigheden van theater, ontdekken de leerlingen hoe
+                | personages vormgegeven kunnen worden vanuit stem en beweging en leren ze een toneeltekst
+                | te spelen voor het publiek. De dag wordt afgesloten met een korte voorstelling voor publiek.
+                | Icarus wilde naar de zon vliegen, wat zou jij doen als je kon vliegen?
+            h2 Specificaties
+            table(class="table__school")
+                tr
+                    td Voor&colon;
+                    td bovenbouw en Plusklas
+                tr
+                    td Duur&colon;
+                    td 4&comma;5 uur 
+                        i &#40;inclusief voorstelling&#41;
+                tr
+                    td Kosten&colon;
+                    td &euro; 495&comma;00
+                tr
+                    td Waar&colon;
+                    td speelzaal of eigen lokaal
+                tr
+                    td Docent&colon;
+                    td 2 theaterdocenten van de Vlinderfabriek
+                tr
+                    td Kerndoel&colon;
+                    td 54 &amp; 55
+                tr
+                    td Kernwoorden&colon;
+                    td verhalen&comma; fantasie&comma; plezier&comma; ontwikkelen van talent&comma; expressie &amp; competentie

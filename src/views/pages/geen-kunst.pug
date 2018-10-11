@@ -1,0 +1,53 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+    - var workshop = "geenKunst"
+    
+block prepend head
+    - var title = "geen kunst aan" 
+
+block buttons 
+    +orangeButtons("basisonderwijs")
+    
+block content
+    main(class="main main--orange")
+        h1 Geen kunst aan
+        a(href="contact.html" class="getProject") aanvragen
+        article
+            h2 voor groep 3&comma; 4 &amp; 5
+            p    ‘Geen kunst aan’ gaat over filosoferen, fantaseren en fabriceren vanuit beeldende kunst.
+                | Achter ieder kunstwerk zit een verhaal. Wat zie jij? Wat denk jij?
+                | Je hoeft geen verstand van kunst te hebben om er iets over te vertellen of te verzinnen.
+                | De volgende stap is dat de kijkers aan de kant, makers op de spelvloer worden.
+                | Het besproken kunstwerk is de inspiratiebron. De zelfgemaakte scene geeft antwoord op de
+                | vraag ‘Wat is hier gebeurd?’.
+                | Het resultaat wordt aan elkaar getoond en nabesproken.
+                | Bewust kijken, reflecteren, basisvaardigheden toneelspelen, creatief denken, samenwerken
+                | en plezier staan centraal in deze workshop.
+            h2 Specificaties
+            table(class="table__school")
+                tr
+                    td Voor&colon;
+                    td groep 3&comma; 4 &amp; 5 
+                        i &#40;dit project is ook geschikt voor groep 6&#41;
+                tr
+                    td Duur&colon;
+                    td 60 minuten
+                tr
+                    td Kosten&colon;
+                    td &euro; 135&comma;00 
+                tr
+                    td Waar&colon;
+                    td speelzaal of eigen lokaal
+                tr
+                    td Docent&colon;
+                    td 2 theaterdocenten van de Vlinderfabriek
+                tr
+                    td Kerndoel&colon;
+                    td 54&comma; 55 &amp; 56
+                tr
+                    td Kernwoorden&colon;
+                    td plezier&comma; verbeelding&comma; toneelspelen&comma; beeldende kunst &amp; samenwerken

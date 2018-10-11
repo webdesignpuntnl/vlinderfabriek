@@ -1,0 +1,25 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+
+block prepend head
+    - var title = "op school" 
+
+block buttons 
+    +orangeButtons
+
+block content
+    main(class="main main--orange")
+        h1 Op School
+        article
+            p 
+                | Iedereen die in aanraking komt met kunst en cultuur krijgt de mogelijkheid om een ontdekkingsreis aan te gaan in hoofd en hart.
+                | De Vlinderfabriek vindt het belangrijk dat het bij kunsteducatie niet alleen bij entertainen en kijken blijft. 
+                | We dagen iedereen uit voor de volgende stap: 
+                | het zelf ervaren en beleven van een artistiek proces.
+                | De Vlinderfabriek ontwikkelt duurzame educatieve workshops en lessen voor het basisonderwijs, schoolbreed. 
+                | In haar werkwijze probeert de Vlinderfabriek aan te sluiten op het cultuurplan, de visie van de school en aandachtspunten van een groep.
+            p Onder het kopje PLUS vindt u workshops en lessenreeksen die we hebben ontwikkeld voor Plus en Eureka klassen en het Leonardo onderwijs.

@@ -1,0 +1,745 @@
+.header__logo {
+        width: 11%;
+        margin: 1.5rem 0 0 0.8rem;
+        animation-name: logo;
+        animation-duration: 1s;
+        animation-delay: 500ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: backwards;
+    }
+
+@keyframes logo {
+    from {
+        width: 30%;
+    }
+    to {
+        width: 11%;
+    }
+}
+
+.header__wordlogo {
+    float: right;
+    width: 45%;
+    margin: 1.5rem 0.8rem 0 0;
+    
+}
+
+.cookieMessage {
+	@include fontBold(0.9rem);
+	text-align: center;
+    background-color: $colorWhite;
+    padding: 0.5rem 0;
+    margin: 0 0 0.2rem 0;
+	width: 100%;
+}
+
+.cookieMessage__message {
+    margin: 0 0 1rem 0;
+}
+
+.cookieMessage__button {
+    @include fontBold(0.8rem);
+    text-transform: uppercase;
+    margin: 0 0.5rem;
+}
+
+nav {
+    @include clearfix;
+    // height: 0;
+
+    .butterflys {
+        float: left;
+        list-style-type: none;
+        margin: 2.5rem 0 0 0.8rem;
+        
+        img {
+            width: 40px;
+            
+        &:hover {
+            animation-name: butterfly;
+            animation-duration: 500ms;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            }
+        }
+
+
+        a {
+            @include fontBold(0.75rem);
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $colorWhite;
+
+            
+            span {
+                display: block;
+                margin: 0 0 2rem 0;
+            }
+            
+        }
+
+        @keyframes butterfly {
+            from {
+                transform: rotate(initial) scale(initial);
+            }
+            to {
+                transform: rotate(55deg) scale(1.2);
+            }
+        }
+        
+        li:first-child a:hover { // green butterfly
+            // color: $colorGreen;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
+        }
+        
+        li:nth-child(2) a:hover { // red butterfly
+            // color: $colorRed;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
+        }
+
+        li:nth-child(3) a:hover { // orange butterfly
+            // color: $colorOrange;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
+        }
+
+        li:nth-child(4) a:hover { // blue butterfly
+            // color: $colorBlue;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
+        }
+
+        .butterflys__active--green {
+            // color: $colorGreen;
+            img:hover {
+                animation: initial;
+            }
+        }
+
+        .butterflys__active--red{
+            // color: $colorRed;
+            img:hover {
+                animation: initial;
+            }
+        }
+
+        .butterflys__active--orange {
+            // color: $colorOrange;
+            img:hover {
+                animation: initial;
+            }
+        }
+
+        .butterflys__active--blue {
+            // color: $colorBlue;
+            img:hover {
+                animation: initial;
+            }
+        }
+        
+    }
+
+    .buttons { // basic styling for all the round buttons
+        float: right;
+        list-style-type: none;
+        margin: 2.5rem 0.8rem 0 0;
+        
+        li {
+            margin: 0 0 1.5rem 0;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        a {
+            @include fontBold(0.8rem);
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $colorGrey;
+            background-color: $colorWhite;
+            display: block;
+            padding: 0.9rem 1rem 0.6rem 1rem;
+            border-radius: 10px;
+            position: relative;
+            z-index: 0;
+
+            &:hover {
+                color: $colorWhite;
+            }
+
+            &::after { // second white border around the grey one
+                content: "";
+                position: absolute;
+                z-index: -2;
+                top: 3px;
+                left: 3px;
+                right: 3px;
+                bottom: 3px;
+                border: 2px solid $colorGrey;
+                background: $colorWhite;
+                border-radius: 10px;
+            }
+
+            &::before { // color fill from left to right
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                border-radius: 10px;
+                height: 100%;
+                width: 0;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+        .buttons__active--green { // state of the active button light green border dark green bg
+            background-color: $colorGreenLight;
+            color: $colorWhite;
+
+            &:hover {
+                color: $colorWhite;
+
+                &::after { // no colorfill on hover
+                    transition: none;
+                    border: 0;
+                    border: 2px solid $colorGrey;
+                }
+
+                &::before { // no colorfill on hover
+                    transition: none;
+                    width: 0;
+                    border: 0;
+                }
+            }
+
+            &::after {
+                background-color: $colorGreen;
+            }
+        }
+
+        .buttons__active--red {
+            background-color: $colorRedLight;
+            color: $colorWhite;
+
+            &:hover {
+                color: $colorWhite;
+
+                &::after {
+                    transition: none;
+                    border: 0;
+                    border: 2px solid $colorGrey;
+                }
+
+                &::before {
+                    transition: none;
+                    width: 0;
+                    border: 0;
+                }
+            }
+
+            &::after {
+                background-color: $colorRed;
+            }
+        }
+
+        .buttons__active--orange {
+            background-color: $colorOrangeLight;
+            color: $colorWhite;
+
+            &:hover {
+                color: $colorWhite;
+
+                &::after {
+                    transition: none;
+                    border: 0;
+                    border: 2px solid $colorGrey;
+                }
+
+                &::before {
+                    transition: none;
+                    width: 0;
+                    border: 0;
+                }
+            }
+
+            &::after {
+                background-color: $colorOrange;
+            }
+        }
+
+        .buttons__active--blue {
+            background-color: $colorBlueLight;
+            color: $colorWhite;
+    
+
+            &:hover {
+                color: $colorWhite;
+                
+                &::after {
+                    transition: none;
+                    border: 0;
+                    border: 2px solid $colorGrey;
+                }
+
+                &::before {
+                    transition: none;
+                    width: 0;
+                    border: 0;
+                }
+            }
+
+            &::after {
+                background-color: $colorBlue;
+            }
+        }
+    }
+
+    .buttons--green { // styling for the $color section of buttons
+        a:hover {
+            border-color: $colorGreenDark; 
+
+            &::after {
+                border: 5px solid $colorGreenLight;
+                transition: border 0.5s ease-in-out;
+            }
+
+            &::before {
+                width: 100%;
+                border: 3px solid $colorGreenLight;  
+            }
+        }
+
+        a::before {
+            // background: $colorGreen;
+            background: yellow;
+        }
+    }
+
+    .buttons--red {
+        a:hover {
+            border-color: $colorRedDark; 
+
+            &::after {
+                border: 5px solid $colorRedLight;
+                transition: border 0.5s ease-in-out;
+            }
+
+            &::before {
+                width: 100%;
+                border: 3px solid $colorRedLight;            
+            }
+        }
+
+        a::before {
+            background: $colorRed;
+        }
+    }
+
+    .buttons--orange {
+        a:hover {
+            border-color: $colorOrangeDark; 
+
+            &::after {
+                border: 5px solid $colorOrangeLight;
+                transition: border 0.5s ease-in-out;
+            }
+
+            &::before {
+                width: 100%;
+                border: 3px solid $colorOrangeLight;            
+            }
+        }
+
+        a::before {
+            background: $colorOrange;
+        }
+    }
+
+    .buttons--blue {
+        a:hover {
+            border-color: $colorBlueDark;
+            
+            &::after {
+                border: 5px solid $colorBlueLight;
+                transition: border 0.5s ease-in-out;
+            }
+
+            &::before {
+                width: 100%;
+                border: 3px solid $colorBlueLight;            
+            }
+        }
+        
+        a::before {
+            background: $colorBlue;
+        }
+    }
+
+
+    .buttons__second-level { // second level of buttons wich appear on click
+        overflow: hidden;
+        list-style-type: none;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        margin: 0.5rem auto 0 auto;
+        height: auto;
+        max-height: 500px;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+        
+        li {
+            margin: 0;
+            text-align: center;
+            
+            a {
+                font-size: 0.66rem;
+                padding: 0.7rem 0.5rem;
+                background-color: transparent;
+                border: none;  
+                color: $colorWhite;
+                text-align: center;
+
+                &:hover {
+                    // color: red;
+                    background-color: $colorWhite;
+                    border: none;
+                    border-radius: initial;
+                    text-decoration: underline;
+                }
+
+                &::after {
+                    background-color: transparent; 
+                    border: none;
+                }
+
+            }
+        }
+    }
+
+    // .openSubmenu {
+    //     display: block;
+    //     opacity: 1;
+    //     height: 105%;
+    //     border-color: transparent;
+    //     transition: all 5s ease-in-out;
+        
+    //     li a {
+    //         font-size: 0.66rem;
+    //         transition: font 5s ease-in-out;
+            
+    //     }
+    // }
+    
+    .closeSubmenu {
+        height: auto;
+        border: none;
+        max-height: 0;
+        font-size: 0;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        
+
+        li a {
+            font-size: 0;
+        }
+    }
+
+
+    
+    .buttons__second-level--orange { // button menu under the main button. Orange section
+       border-color: $colorOrange;
+
+       a:hover {
+           color: $colorOrange;
+
+           &::after {
+               border: none;
+               background-color: $colorWhite;
+           }
+
+           &::before {
+            border: none;
+            transition: none;
+            width: 0;
+            background-color: $colorWhite;
+           }
+       }
+
+        .buttons__second-level__active { // active button in the button second level
+                background-color: $colorWhite;
+                color: $colorOrange;
+                border-radius: inherit;
+    
+                &:hover {
+                    text-decoration: none;
+                    color: $colorOrange;
+                }
+            }
+        }
+    
+
+    .buttons__second-level--red { // button menu under the main button. Orange section
+        border-color: $colorRed;
+
+        a:hover {
+            color: $colorRed;
+ 
+            &::after {
+                border: none;
+                background-color: $colorWhite;
+            }
+
+            &::before {
+                border: none;
+                transition: none;
+                width: 0;
+                background-color: $colorWhite;
+            }
+        }
+            
+        .buttons__second-level__active { // active button in the button second level
+            background-color: $colorWhite;
+            color: $colorRed;
+            border-radius: inherit;
+
+            &:hover {
+                text-decoration: none;
+                color: $colorRed;
+            }
+        }
+    }
+
+    .buttons__second-level--green { // button menu under the main button. Orange section
+    border-color: $colorGreen;
+
+    a:hover {
+        color: $colorGreen;
+
+        &::after {
+            border: none;
+            background-color: $colorWhite;
+        }
+
+        &::before {
+            border: none;
+            transition: none;
+            width: 0;
+            background-color: $colorWhite;
+        }
+    }
+        
+        .buttons__second-level__active { // active button in the button second level
+            background-color: $colorWhite;
+            color: $colorGreen;
+            border-radius: inherit;
+
+            &:hover {
+                text-decoration: none;
+                color: $colorGreen;
+            }
+        }
+    }
+}
+
+
+
+@mixin navigation--vs {
+    nav {
+        
+        .buttons {
+
+            a {
+                padding: 1rem 1.8rem 0.7rem 1.8rem;
+            }
+        }
+    }
+}
+
+@mixin navigation--s {
+
+    header {
+        // @include clearfix;
+        .header__logo {
+            width: 200px;
+            margin: 10rem 0 0 0.8rem;
+            position: relative;
+            animation-name: initial;
+        }
+
+        .header__wordlogo {
+            width: 250px;            
+        }
+    }
+
+    nav {
+        width: 40%;
+        margin: 1rem 0 0 1rem;
+        overflow: visible;        
+
+        .butterflys {
+            float: none;
+            margin: 0 0 0 0.8rem;
+            
+            a {
+                span {
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+
+            li {
+                position: absolute;
+                padding: 0;
+                margin: 0;
+            }
+
+            li:first-child { // blue butterfly
+                top: 108px;
+                
+                img {
+                    width: 40%;
+                }
+            }
+            
+            li:nth-child(2) { // green butterfly
+                top: 66px;
+                left: 69px;
+
+                img {
+                    transform: rotate(40deg);
+                }
+            }
+    
+            li:nth-child(3) { // orange butterfly
+                top: 29px;
+                left: 150px;
+
+                img {
+                    width: 75%;
+                    transform: rotate(45deg);
+                }
+            }
+    
+            li:nth-child(4) { // red butterfly
+                top: 119px;
+                left: 198px;
+
+                img {
+                    width: 40%;
+                }
+            }
+        }
+
+        .buttons {
+            float: left;
+            margin: 2rem 0 0 0.8rem;
+
+            a {
+                font-size: 0.85rem;
+                padding: 1.2rem 1.7rem 0.9rem 1.7rem;
+            }
+        }
+
+        // .buttons--orange {
+        //     a {
+        //         padding: 0.7rem 1rem 0.4rem 1rem;
+        //     }
+        // }
+
+        // .buttons__second-level--orange { // button menu under the main button. Orange section
+     
+        //     li {
+     
+        //         a {
+        //             font-size: 0.7rem;
+        //             padding: 0.7rem 0.5rem;
+        //         }
+        //     }
+        //  }
+    }
+}
+
+@mixin navigation--m {
+
+    .cookieMessage {
+        font-size: 0.9rem; 
+    }
+    
+    .cookieMessage__message {
+        display: inline-block;
+        margin: 1rem 0;
+    }
+    
+    .cookieMessage__button {
+        font-size: 0.9rem;   
+    }
+   
+    nav {
+        .buttons--orange {
+            margin: 2rem 0 5rem 0.8rem;
+        }
+    }
+}
+
+@mixin navigation--ml {
+    nav {
+
+        .buttons {
+            position: absolute;
+            top: 272px;
+            left: 14rem;
+            width: 98%;
+
+                li {
+                    display: inline-block;
+                    min-width: 180px;
+                    margin: 0 0 0 1rem;
+    
+                    a {
+                        padding: 1rem 1rem 0.7rem 1rem;  
+                    }
+                }
+            }
+            
+            .buttons--blue {
+                li {
+                    min-width: 140px;
+                }
+            }
+            
+            .buttons__second-level {
+                position: absolute;
+                left: -14rem;
+                margin: 1rem 0 0 0;
+                font-size: 0;
+                
+                li {
+                    display: inline-block;
+                    padding: 0;
+                    margin: 0;
+                    min-width: initial;
+                    border-right: 2px solid $colorWhite;
+
+                    &:last-child {
+                        border-right: transparent;
+                    }
+                    
+                    a {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+@mixin navigation--l {
+    nav {
+
+        .buttons {
+            
+            a {
+                padding: 0.7rem 2rem 0.4rem 2rem;
+            }
+        }
+    }
+}

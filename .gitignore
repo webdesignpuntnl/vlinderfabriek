@@ -41,8 +41,10 @@ Thumbs.db
 # config files #
 ######################
 
-_source-files
 node_modules
+dist
+_source-docs
+
 
 
 # movie files #

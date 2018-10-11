@@ -1,0 +1,40 @@
+extends ../layout/layout
+include ../mixins/green-buttons
+ 
+
+block prepend header
+    - var color = "green"
+
+block prepend head
+    - var title = "ehbm coaching" 
+    - var workshop = "ehbmVerdieping"
+
+block buttons 
+    +greenButtons("begeleiding")
+    
+block content
+    main(class="main main--green")
+        h1 EHBM Coaching traject voor de leerkracht
+        a(href="contact.html" class="getProject getProject--green") aanvragen
+        p
+            | Wanneer u heeft gekozen voor een bestaande musical kan de Vlinderfabriek de
+            | uitvoerende leerkracht coachen door middel van:
+            ul(class="ehbm__list")
+                li ondersteuning in opzet repetitieperiodes
+                li creatieve brainstormsessies rondom thema musical/verhaal
+                li spel- en regiebegeleiding of ondersteuning bij de generale repetitie
+        h3 Specificaties
+        table(class="table__school")
+            tr
+                td Voor&colon;
+                td groep 8
+            tr
+                td Duur&colon;
+                td minimaal 2 uur
+            tr
+                td Kosten&colon;
+                td &euro; 125&comma;00 
+                    i &#40;bij 2 uur begeleiding&#41;
+            tr
+                td Docent&colon;
+                td 1 theaterdocent van de Vlinderfabriek

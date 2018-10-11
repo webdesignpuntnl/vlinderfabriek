@@ -1,0 +1,52 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+    - var workshop = "pauw"
+
+block prepend head
+    - var title = "zo trots als een pauw" 
+
+block buttons 
+    +orangeButtons("basisonderwijs")
+    
+block content
+    main(class="main main--orange")
+        h1 Zo trots als een pauw
+        a(href="contact.html" class="getProject") aanvragen
+        article
+            h2 voor groep 1 &amp; 2
+            p    Dieren en hun fysieke- en karaktereigenschappen zijn het uitgangspunt in deze
+                | toneelworkshop.
+                | De leerlingen maken kennis met de lichaamstaal van dieren die eigenlijk voor mensen niet
+                | heel anders blijken te zijn...... Zo ontdekken de leerlingen op de spelvloer dat je ook zonder te
+                | praten heel veel kunt vertellen.
+                | Verhalen en uitdrukkingen over dieren zijn de ingang tot spel en bewegingsimprovisaties.
+                | Het spelenderwijs ontwikkelen van het bewustzijn van (eigen) lichaamstaal en zelfvertrouwen
+                | zijn een belangrijk onderdeel van deze workshop. 
+            h2 Specificaties
+            table(class="table__school")
+                tr
+                    td Voor&colon;
+                    td groep 1 &amp; 2
+                tr
+                    td Duur&colon;
+                    td 45 minuten per groep 
+                        i &#40; minimale afname 2 groepen op 1 dag &#41;
+                tr
+                    td Kosten&colon;
+                    td &euro; 90&comma;00 per klas
+                tr
+                    td Waar&colon;
+                    td speelzaal of eigen lokaal
+                tr
+                    td Docent&colon;
+                    td 2 theaterdocenten van de Vlinderfabriek
+                tr
+                    td Kerndoel&colon;
+                    td 54
+                tr
+                    td Kernwoorden&colon;
+                    td bewegen, lef, lichaamstaal, fantasie, weerbaarheid &amp; spelplezier

@@ -1,0 +1,29 @@
+mixin orangeButtons(active)
+    ul(class="buttons buttons--orange")
+        li
+            a(href="basisonderwijs.html" class=(active == "basisonderwijs" ? "buttons__active--orange" : '') title="basisonderwijs") basisonderwijs
+            if active === "basisonderwijs"
+                ul(class="buttons__second-level buttons__second-level--orange")
+                    li
+                        a(href="proefkonijnen.html" class=(workshop == "proefkonijnen" ? "buttons__second-level__active" : '') title="proefkonijnen") proefkonijnen
+                    li
+                        a(href="zo-trots-als-een-pauw.html" class=(workshop == "pauw" ? "buttons__second-level__active" : '') title="zo trots als een pauw") zo trots als een pauw
+                    li
+                        a(href="sprookjes-op-zijn-kop.html" class=(workshop == "sprookjes" ? "buttons__second-level__active" : '') title="sprookjes op zijn kop") sprookjes op zijn kop
+                    li
+                        a(href="theaterhelden.html" class=(workshop == "helden" ? "buttons__second-level__active" : '') title="Theaterhelden") Theaterhelden
+                    li
+                        a(href="eerste-hulp-bij-musicals.html" class=(workshop == "ehbm" ? "buttons__second-level__active" : '') title="E.H.B.M.") E.H.B.M.
+                    li
+                        a(href="geen-kunst.html" class=(workshop == "geenKunst" ? "buttons__second-level__active" : '') title="E.H.B.M.") Geen kunst aan
+                    li
+                        a(href="vroeger.html" class=(workshop == "vroeger" ? "buttons__second-level__active" : '') title="E.H.B.M.") vroeger
+
+        li
+            a(href="plus.html" class=(active == "plus" ? "buttons__active--orange" : '') title="plus") plus
+            if active ===  "plus"
+                ul(class="buttons__second-level buttons__second-level--orange")
+                    li
+                        a(href="icarus.html" class=(workshop == "icarus" ? "buttons__second-level__active" : '') title="icarus") Icarus
+                    li
+                        a(href="plus-lessen.html" class=(workshop == "plusLessen" ? "buttons__second-level__active" : '') title="plus lessen") plus lessen

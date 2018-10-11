@@ -1,0 +1,24 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+
+block prepend head
+    - var title = "basisonderwijs" 
+
+block buttons 
+    +orangeButtons("basisonderwijs")
+    
+block content
+    main(class="main main--orange")
+        h1 Basisonderwijs
+        article
+            p
+                | Ieder kind is anders, iedere groep is anders, ieder project is anders.
+                | Hiernaast vindt u een gevarieerd aanbod van onze workshops die we, indien gewenst nog passender op maat kunnen maken.
+            p     
+                | Nieuw in ons aanbod zijn de projecten waar we filosofie, beeldende kunst en cultureel erfgoed met elkaar combineren. 
+                | Deze workshops worden bij u op school uitgevoerd. 
+            

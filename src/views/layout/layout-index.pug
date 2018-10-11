@@ -1,0 +1,87 @@
+doctype html
+html(lang="nl")
+block head
+    head
+        meta(charset="UTF-8") 
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=yes") 
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        meta(name="robots" content="all")
+        meta(name="Description" content="De Vlinderfabriek wil kinderen en jongeren het creatieve & grenzeloze van theater laten ontdekken.")
+        meta(name="copyright" content="Copyright Webdesignpuntnl Culemborg")
+        meta(name="msapplication-TileColor" content="#ffc40d")
+        meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
+        meta(name="theme-color" content="#ffffff")
+        link(rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png")
+        link(rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png")
+        link(rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png")
+        link(rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png")
+        link(rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png")
+        link(rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png")
+        link(rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png")
+        link(rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png")
+        link(rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png")
+        link(rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png")
+        link(rel="icon" href="favicon.ico")
+        link(rel="manifest" href="manifest.json")
+        //- meta(name="msapplication-TileColor" content="#ffc40d")
+        //- meta(name="theme-color" content="#ffffff")
+        //- link(rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon.png")
+        //- link(rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png")
+        //- link(rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png")
+        //- link(rel="manifest" href="site.webmanifest")
+        //- link(rel="mask-icon" href="safari-pinned-tab.svgs" color="#5bbad5")
+        title Stichting de Vlinderfabriek - #{title} 
+    body
+        div(class="pageWrapper" id="backToTop")
+            block header
+                header
+                    div
+                        a(href="../index.html")
+                            img(src="images/fabriek-blue.svg" alt="logo" class="header__logo")
+                        a(href="../index.html")
+                            img(src="images/woordlogo.png" alt="logo" class="header__wordlogo")
+                    block navigation
+                        nav
+                            ul(class="butterflys")
+                                li
+                                    a(href="pages/verdieping.html")
+                                        img(src="images/vlinder-groen-outline.png" alt="verdieping")
+                                        span verdieping
+                                li
+                                    a(href="pages/lesaanbod.html")
+                                        img(src="images/vlinder-rood-outline.png" alt="lesaanbod")
+                                        span lesaanbod
+                                li
+                                    a(href="pages/op-school.html")
+                                        img(src="images/vlinder-oranje-outline.png" alt="op School")
+                                        span op school
+                                li
+                                    a(href="#" class="butterflys__active--blue")
+                                        img(src="images/vlinder-blauw.png" alt="home")
+                                        span home
+                            ul(class="buttons buttons--blue")
+                                li
+                                    a(href="#" class="buttons__active--blue" title="nieuws") nieuws
+                                li
+                                    a(href="pages/over-ons.html" title="over ons") over ons
+                                li
+                                    a(href="pages/wie-zijn-wij.html" title="wij zijn wij") wij zijn wij
+                                li
+                                    a(href="pages/contact.html" title="contact") contact
+                                li
+                                    a(href="pages/achter-de-schermen.html" title="bestuur") bestuur
+                                li
+                                    a(href="pages/privacy.html" title="privacy") privacy
+            block content
+        block footer
+            footer(class="footer footer--blue")
+                a(class="footer__link" href="#backToTop")
+                    img(class="footer__link__arrow" src="images/pijl-terug-blue.png" alt="klik voor terug omhoog" title="klik voor terug omhoog")
+                a(class="footer__link" href="https://www.facebook.com/De-Vlinderfabriek-365229100205779/" target="_blank")
+                    img(class="footer__link__facebookLogo" src="images/logo-facebook-normal.svg" alt="facebook" title="facebook")
+                a(class="footer__link footer__link__copyright" href="https://www.webdesignpuntnl.com") &copy; Webdesignpuntnl   
+                a(class="footer__link footer__link__cookieSetup" href="#" id="noat-cookie-consent__setup") cookie instellingen   
+

@@ -1,0 +1,38 @@
+extends ../layout/layout
+include ../mixins/green-buttons
+ 
+
+block prepend header
+    - var color = "green"
+
+block prepend head
+    - var title = "kunst in de klas"
+    - var workshop = "kunstKlas"
+
+block buttons 
+    +greenButtons("bijscholing")
+    
+block content
+    main(class="main main--green")
+        h1 Kunst in de klas
+        a(href="contact.html" class="getProject getProject--green") aanvragen
+        p ‘Kunst in de klas’ is een workshop waarbij leerkrachten uitgedaagd worden op een creatieve
+          | manier les te geven vanuit een kunstdiscipline of deze te verbinden met de reguliere lesstof.
+          | Op interactieve en inspirerende wijze ontdekt men mogelijkheden op gebied van thematiek,
+          | kennis en uitvoering van verschillende kunstdisciplines, die eenvoudig toepasbaar en verrijkend
+          | zijn binnen de dagelijkse lessen.
+        h2 Specificaties
+        table(class="table__school")
+            tr
+                td Voor&colon;
+                td max. 12 leerkrachten PO per workshop
+            tr
+                td Duur&colon;
+                td de workshop bestaat uit 2 onderdelen van elk 1,5 uur – op 1 dag
+            tr
+                td Kosten&colon;
+                td &euro; 495&comma;00 
+                    i &#40;op maat maken kan altijd - in overleg&#41;
+            tr
+                td Docent&colon;
+                td 2 theaterdocenten van de Vlinderfabriek

@@ -1,0 +1,48 @@
+extends ../layout/layout
+include ../mixins/orange-buttons
+ 
+
+block prepend header
+    - var color = "orange"
+    - var workshop = "ehbm"
+    
+block prepend head
+    - var title = "Eerste hulp bij Muscicals" 
+
+block buttons 
+    +orangeButtons("basisonderwijs")
+    
+block content
+    main(class="main main--orange")
+        h1 E.erste H.ulp B.ij M.usical
+        a(href="contact.html" class="getProject") aanvragen
+        article
+            h2 speciaal voor groep 8
+            p   De Vlinderfabriek biedt Eerste Hulp Bij Musicals en afscheidsvoorstellingen van groep 8.
+                | Op bijna iedere basisschool is de eindmusical van groep 8 een belangrijk onderdeel bij
+                | de afsluiting van de basisschoolperiode. Iedere school doet dit op zijn eigen manier,
+                | welke vorm u ook kiest de theaterdocenten van de Vlinderfabriek kunnen u de nodige
+                | ondersteuning bieden.
+            h2 Specificaties
+            table(class="table__school")
+                tr
+                    td Voor&colon;
+                    td groep 6&comma; 7 &amp; 8
+                tr
+                    td Duur&colon;
+                    td 60 minuten
+                tr
+                    td Kosten&colon;
+                    td &euro; 135&comma;00 
+                tr
+                    td Waar&colon;
+                    td speelzaal of eigen lokaal
+                tr
+                    td Docent&colon;
+                    td 2 theaterdocenten van de Vlinderfabriek
+                tr
+                    td Kerndoel&colon;
+                    td 54 &amp; 55 
+                tr
+                    td Kernwoorden&colon;
+                    td lef&comma; weerbaarheid&comma; jeugdliteratuur&comma; fantasie&comma; toneel &amp; plezier

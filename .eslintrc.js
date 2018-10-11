@@ -9,6 +9,7 @@ module.exports = {
 
     "rules": {
         "linebreak-style": 0, //0 is off, 1 is warn, 2 is error
-        "prefer-arrow-callback": 1 
+        "prefer-arrow-callback": 1,
+        "no-console": 0
     }
 };

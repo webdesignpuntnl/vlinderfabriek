@@ -1,0 +1,155 @@
+extends ../layout/layout
+include ../mixins/red-buttons
+ 
+
+block prepend header
+    - var color = "red"
+
+block prepend head
+    - var title = "Locatie Breda"
+    - var workshop = "locatieBreda" 
+
+block buttons 
+    +redButtons("breda")
+    
+block content
+    main(class="main main--red")
+        article(class="courses")
+            h1(class="courses__h1") locatie Breda
+            h2(class="courses__h2") de Vlinderklas
+            p(class="courses__p")
+                | In de 
+                strong Vlinderklas
+                |  stappen we iedere week in een ander verhaal. 
+                | Soms vanuit een prentenboeken, een andere keer vanuit muziek of gewoon helemaal zelfverzonnen. 
+                | Misschien zijn we piraten, prinsessen of een eenhoorn, misschien speelt het zich onderwater af, 
+                | op de maan of in de middeleeuwen. We gebruiken vooral heel veel fantasie en omdat het net alsof is,
+                | kan alles! Aan het einde van de cursus is er een korte presentatie voor publiek. 
+
+            table(class="table table--courses")
+                thead
+                    tr
+                        th Groep&colon;
+                        th Lesdag&colon;
+                        th Lestijd&colon;
+                        th Lesdata&colon;
+                        th docent&colon;
+                        th Kosten&colon;
+                        th lessen&colon;
+                tbody
+                    tr
+                        td 1, 2 &amp; 3
+                        td maandag
+                        td 15.15 - 16.00
+                        td
+                            span 27 augustus (eerste les = gratis proefles)
+                            span 3,10, 17 &amp; 24 september, 1, 8, 22 &amp; 29 oktober, 5 november
+                            span Presentatie&colon; 12 november
+                            span Laatste les&colon; 19 november
+                        td Claudette Efrosina
+                        td € 70,00 
+                            span bij aanmelding voor 24 augustus € 65,00
+                        td 12
+
+            h2(class="courses__h2") Spelersklas 1
+            p(class="courses__p")
+                | In de 
+                strong Spelersklas
+                |  gaan we spelenderwijs aan de slag op de spelvloer en ontdek je hoe je toneel kunt spelen en theater kunt maken. 
+                | We verzinnen personages bij een foto, kledingstuk of attribuut, we spelen met echte teksten 
+                | en je ontdekt hoe je een scene interessant kunt maken voor het publiek. 
+                | En natuurlijk we maken we ook een voorstelling! Weet jij al wie je uitnodigt? 
+            table(class="table table--courses")
+                thead
+                    tr
+                        th Groep&colon;
+                        th Lesdag&colon;
+                        th Lestijd&colon;
+                        th Lesdata&colon;
+                        th docent&colon;
+                        th Kosten&colon;
+                        th lessen&colon;
+                tbody
+                    tr
+                        td 3, 4 &amp; 5
+                        td donderdag
+                        td 15.15 - 16.15
+                        td 
+                            span 27 augustus (eerste les = gratis proefles)
+                            span 3,10, 17 &amp; 24 september, 1, 8, 22 &amp; 29 oktober, 5 november
+                            span Presentatie&colon; 12 november
+                            span Laatste les&colon; 19 november
+                        td Claudette Efrosina
+                        td € 85,00 
+                            span bij aanmelding voor 24 augustus € 80,00
+                        td 12
+            h2(class="courses__h2") Spelersklas 2
+            table(class="table table--courses")
+                thead
+                    tr
+                        th Groep&colon;
+                        th Lesdag&colon;
+                        th Lestijd&colon;
+                        th Lesdata&colon;
+                        th docent&colon;
+                        th Kosten&colon;
+                        th lessen&colon;
+                tbody
+                    tr
+                        td 4&comma; 5 &amp; 6
+                        td donderdag
+                        td 16.15 - 17.15
+                        td 
+                            span 30 augustus (eerste les = gratis proefles)
+                            span 6&comma; 13&comma; 20 &amp; 27 september&comma; 4&comma; 11 &amp; 25 oktober&comma; 1&comma; 8 &amp; 15 november
+                            span Presentatie&colon; 22 november
+                            span Laatste les&colon; 22 november
+                        td Claudette Efrosina
+                        td &euro; 85&comma;00 
+                            span bij aanmelding voor 24 augustus &euro; 80&comma;00
+                        td 12
+            h2(class="courses__h2") de Fabriek
+            p(class="courses__p")
+                | In de 
+                strong Fabriek
+                |  werken we met verschillende vormen van theater maken. 
+                | Je ontdekt wat teksttoneel, bewegingstheater en improviseren is. 
+                | En je leert hoe je ervoor zorgt dat een scene grappig of juist super spannend wordt. 
+                | Ongeveer op de helft van de lessen gaan we aan de slag met de voorstelling: 
+                | we kiezen een boek of bestaand stuk als uitgangspunt en verzinnen samen het script van de voorstelling waarin jij een hoofdrol speelt. 
+                | Deze voorstelling spelen we niet alleen voor de ouders maar ook onder schooltijd voor de peuters en kleuters van Montessori+ 
+            table(class="table table--courses")
+                thead
+                    tr
+                        th Groep&colon;
+                        th Lesdag&colon;
+                        th Lestijd&colon;
+                        th Lesdata&colon;
+                        th docent&colon;
+                        th Kosten&colon;
+                        th lessen&colon;
+                tbody
+                    tr
+                        td 6&comma; 7 &amp; 8
+                        td maandag
+                        td 16.15 - 17.45
+                        td 
+                            span 3 september (eerste les = gratis proefles)
+                            span 3, 10, 17 &amp; 24 september, 1, 8, 22 &amp; 29 oktober, 5&comma; 12 &amp; 19 november
+                            span Presentatie&colon; 26 november
+                            span Laatste les&colon; 27 november
+                        td Claudette Efrosina
+                        td € 110,00 
+                            span bij aanmelding voor 24 augustus € 105,00
+                        td 12
+            h2 Goed om te weten
+            p(class="courses__p")
+                ul(class="courses__list")
+                    li Je hoeft niet op de leslocatie op school te zitten om mee te mogen doen!
+                    li De lessen gaan alleen door bij voldoende aanmeldingen, maximaal leerlingen per groep 12.
+                    li De Vlinderfabriek is aangesloten bij het Jeugdcultuurfonds, 
+                        | mocht u zelf het cursusgeld niet kunnen betalen dan wordt dit vergoed door het Jeugdcultuurfonds. 
+                        | De aanvraag kan door uw school worden verzorgd. Kijk op 
+                        a(href="https://www.jeugdcultuurfonds.nl" target="_blank") www.jeugdcultuurfonds.nl
+                        | voor meer informatie.
+    

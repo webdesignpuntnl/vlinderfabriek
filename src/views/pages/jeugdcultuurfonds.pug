@@ -1,0 +1,23 @@
+extends ../layout/layout
+include ../mixins/red-buttons
+ 
+
+block prepend header
+    - var color = "red"
+
+block prepend head
+    - var title = "Jeugdcultuurfonds" 
+
+block buttons 
+    +redButtons("jeugdcultuurfonds")
+    
+block content
+    main(class="main main--red")
+        h1 Jeugdcultuurfonds geeft kinderen cultuur!
+        article
+            p   Wil uw kind graag bij ons op les maar kunt u het niet betalen? 
+                | Het Jeugdcultuurfonds betaalt cultuurlessen of materialen voor kinderen wiens ouders geen financiële mogelijkheden hebben hiervoor.
+            p   Hoe werkt het? De leerkracht op school of iemand van een hulpverlenende instantie kan een aanvraag voor u doen op de website 
+                a(href="https://www.allekinderendoenmee.nl" target="_blank") www.allekinderendoenmee.nl 
+                | Nadat het Jeugdcultuurfonds de aanvraag heeft goedgekeurd, kan uw kind drie weken later op les! 
+                | Kijk voor de voorwaarden op en klik door naar de gemeente waarin u woont.

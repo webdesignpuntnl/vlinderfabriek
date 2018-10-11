@@ -1,0 +1,40 @@
+extends ../layout/layout
+ 
+
+block prepend header
+    - var page = "schermen"
+    - var color = "blue"
+
+block prepend head
+    - var title = "achter de schermen" 
+
+block buttons
+    ul(class="buttons buttons--blue")
+        li
+            a(href="../index.html" title="nieuws") nieuws 
+        li
+            a(href="../pages/over-ons.html" title="over ons") over ons
+        li
+            a(href="../pages/wie-zijn-wij.html" title="wij zijn wij") wij zijn wij
+        li
+            a(href="../pages/contact.html" title="contact") contact
+        li
+            a(href="../pages/achter-de-schermen.html" class="buttons__active--blue" title="bestuur") bestuur
+        li
+            a(href="../pages/privacy.html" title="privacy") privacy
+
+
+block content
+    main(class="main main--blue")
+        h1 achter de schermen
+        article(class="behindScenes")
+            h2 Het bestuur van Stichting de Vlinderfabriek bestaat uit:
+            ul(class="list")
+                li Hilde Dehouck &ndash; voorzitter
+                li Rene de Kruijf &ndash; penningmeester
+                li Mariska Franken &ndash; secretaris
+            h2 Het bestuur heeft de dagelijkse leiding overgedragen aan de directie:
+            ul(class="list")
+                li Sylke van de Calseijde &ndash; artistiek leider
+                li Claudette Efrosina &ndash; zakelijk leider
+            h2 Het bestuur van de Vlinderfabriek heeft een controlerende taak.

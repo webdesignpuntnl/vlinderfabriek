@@ -1,0 +1,20 @@
+extends ../layout/layout
+include ../mixins/green-buttons
+ 
+
+block prepend header
+    - var color = "green"
+
+block prepend head
+    - var title = "verdieping" 
+
+block buttons 
+    +greenButtons
+    
+block content
+    main(class="main main--green")
+        h1 Verdieping
+        article
+            p   De deuren van de Vlinderfabriek zijn al open, maar nog niet alles is klaar; 
+                | er hangen nog kranten voor de ramen en de afdeling ‘voor verdieping’ staat nog in de steigers.
+                | We zijn hard aan het werk om inspirerende workshops, kwalitatieve coaching en creatieve studiedagen op papier te zetten.
