@@ -1,5 +1,5 @@
 require('./src/sass/main.scss');
-// require('./src/js/cookieBar');
+require('./src/js/cookieBar');
 require('./src/js/swapImage');
 // require('../js/subMenu');
 // require('./src/js/preloadImages');
