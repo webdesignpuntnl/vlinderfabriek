@@ -1,0 +1,19 @@
+extends ../layout/layout
+include ../mixins/red-buttons
+ 
+
+block prepend header
+    - var color = "red"
+
+block prepend head
+    - var title = "inschrijven Breda"
+    - var workshop = "inschrijvenBreda" 
+
+block buttons 
+    +redButtons("breda")
+    
+block content
+    main(class="main main--red")
+        h1 Bedankt! Uw inschrijving is verzonden
+            p Wij hebben uw inschrijving ontvangen. Wij nemen zo snel mogelijk contact op!
+            

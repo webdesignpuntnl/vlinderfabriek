@@ -294,22 +294,21 @@ nav {
 
     .buttons--green { // styling for the $color section of buttons
         a:hover {
-            border-color: $colorGreenDark; 
-
+            border-color: $colorGreenDark;
+            
             &::after {
                 border: 5px solid $colorGreenLight;
                 transition: border 0.5s ease-in-out;
             }
-
+            
             &::before {
                 width: 100%;
-                border: 3px solid $colorGreenLight;  
+                border: 3px solid $colorGreenLight; 
             }
         }
 
         a::before {
-            // background: $colorGreen;
-            background: yellow;
+            background: $colorGreen;
         }
     }
 

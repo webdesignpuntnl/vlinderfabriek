@@ -1,0 +1,34 @@
+extends ../layout/layout
+ 
+
+block prepend header
+    - var page = "contact"
+     - var color = "blue"
+
+block prepend head
+    - var title = "contact" 
+
+
+block buttons
+    ul(class="buttons buttons--blue")
+        li
+            a(href="../index.html" title="nieuws") nieuws 
+        li
+            a(href="../pages/over-ons.html" title="over ons") over ons
+        li
+            a(href="../pages/wie-zijn-wij.html" title="wij zijn wij") wij zijn wij
+        li
+            a(href="../pages/contact.html" title="contact") contact
+        li
+            a(href="../pages/achter-de-schermen.html" title="bestuur") bestuur
+        li
+            a(href="../pages/privacy.html" title="privacy") privacy
+
+
+block content
+    main(class="main main--blue")
+        h1 Helaas! Uw vraag is niet verzonden
+        article
+            p   U kunt terug naar de vorige pagina en het nogmaals proberen of maak gebruik
+                | van de andere contact mogelijkheden.
+            
