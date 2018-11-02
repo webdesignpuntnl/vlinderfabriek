@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const utils = require('./utils');
+const utilsErrorDocs = require('./utilsErrorDocs');
 
 module.exports = {
     entry: {
@@ -84,7 +85,18 @@ module.exports = {
             { from: 'src/assets/**/*',
               to: '[name].[ext]'
              }
-         ]) ,
+         ]),
+         new CopyWebpackPlugin([
+            { from: 'src/php/**/*',
+              to: '[name].[ext]'
+             }
+         ]),
+         new CopyWebpackPlugin([
+            { from: 'src/forms/**/*',
+              to: '[name].[ext]'
+             }
+         ]),
         ...utils.pages(),
+        ...utilsErrorDocs.Errorpages(),
     ]
 };

@@ -164,20 +164,20 @@ block content
                         option(value="geslacht-deelnemer" disabled selected) geslacht &ast;
                         option vrouw
                         option man
-                div(class="courseSelect") 
-                    select(name="locatie en cursus") 
-                        option kies locatie en cursus &ast;
-                            optgroup(label="Locatie: Breda") 
-                                option(value="Locatie: Breda de Vlinderklas ") de Vlinderklas
-                                option(value="Locatie: Breda Spelersklas 1") Spelersklas 1
-                                option(value="Locatie: Breda Spelersklas 2") Spelersklas 2
-                                option(value="Locatie: Breda Fabriek") Fabriek
-                                option(disabled label=" ") 
-                            optgroup(label="Locatie: Prinsenbeek")
-                                option(value="Locatie: Prinsenbeek de Vlinderklas") de Vlinderklas
-                                option(value="Locatie: Prinsenbeek Spelersklas") Spelersklas
-                                option(value="Locatie: Prinsenbeek Fabriek") Fabriek
-                                option(disabled label=" ") 
+                label(for="location") cursus &amp; locatie &ast;
+                select(name="cursus en locatie" id="location") 
+                    option kies cursus en locatie &ast;
+                        optgroup(label="Locatie: Breda") 
+                            option(value="Locatie: Breda de Vlinderklas ") de Vlinderklas
+                            option(value="Locatie: Breda Spelersklas 1") Spelersklas 1
+                            option(value="Locatie: Breda Spelersklas 2") Spelersklas 2
+                            option(value="Locatie: Breda Fabriek") Fabriek
+                            option(disabled label=" ") 
+                        optgroup(label="Locatie: Prinsenbeek")
+                            option(value="Locatie: Prinsenbeek de Vlinderklas") de Vlinderklas
+                            option(value="Locatie: Prinsenbeek Spelersklas") Spelersklas
+                            option(value="Locatie: Prinsenbeek Fabriek") Fabriek
+                            option(disabled label=" ") 
                 p(class="form__subscribe__starObligated") &ast; verplicht
             fieldset 
                 legend plaats en datum

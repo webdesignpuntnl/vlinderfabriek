@@ -19,6 +19,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const plugins = [imageminGifsicle(), imageminMozjpeg(), imageminOptinpng(), imageminSvgo()];
 
 const utils = require('./utils');
+const utilsErrorDocs = require('./utilsErrorDocs');
+
 
 const PATHS = { src: path.join(__dirname, '../src') }
 
@@ -96,6 +98,7 @@ module.exports =  {
             // favicon: 'src/images/logo.ico'
         }),
         ...utils.pages(),
+        ...utilsErrorDocs.Errorpages(),
         new ImageminWebpackPlugin({
             imageminOptions: {
                 plugins
@@ -118,6 +121,18 @@ module.exports =  {
            { from: 'src/assets/**/*',
              to: '[name].[ext]'
             }
-        ]) 
+        ]),
+        new CopyWebpackPlugin([
+            { from: 'src/php/**/*',
+              to: 'php/[name].[ext]',
+              force: true
+             }
+         ]),
+         new CopyWebpackPlugin([
+            { from: 'src/forms/**/*',
+              to: 'forms/[name].[ext]',
+              force: true
+             }
+         ]), 
     ]
 };
