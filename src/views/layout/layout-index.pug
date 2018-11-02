@@ -6,7 +6,7 @@ block head
         meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0, user-scalable=yes") 
         meta(http-equiv="X-UA-Compatible" content="ie=edge")
         meta(name="robots" content="all")
-        meta(name="Description" content="De Vlinderfabriek wil kinderen en jongeren het creatieve & grenzeloze van theater laten ontdekken.")
+        meta(name="description" content="De Vlinderfabriek wil kinderen en jongeren het creatieve & grenzeloze van theater laten ontdekken.")
         meta(name="copyright" content="Copyright Webdesignpuntnl Culemborg")
         link(rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png")
         link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
@@ -59,6 +59,7 @@ block head
                                 li
                                     a(href="pages/privacy.html" title="privacy") privacy
             block content
+
         block footer
             footer(class="footer footer--blue")
                 a(class="footer__link" href="#backToTop")
@@ -66,5 +67,15 @@ block head
                 a(class="footer__link" href="https://www.facebook.com/De-Vlinderfabriek-365229100205779/" target="_blank")
                     img(class="footer__link__facebookLogo" src="images/logo-facebook-normal.svg" alt="facebook" title="facebook")
                 a(class="footer__link footer__link__copyright" href="https://www.webdesignpuntnl.com") &copy; Webdesignpuntnl   
-                a(class="footer__link footer__link__cookieSetup" href="#" id="noat-cookie-consent__setup") cookie instellingen   
+                a(class="footer__link footer__link__cookieSetup" href="#" id="noat-cookie-consent__setup") cookie instellingen
+
+        block scripts
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            script(async src="https://www.googletagmanager.com/gtag/js?id=UA-63079670-1")
+            script
+                | window.dataLayer = window.dataLayer || [];
+                | function gtag(){dataLayer.push(arguments);}
+                | gtag('js', new Date());
+                | gtag('config', 'UA-63079670-1');
+  
 
