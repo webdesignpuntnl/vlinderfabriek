@@ -23,8 +23,9 @@ block head
             block header
                 header
                     div
-                        a(href="../index.html")
-                            img(src="../images/fabriek-blue.svg" alt="logo" class="header__logo")
+                        a(href="../index.html" class="header__link")
+                            object(type="image/svg+xml", data="../images/fabriek-blue.svg" class="header__logo")
+                                //- img(src="images/fabriek-blue.svg" alt="logo" class="header__logo")
                         a(href="../index.html")
                             img(src="../images/woordlogo.png" alt="logo" class="header__wordlogo")
                     block navigation

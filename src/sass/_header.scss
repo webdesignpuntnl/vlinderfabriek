@@ -1,12 +1,24 @@
-.header__logo {
-        width: 11%;
-        margin: 1.5rem 0 0 0.8rem;
-        animation-name: logo;
-        animation-duration: 1s;
-        animation-delay: 500ms;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: backwards;
+.header__link {
+    width: 11%;
+    position: relative;
+    display: inline-block;
+    margin: 1.5rem 0 0 0.8rem;
+    animation-name: logo;
+    animation-duration: 1s;
+    animation-delay: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: backwards; 
+    
+    &:after {
+        content: ""; 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left:0;
     }
+}
+
 
 @keyframes logo {
     from {
@@ -556,7 +568,7 @@ nav {
 
     header {
         // @include clearfix;
-        .header__logo {
+        .header__link {
             width: 200px;
             margin: 10rem 0 0 0.8rem;
             position: relative;
