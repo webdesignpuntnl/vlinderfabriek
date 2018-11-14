@@ -8,6 +8,12 @@ block prepend header
 block prepend head
     - var title = "contact" 
 
+block contactScript
+    script(src="https://www.google.com/recaptcha/api.js" async defer)
+    script.
+     function onSubmit(token) {document.getElementById("contactForm").submit();
+     }
+
 
 block buttons
     ul(class="buttons buttons--blue")
@@ -64,6 +70,7 @@ block content
             input(type="hidden" name="good_url" value="../pages/contact-verzonden.html")
             input(type="hidden" name="bad_url" value="../pages/contact-niet-verzonden.html")
             input(type="hidden" name="subject" value="contactformulier")
+            input(type="hidden" name="derive_fields" value="imgverify=g-recaptcha-response")
             //- input(type="hidden" name="Locatie" value="contactformulier")
             fieldset
                 label(for="nameField") naam&#42;
@@ -76,4 +83,4 @@ block content
                  textarea(name="opmerkingen"  id="remarksField" rows="8" required placeholder="uw vraag of opmerking")
                 p 
                     span &#42; invullen verplicht
-                input(name="insturen" type="submit" id="formSubmitButton" value="verzenden")           
+                input(name="insturen" type="submit" id="formSubmitButton" value="verzenden" class="g-recaptcha" data-callback="onSubmit" data-sitekey="6LdEvXoUAAAAAHqDWQlo2JPKfLgH2Mcuo9ZMEmy4")           
