@@ -610,11 +610,11 @@ $DB_SEE_INI = false; /* set to true to just see the ini file */
 $MAXSTRING = 1024; /* maximum string length for a value */
 
 /* Help: http://www.tectite.com/fmdoc/require_captcha.php */
-$REQUIRE_CAPTCHA = ""; /* set to a message string if your forms */
+$REQUIRE_CAPTCHA = "Bevestig dat je geen robot bent!!"; /* set to a message string if your forms */
 // must provide a CAPTCHA string
 
 /* Help: http://www.tectite.com/fmdoc/recaptcha_private_key.php */
-$RECAPTCHA_PRIVATE_KEY = "";
+$RECAPTCHA_PRIVATE_KEY = "6LdEvXoUAAAAAN9MF9lczbM-lwnvDyBihh7jMPS0";
 
 /* Help: http://www.tectite.com/fmdoc/bshowmesgnumbers.php */
 $bShowMesgNumbers = false;

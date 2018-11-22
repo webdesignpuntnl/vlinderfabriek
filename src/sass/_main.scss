@@ -252,13 +252,14 @@ main {
     }
   }
 
-  input[type='submit'] {
+  button {
     @include fontBold;
     color: $colorGrey;
     display: block;
     margin: 0 auto 1rem auto;
     text-align: center;
     text-transform: uppercase;
+    background-color: $colorWhite;
     border: 1px solid $colorGrey;
     border-radius: 10px;
     padding: 1.3rem 0 0.8rem 0;
