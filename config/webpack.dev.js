@@ -8,6 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const utils = require('./utils');
 const utilsErrorDocs = require('./utilsErrorDocs');
+const variables = require('../src/js/variables');
 
 module.exports = {
     entry: {
@@ -80,6 +81,8 @@ module.exports = {
             filename: "index.html",
             template: "src/views/index.pug",
             inject: true,
+            heading1: variables.heading1,
+            text1: variables.text1,
         }),
         new CopyWebpackPlugin([
             { from: 'src/assets/**/*',

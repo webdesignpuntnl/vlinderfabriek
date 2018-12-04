@@ -252,7 +252,7 @@ main {
     }
   }
 
-  button {
+.button {
     @include fontBold;
     color: $colorGrey;
     display: block;
@@ -267,11 +267,22 @@ main {
     cursor: pointer;
     transition: all 0.5s;
 
-    &:hover {
-      color: $colorBlue;
-      border: 1px solid $colorBlue;
-      box-shadow: 0 2px 5px $colorGrey;
-      transition: all 0.5s;
+    &--blue {
+      &:hover {
+        color: $colorBlue;
+        border: 1px solid $colorBlue;
+        box-shadow: 0 2px 5px $colorBlue;
+        transition: all 0.5s;
+      }
+    }
+
+    &--red {
+      &:hover {
+        color: $colorRed;
+        border: 1px solid $colorRed;
+        box-shadow: 0 2px 5px $colorRed;
+        transition: all 0.5s;
+      }
     }
   }
 }
