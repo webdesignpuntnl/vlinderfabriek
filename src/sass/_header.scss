@@ -690,14 +690,14 @@ nav {
     }
 }
 
-@mixin navigation--ml {
+@mixin navigation--ml { // 1080
     nav {
 
         .buttons {
             position: absolute;
             top: 272px;
             left: 14rem;
-            width: 98%;
+            width: 95%;
 
                 li {
                     display: inline-block;
@@ -712,7 +712,7 @@ nav {
             
             .buttons--blue {
                 li {
-                    min-width: 140px;
+                    min-width: 120px;
                 }
             }
             
@@ -743,14 +743,30 @@ nav {
 
 
 
-@mixin navigation--l {
+@mixin navigation--l { //1200
     nav {
 
         .buttons {
+            position: absolute;
+            top: 272px;
+            left: 14rem;
+            width: 100%;
+
+                li {
+                    margin: 0 0 0 1.17rem;
+                }
+            }
             
-            a {
-                padding: 0.7rem 2rem 0.4rem 2rem;
+            .buttons--blue {
+                li {
+                    min-width: 139px;
+                }
+            }
+            
+            .buttons__second-level {
+                li {
+                    margin: 0;
+                }
             }
         }
-    }
 }
