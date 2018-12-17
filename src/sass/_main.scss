@@ -287,6 +287,10 @@ main {
   }
 }
 
+.form__contactForm__remarksField {
+ height: 100px;
+}
+
 main {
   .form__pargraph {
     width: 100%;
@@ -431,6 +435,21 @@ main {
 .main__kinderboekenweek__p--bolder {
   @include fontBold;
   margin: 1rem 0;
+}
+
+// styles for the annual christmas picture
+.christmas__picture {
+  display: block;
+  width: 100%;
+  box-shadow: 1px 1px 15px 2px $colorGrey;
+  border: 2px solid $colorBlue;
+}
+
+.christmas {
+  width: 80%;
+  margin: 2rem auto 3rem auto;
+  max-width: 400px;
+
 }
 
 .sidepicture img {
@@ -656,6 +675,21 @@ main {
     text-align: left;
   }
 
+  // styles for the annual christmas picture
+  .christmas__picture {
+    width: 100%;
+    box-shadow: 1px 1px 15px 2px $colorGrey;
+    border: 2px solid $colorBlue;
+  }
+  
+  .christmas {
+    float: right;
+    width: 80%;
+    margin: 0;
+    padding: 0 0 0 2rem;
+    max-width: 400px;
+
+  }
   .sidepicture {
     max-width: 235px;
     position: absolute;

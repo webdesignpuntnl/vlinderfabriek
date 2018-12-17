@@ -462,7 +462,7 @@ if (isset($SET_REAL_DOCUMENT_ROOT) && $SET_REAL_DOCUMENT_ROOT !== "") {
 $CONFIG_CHECK = array("TARGET_EMAIL");
 
 /* Help: http://www.tectite.com/fmdoc/at_mangle.php */
-$AT_MANGLE = "";
+$AT_MANGLE = "_@_";
 
 /* Help: http://www.tectite.com/fmdoc/target_urls.php */
 $TARGET_URLS = array(); /* default; no URLs allowed */

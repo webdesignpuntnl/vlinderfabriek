@@ -8,7 +8,7 @@ block prepend header
 block prepend head
     - var title = "contact" 
 
-block contactScript
+//- block contactScript
     script(src="https://www.google.com/recaptcha/api.js" async defer)
     script.
      function onSubmit(token) {document.getElementById("contactForm").submit();
@@ -64,23 +64,24 @@ block content
                     span(class="fontSizeNone") lege rij
                 li Onze voorwaarden &amp; privacy beleid 
                  a(href="privacy.html") privacy &amp; voorwaarden
-        form(id="contactForm" class="form form__contactForm" method="post" action="../php/formmailContact.php" enctype="multipart/form-data" autocomplete="on")
+        form(id="contactForm" class="form form__contactForm" method="POST" action="../php/formmailContact.php" enctype="multipart/form-data" autocomplete="on")
             input(type="hidden" name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER")
-            input(type="hidden" name="recipients" value="administratie@vlinderfabriek.nl, info@vlinderfabriek.nl")
+            input(type="hidden" name="recipients" value="administratie_@_vlinderfabriek.nl, info_@_vlinderfabriek.nl")
             input(type="hidden" name="good_url" value="../pages/contact-verzonden.html")
             input(type="hidden" name="bad_url" value="../pages/contact-niet-verzonden.html")
             input(type="hidden" name="subject" value="contactformulier")
-            input(type="hidden" name="derive_fields" value="imgverify=g-recaptcha-response")
-            //- input(type="hidden" name="Locatie" value="contactformulier")
+            //- input(type="hidden" name="derive_fields" value="imgverify=g-recaptcha-response")
             fieldset
                 label(for="nameField") naam&#42;
-                    input(name="name" type="text" id="nameField" required pattern="^[a-zA-Z ]*$" placeholder="bijv Joep Jansen" title="gebruik alleen letters en geen cijfers")
+                    input(name="name" type="text" id="nameField"  pattern="^[a-zA-Z]*$" placeholder="bijv Joep Jansen" title="gebruik alleen letters en geen cijfers")
                 label(for="subjectField") onderwerp
-                    input(name="onderwerp" type="text"  id="subjectField" placeholder="bijv informatie over de lessen" title="vul hier een onderwerp in")
+                    input(name="onderwerp" type="text"  id="subjectField"  pattern="^[a-zA-Z]*$" placeholder="bijv informatie over de lessen" title="vul hier een onderwerp in")
                 label(for="emailField") email&#42;
-                    input(name="email" type="email"  id="emailField" required placeholder="bijv joep@jansen.nl" pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$" title="vul een geldig emailadres in")
-                label(for="remarksField") stel uw vraag&#42; 
-                 textarea(name="opmerkingen"  id="remarksField" rows="8" required placeholder="uw vraag of opmerking")
+                    input(name="email" type="email"  id="emailField"  placeholder="bijv joep@jansen.nl" pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$" title="vul een geldig emailadres in")
+                label(for="remarksField") stel uw vraag&#42;
+                    input(name="name" type="text" id="remarksField" class="form__contactForm__remarksField" required pattern="^(?!http)([a-zA-Z]*)$" placeholder="bijv Joep Jansen" title="gebruik alleen letters en geen cijfers" height="500")
+                //-  textarea(name="opmerkingen" id="remarksField" rows="8" required placeholder="uw vraag of opmerking")
                 p 
                     span &#42; invullen verplicht
-                button(name="insturen" type="submit" id="formSubmitButton" value="verzenden" class="g-recaptcha button button--blue" data-callback="onSubmit" data-sitekey="6LdEvXoUAAAAAHqDWQlo2JPKfLgH2Mcuo9ZMEmy4") verzenden        
+                //- button(name="insturen" type="submit" id="formSubmitButton" value="verzenden" class="g-recaptcha button button--blue" data-callback="onSubmit" data-sitekey="6Ld1IYEUAAAAAFxzekRWz3pwKnwfwwQATykSzc2o") verzenden        
+                button(name="insturen" type="submit" id="formSubmitButton" value="verzenden" class="button button--blue") verzenden

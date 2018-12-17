@@ -274,7 +274,7 @@ class ExecEnv
 
 	/**
 	 * Test PHP version against a particular version string.
-	 *
+	 *Bevestig dat je geen robot bent!!
 	 * @return boolean true if the PHP version is at or later than the version
 	 *         specified
 	 */
@@ -462,7 +462,7 @@ if (isset($SET_REAL_DOCUMENT_ROOT) && $SET_REAL_DOCUMENT_ROOT !== "") {
 $CONFIG_CHECK = array("TARGET_EMAIL");
 
 /* Help: http://www.tectite.com/fmdoc/at_mangle.php */
-$AT_MANGLE = "";
+$AT_MANGLE = "_@_";
 
 /* Help: http://www.tectite.com/fmdoc/target_urls.php */
 $TARGET_URLS = array(); /* default; no URLs allowed */
@@ -610,11 +610,12 @@ $DB_SEE_INI = false; /* set to true to just see the ini file */
 $MAXSTRING = 1024; /* maximum string length for a value */
 
 /* Help: http://www.tectite.com/fmdoc/require_captcha.php */
-$REQUIRE_CAPTCHA = "Bevestig dat je geen robot bent!!"; /* set to a message string if your forms */
+// $REQUIRE_CAPTCHA = "Bevestig dat je geen robot bent!!"; /* set to a message string if your forms */
+$REQUIRE_CAPTCHA = ""; /* set to a message string if your forms */
 // must provide a CAPTCHA string
 
 /* Help: http://www.tectite.com/fmdoc/recaptcha_private_key.php */
-$RECAPTCHA_PRIVATE_KEY = "6LdEvXoUAAAAAN9MF9lczbM-lwnvDyBihh7jMPS0";
+$RECAPTCHA_PRIVATE_KEY = "6Ld1IYEUAAAAAOxGLi9V2KHsDSlA0wEbRNhoQ_i5";
 
 /* Help: http://www.tectite.com/fmdoc/bshowmesgnumbers.php */
 $bShowMesgNumbers = false;

@@ -1,12 +1,17 @@
+/* eslint-disable */
+
 require('./src/sass/main.scss');
 require('./src/js/cookieBar');
 require('./src/js/swapImage');
+// require('./src/js/formvalV18');
 // require('../js/subMenu');
 // require('./src/js/preloadImages');
 
+// kerstkaart 
+require('./src/images/snowangel-low-res.jpg');
+
 
 // images
-
 require('./src/images/vlinder-groen.png');
 require('./src/images/vlinder-groen-outline.png');
 require('./src/images/vlinder-oranje.png');
