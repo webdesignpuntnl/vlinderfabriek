@@ -8,5 +8,5 @@ window.noat.cookieConsent = {
   privacyPolicyText: 'Lees hier onze privacy verklaring',
   privacyPolicyUrl: '../pages/privacy.html',
   denyText: 'Weigeren',
-  allowText: 'Accepteren',
+  allowText: 'Accepteren'
 };

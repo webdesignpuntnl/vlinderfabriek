@@ -7,7 +7,6 @@ function swapButterfly(e) {
   const link = this.querySelector('a');
   const oldImageSource = butterfly.src;
 
-
   if (!link.hasAttribute('class')) {
     if (e.type === 'mouseover') {
       const newImageSource = oldImageSource.replace('-outline', '');
@@ -18,7 +17,6 @@ function swapButterfly(e) {
     }
   }
 }
-
 
 const facebookLogo = document.querySelector('.footer__link__facebookLogo');
 const oldFacebookLogosource = facebookLogo.src;
