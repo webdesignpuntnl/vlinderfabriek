@@ -323,8 +323,8 @@ main {
     background: $colorWhite;
     border: 1px solid $colorRed;
     border-radius: 5px;
-    padding: 0.3rem 0.5rem 0 0.5rem;
-    margin: 0.2rem 0.4rem 1rem 0.4rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    margin: 0.2rem 0.4rem 1rem 0.7rem;
     outline: none;
 
     &:hover {
@@ -336,7 +336,20 @@ main {
       background: lighten($colorRed, 45%);
     }
   }
-
+  
+  input {
+    width: 98%;
+    margin: 0.2rem 0.4rem 1rem 0.4rem;
+  }
+  
+  input[type="date"] {
+    color: darken($colorGrey, 25%);
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    margin: 0.2rem 0.4rem 1rem 0.7rem;
+    width: 96%;
+    max-width: 200px;
+  }
+  
   select[name='locatie en cursus'] {
     width: 99%;
   }
@@ -555,10 +568,10 @@ main {
   width: 70%;
 }
 
-@mixin main--s {
+@mixin main--s { // 512 px
   main {
     float: right;
-    width: 60%;
+    width: 50%;
     margin: 2rem 0.8rem 8rem 0.8rem;
     padding: 0.8rem;
   }
