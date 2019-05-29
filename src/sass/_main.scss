@@ -6,7 +6,6 @@ main {
   overflow: hidden;
   position: relative;
 
-
   h1 {
     @include fontBold(2.1rem);
     margin: 0 0 1rem 0;
@@ -39,6 +38,10 @@ main {
   }
 
   .main__article--extraInfo {
+    margin: 3rem 0 0 0;
+    padding: 1rem;
+    border-top: 1px solid $colorBlue;
+
     h2 {
       position: absolute;
       top: -9999px;
@@ -60,6 +63,10 @@ main {
   display: block;
 }
 
+.blue__text {
+  color: $colorBlue;
+}
+
 .getProject {
   @include fontBold;
   text-decoration: none;
@@ -79,8 +86,7 @@ main {
   }
 
   &--green {
-    background-color: $colorGreen;    // width: 70%;    float: left;
-
+    background-color: $colorGreen; // width: 70%;    float: left;
   }
 }
 
@@ -112,7 +118,7 @@ main {
 
   a {
     color: $colorBlack;
-    
+
     &:hover {
       color: $colorBlue;
     }
@@ -252,7 +258,7 @@ main {
     }
   }
 
-.button {
+  .button {
     @include fontBold;
     color: $colorGrey;
     display: block;
@@ -288,7 +294,7 @@ main {
 }
 
 .form__contactForm__remarksField {
- height: 100px;
+  height: 100px;
 }
 
 main {
@@ -336,20 +342,20 @@ main {
       background: lighten($colorRed, 45%);
     }
   }
-  
+
   input {
     width: 98%;
     margin: 0.2rem 0.4rem 1rem 0.4rem;
   }
-  
-  input[type="date"] {
+
+  input[type='date'] {
     color: darken($colorGrey, 25%);
     padding: 0.5rem 0.5rem 0 0.5rem;
     margin: 0.2rem 0.4rem 1rem 0.7rem;
     width: 96%;
     max-width: 200px;
   }
-  
+
   select[name='locatie en cursus'] {
     width: 99%;
   }
@@ -394,9 +400,7 @@ main {
     transition: all 0.5s ease-in-out;
   }
 
-  .form__subscribe__confirmation__label:hover
-    input
-    ~ .form__subscribe__confirmation__checkmark {
+  .form__subscribe__confirmation__label:hover input ~ .form__subscribe__confirmation__checkmark {
     box-shadow: 0 2px 2px $colorGrey;
     width: 23px;
     background: lighten($colorRed, 45%);
@@ -415,8 +419,7 @@ main {
     display: block;
   }
 
-  .form__subscribe__confirmation__label
-    .form__subscribe__confirmation__checkmark:after {
+  .form__subscribe__confirmation__label .form__subscribe__confirmation__checkmark:after {
     left: 7px;
     top: 2px;
     width: 8px;
@@ -462,7 +465,6 @@ main {
   width: 80%;
   margin: 2rem auto 3rem auto;
   max-width: 400px;
-
 }
 
 .sidepicture img {
@@ -568,7 +570,8 @@ main {
   width: 70%;
 }
 
-@mixin main--s { // 512 px
+@mixin main--s {
+  // 512 px
   main {
     float: right;
     width: 50%;
@@ -651,7 +654,8 @@ main {
   }
 }
 
-@mixin main--ml { // 1080
+@mixin main--ml {
+  // 1080
   main {
     @include clearfix;
     float: none;
@@ -659,11 +663,10 @@ main {
     display: block;
     width: 98%;
     margin: 5rem 0.8rem 8rem 0.8rem;
-    
+
     p {
       width: 70%;
     }
-
   }
 
   main {
@@ -694,14 +697,13 @@ main {
     box-shadow: 1px 1px 15px 2px $colorGrey;
     border: 2px solid $colorBlue;
   }
-  
+
   .christmas {
     float: right;
     width: 80%;
     margin: 0;
     padding: 0 0 0 2rem;
     max-width: 400px;
-
   }
   .sidepicture {
     max-width: 235px;
