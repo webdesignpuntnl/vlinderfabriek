@@ -8,7 +8,7 @@ require('./src/js/swapImage');
 // require('./src/js/preloadImages');
 
 // kerstkaart 
-// require('./src/images/snowangel-low-res.jpg');
+require('./src/images/kerstkaart-2020.jpg');
 
 
 // images

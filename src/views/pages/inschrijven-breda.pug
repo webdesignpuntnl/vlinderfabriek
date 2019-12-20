@@ -16,15 +16,15 @@ block content
     main(class="main main--red")
         h1 Inschrijven Naschoolse lessen locatie Breda
         //- p De inschrijving is gesloten. Vanaf december staan de nieuwe lessen weer online!
-        a(href="../forms/inschrijvenbreda.pdf" class="getForm" title="download het formulier als PDF" target="_blank") formulier downloaden</a>
+        //- a(href="../forms/inschrijvenbreda.pdf" class="getForm" title="download het formulier als PDF" target="_blank") formulier downloaden</a>
         p(class="form__pargraph") 
             | Aanmelden voor een van de Vlinderfabriek cursussen kan vanaf nu digitaal! 
             | U hoeft alleen onderstaand formulier in te vullen. Indien u op de verzendknop drukt dan gaat u akkoord met onze 
             a(href="../forms/algemenevoorwaarden.pdf") algemene voorwaarden.
             |  Wij slaan de gegevens die u invult op, kijk voor meer informatie op onze 
             a(href="../privacy.html") privacy-pagina.
-            |  Het formulier is ook te downloaden en uit te printen door op de pijl te klikken. 
-            | Heeft u vragen? Of wilt u liever een formulier per e-mail? Neem dan gerust contact met ons op via 
+            //- |  Het formulier is ook te downloaden en uit te printen door op de pijl te klikken. 
+            |  Heeft u vragen? Of wilt u liever een formulier per e-mail? Neem dan gerust contact met ons op via 
             a(href="mailto:info@vlinderfabriek.nl") info@vlinderfabriek.nl
     
         form(class="form form__subscribe" method="post" action="../php/formmailBreda.php" name="formBreda" enctype="multipart/form-data"  autocomplete="on")
@@ -32,8 +32,8 @@ block content
             input(type="hidden" name="recipients" value="administratie_@_vlinderfabriek.nl, claudette_@_vlinderfabriek.nl")
             input(type="hidden" name="good_url" value="../pages/formulier-verzonden.html")
             input(type="hidden" name="bad_url" value="../pages/formulier-niet-verzonden.html")
-            input(type="hidden" name="Locatie" value="Eerste inschrijving Breda 2019")
-            input(type="hidden" name="subject" value="Eerste inschrijving Breda 2019")
+            input(type="hidden" name="Locatie" value="Eerste inschrijving Breda 2020")
+            input(type="hidden" name="subject" value="Eerste inschrijving Breda 2020")
             fieldset
                 legend gevens deelnemer / cursist
                 label(for="firstname") voornaam &amp; achternaam &ast;
@@ -176,9 +176,9 @@ block content
                             option(value="Locatie: Breda de Vlinderklas") de Vlinderklas
                             option(value="Locatie: Breda Spelersklas 1") Spelersklas 1
                             option(value="Locatie: Breda Spelersklas 2") Spelersklas 2
-                            option(value="Locatie: Breda Fabriek") Fabriek
+                            option(value="Locatie: Breda Fabriek") de Fabriek
                             option(disabled label=" ")
-                        optgroup(label="Locatie: Prinsenbeek")
+                        //- optgroup(label="Locatie: Prinsenbeek")
                             option(value="Locatie: Prinsenbeek de Vlinderklas") de Vlinderklas
                             option(value="Locatie: Prinsenbeek Spelersklas") Spelersklas
                             //- option(value="Locatie: Prinsenbeek Fabriek") Fabriek
