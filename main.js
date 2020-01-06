@@ -8,7 +8,7 @@ require('./src/js/swapImage');
 // require('./src/js/preloadImages');
 
 // kerstkaart 
-require('./src/images/kerstkaart-2020.jpg');
+// require('./src/images/kerstkaart-2020.jpg');
 
 
 // images
@@ -35,3 +35,4 @@ require('./src/images/pijl-terug-green.png');
 require('./src/images/pijl-terug-orange.png');
 require('./src/images/pijl-terug-red.png');
 require('./src/images/woordlogo.png');
+require('./src/images/theaterdoedag-vlinderfabriek.jpg');
