@@ -73,13 +73,15 @@ block content
             //- input(type="hidden" name="derive_fields" value="imgverify=g-recaptcha-response")
             fieldset
                 label(for="nameField") naam&#42;
-                    input(name="name" type="text" id="nameField"  pattern="^[a-zA-Z]*$" placeholder="bijv Joep Jansen" title="gebruik alleen letters en geen cijfers")
-                label(for="subjectField") onderwerp
-                    input(name="onderwerp" type="text"  id="subjectField"  pattern="^[a-zA-Z]*$" placeholder="bijv informatie over de lessen" title="vul hier een onderwerp in")
+                    input(name="name" type="text" id="nameField" placeholder="bijv Joep Jansen" title="gebruik alleen letters en geen cijfers" required)
                 label(for="emailField") email&#42;
-                    input(name="email" type="email"  id="emailField"  placeholder="bijv joep@jansen.nl" pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$" title="vul een geldig emailadres in")
+                    input(name="email" type="email"  id="emailField"  placeholder="bijv joep@jansen.nl" pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$" title="vul een geldig emailadres in" required)
+                label(for="phone") telefoonnummer&#42; 
+                   input(name="telefoonnummer" type="tel" id="phone"  placeholder="bijvoorbeeld 1234567890" pattern="[0-9]{10}" autocomplete="off" required)
+                label(for="subjectField") onderwerp
+                    input(name="onderwerp" type="text"  id="subjectField" placeholder="bijv informatie over de lessen" title="vul hier een onderwerp in")
                 label(for="remarksField") stel uw vraag&#42;
-                    input(name="name" type="text" id="remarksField" class="form__contactForm__remarksField" required  placeholder="bijv Joep Jansen" title="vul uw vraag of bericht in" height="500")
+                    input(name="vraag" type="text" id="remarksField" class="form__contactForm__remarksField" required  placeholder="bijv Joep Jansen" title="vul uw vraag of bericht in" height="500")
                 //-  textarea(name="opmerkingen" id="remarksField" rows="8" required placeholder="uw vraag of opmerking")
                 p 
                     span &#42; invullen verplicht
