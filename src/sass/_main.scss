@@ -42,6 +42,8 @@ main {
     padding: 1rem;
     border-top: 1px solid $colorBlue;
 
+    @include clearfix;
+
     h2 {
       position: absolute;
       top: -9999px;
@@ -700,10 +702,18 @@ main {
 
   .christmas {
     float: right;
-    width: 80%;
-    margin: 0;
+    width: 40%;
+    // margin: 4rem auto 2rem auto;
     padding: 0 0 0 2rem;
     max-width: 650px;
+  }
+
+  .chr {
+    font-size: 1.4rem;
+  }
+
+  .chrh2 {
+    font-size: 1.5rem;
   }
 
   .sidepicture {

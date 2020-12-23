@@ -36,3 +36,4 @@ require('./src/images/pijl-terug-orange.png');
 require('./src/images/pijl-terug-red.png');
 require('./src/images/woordlogo.png');
 require('./src/images/theaterdoedag-vlinderfabriek.jpg');
+require('./src/images/kerstkaart-2021.jpg');
